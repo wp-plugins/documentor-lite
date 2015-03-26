@@ -7,12 +7,16 @@ Tested up to: 4.1.1
 Stable tag: 1.0
 License: GPLv2 or later
 
-Easily create Online Product Guide or Help Document. Add sections, change colors and embed. 
+Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
 
 == Description ==
 
-Easily create Online Product Guide or Help Document on WordPress site. Add sections, change colors and embed. Sections can be custom, posts or pages. 
+Easily create Online Product Guide or Help Document on WordPress site. Add sections, change colors and embed. Sections can be custom posts, regular posts or pages. 
 
+Documentor was built with the idea to make plugin, theme or any other product developer's life easier by cutting the documentation time short. Using Documentor, one can create and publish a profession looking documentation in just an hour with an elegant design and implementation. 
+
+<h4>Checkout this video tutorial</h4>
+[youtube https://www.youtube.com/watch?v=vhMGH8UPdc4]
 
 = Features =
 
@@ -28,7 +32,19 @@ Easily create Online Product Guide or Help Document on WordPress site. Add secti
 * WPML Compatible
 * Non intrusive styles, looks perfect on all the devices
 
-[Features and Installation Guide](http://documentor.in/lite/ "Documentor Lite Features")
+= Premium Version =
+[Documentor Premium](http://documentor.in/ "Documentor Premium Features") offers awesome features such as
+
+* Multiple Skins
+* User Feedback form submission
+* Live Preview on Dashboard
+* Save Document as PDF
+* Print and Email Document
+* Unlimited Documentations
+* Don't reinstall. Simply install an additional plugin
+* Priority Support
+
+[Visit our Premium page](http://documentor.in/ "Documentor Premium Features")
 
 == Installation ==
 
