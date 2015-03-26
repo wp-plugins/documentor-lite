@@ -41,7 +41,6 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Save Document as PDF
 * Print and Email Document
 * Unlimited Documentations
-* Don't reinstall. Simply install an additional plugin
 * Priority Support
 
 [Visit our Premium page](http://documentor.in/ "Documentor Premium Features")
