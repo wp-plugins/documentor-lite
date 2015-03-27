@@ -4,7 +4,7 @@
 	   <custom-field action="translate">_documentor_sectiontitle</custom-field>
    </custom-fields>
     <custom-types>
-        <custom-type translate="1">sections</custom-type>
+        <custom-type translate="1">documentor-sections</custom-type>
     </custom-types>    
     <language-switcher-settings>
         <key name="icl_lang_sel_config">

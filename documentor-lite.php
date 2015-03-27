@@ -2,7 +2,7 @@
 Plugin Name: Documentor Lite
 Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
-Version: 1.0
+Version: 1.0.1
 Author: WebFanzine Media
 Author URI: http://www.webfanzine.com/
 Wordpress version supported: 3.6 and above
@@ -22,6 +22,8 @@ class DocumentorLite{
 			'skin' => 'default',
 			'animation' => '',
 			'indexformat'=> 1,
+			'scrolling' => 1,
+			'fixmenu' => 1, 
 			'navmenu_default' => 1,
 			'navt_font' =>'regular',
 			'navmenu_tfont' => 'Arial,Helvetica,sans-serif',
@@ -68,7 +70,7 @@ class DocumentorLite{
 	{
 		if ( ! defined( 'DOCUMENTORLITE_TABLE' ) ) define('DOCUMENTORLITE_TABLE','documentor'); //Documentor TABLE NAME
 		if ( ! defined( 'DOCUMENTORLITE_SECTIONS' ) ) define('DOCUMENTORLITE_SECTIONS','documentor_sections'); //sections TABLE NAME
-		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.0",false);//Current Version of Documentor
+		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.0.1",false);//Current Version of Documentor
 		if ( ! defined( 'DOCUMENTORLITE_PLUGIN_BASENAME' ) )
 			define( 'DOCUMENTORLITE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		if ( ! defined( 'DOCUMENTORLITE_CSS_DIR' ) )
@@ -112,7 +114,14 @@ class DocumentorLite{
 						) 
 					);
 			}
-		
+			//alter table to change collation of column doc_title : 1.0.1
+			$row = $wpdb->get_row("SHOW FULL COLUMNS FROM $table_name LIKE 'doc_title'" );
+			$collation = ( isset( $row->Collation ) ) ? $row->Collation : '';
+			if( !empty( $collation ) && $collation != 'utf8_general_ci' ) {
+				$sql = "ALTER TABLE $table_name
+				MODIFY doc_title VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci";
+				$rs5 = $wpdb->query($sql);
+			}
 			$table_name = $table_prefix.DOCUMENTORLITE_SECTIONS;
 			if($wpdb->get_var("show tables like '$table_name'") != $table_name) {
 				$sql = "CREATE TABLE $table_name (

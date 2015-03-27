@@ -210,6 +210,8 @@ class DocumentorLiteDisplaydefault{
 			if( !empty ( $settings['animation'] ) ) {
 				wp_enqueue_script( 'documentor_wowjs', $documentor->documentor_plugin_url( 'core/js/wow.js' ), array('jquery'), DOCUMENTORLITE_VER, false);
 			}
+			$settings['scrolling'] = ( !isset( $settings['scrolling'] )  ) ? 1 : $settings['scrolling']; 
+			$settings['fixmenu'] = ( !isset( $settings['fixmenu'] )  ) ? 1 : $settings['fixmenu']; 
 			$script =  '<script type="text/javascript">
 			jQuery(document).ready(function(){
 				jQuery("#documentor-'.$this->docid.'").documentor({
@@ -219,6 +221,8 @@ class DocumentorLiteDisplaydefault{
 					secstyle	: "'.$secstyle.'",
 					actnavbg_default: "'.$settings['actnavbg_default'].'",
 					actnavbg_color	: "'.$settings['actnavbg_color'].'",
+					scrolling	: "'.$settings['scrolling'].'",
+					fixmenu		: "'.$settings['fixmenu'].'"
 				});	
 			});</script>'; 
 			$html .= $script;

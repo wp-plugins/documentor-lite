@@ -74,6 +74,10 @@
 	-moz-box-sizing: border-box;
 }
 /*Decimal indexing*/
+.documentor-default .doc-section {
+	border: 0;
+	outline: none;
+}
 .documentor-default .doc-sec-container span img {
 	margin-right: 10px;
 }

@@ -32,6 +32,8 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 			secstyle	: '',
 			actnavbg_default: '0',
 			actnavbg_color	: '#f3b869',
+			scrolling	: "1",
+			fixmenu		: "1"
 		}
 		
 		var options=jQuery.extend({},defaults,args);
@@ -54,9 +56,10 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 		if(options.actnavbg_default != '1' && options.actnavbg_color.length > 0 ) {
 			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" .doc-menu ol > li.doc-acta{background-color: "+options.actnavbg_color+"}</style>");
 		}
-		var docEnd = jQuery("#"+documentHandle+"-end").position(); //cache the position
-		jQuery.lockfixed("#"+documentHandle+" .doc-menu",{offset: {top: 0, bottom: (document.body.clientHeight - docEnd.top)}});
-		
+		if( options.fixmenu == 1 ) {
+			var docEnd = jQuery("#"+documentHandle+"-end").position(); //cache the position
+			jQuery.lockfixed("#"+documentHandle+" .doc-menu",{offset: {top: 0, bottom: (document.body.clientHeight - docEnd.top)}});
+		}
 		//js
 		jQuery(this).find(".doc-menu a.documentor-menu:first, .doc-menu li.doc-actli:first").addClass('doc-acta');
 			
@@ -64,7 +67,9 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 		 * This part causes smooth scrolling using scrollto function
 		*/
 		jQuery(this).find(".doc-menu a.documentor-menu").click(function(evn){
-			evn.preventDefault();
+			if( options.scrolling == 1 ) {
+				evn.preventDefault();
+			}
 			jQuery(this).parents('.doc-menu:first').find('a.documentor-menu, li.doc-actli').removeClass('doc-acta');
 			jQuery(this).addClass('doc-acta');
 			jQuery(this).parents('li.doc-actli:first').addClass('doc-acta');
@@ -91,7 +96,7 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 				   	bindsectionBehaviour(cnxt);
 				 });
 			 }
-			 if( jQuery(this.hash).length > 0 ) {
+			 if( jQuery(this.hash).length > 0 && options.scrolling == 1 ) {
 			 	jQuery('html,body').docuScrollTo( this.hash, this.hash ); 
 			}
 		

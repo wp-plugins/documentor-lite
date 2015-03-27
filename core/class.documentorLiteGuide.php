@@ -713,6 +713,30 @@ class DocumentorLiteGuide{
 					</td>
 				</tr>
 				
+				<tr valign="top">
+				<th scope="row"><?php _e('Scrolling','documentorlite'); ?></th>
+				<td>
+				<?php $documentor_curr['scrolling'] = ( !isset( $documentor_curr['scrolling'] )  ) ? 1 : $documentor_curr['scrolling']; ?>
+				<div class="eb-switch eb-switchnone havemoreinfo">
+					<input type="hidden" name="<?php echo $documentor_options;?>[scrolling]" id="doc-enable-scroll" class="hidden_check" value="<?php echo esc_attr($documentor_curr['scrolling']);?>">
+					<input id="enable-scroll" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['scrolling']); ?>>
+					<label for="enable-scroll"></label>
+				</div>
+				</td>
+				</tr>
+				
+				<tr valign="top">
+				<th scope="row"><?php _e('Fixed Menu','documentorlite'); ?></th>
+				<td>
+				<?php $documentor_curr['fixmenu'] = ( !isset( $documentor_curr['fixmenu'] )  ) ? 1 : $documentor_curr['fixmenu']; ?>
+				<div class="eb-switch eb-switchnone havemoreinfo">
+					<input type="hidden" name="<?php echo $documentor_options;?>[fixmenu]" id="doc-enable-fixmenu" class="hidden_check" value="<?php echo esc_attr($documentor_curr['fixmenu']);?>">
+					<input id="enable-fixmenu" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['fixmenu']); ?>>
+					<label for="enable-fixmenu"></label>
+				</div>
+				</td>
+				</tr>
+				
 				</table>
 				<p class="submit">
 				<input type="submit" name="save-settings" class="button-primary" value="<?php _e('Save Changes','documentorlite'); ?>" />

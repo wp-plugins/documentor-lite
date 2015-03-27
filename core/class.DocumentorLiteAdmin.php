@@ -13,19 +13,31 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 				add_action( 'edit_attachment', array( &$this, 'update_custom_fields' ) );
 				//delete section when post is deleted
 				add_action( 'wp_trash_post', array( &$this, 'doc_delete_section' ) );
+				//add manage action link at plugins page
+				add_filter( 'plugin_action_links',  array( &$this,'documentor_action_links'), 10, 2 );
 			}
+		}
+		function documentor_action_links( $links, $file ) {
+			if ( $file != DOCUMENTORLITE_PLUGIN_BASENAME )
+				return $links;
+			$doc = new DocumentorLite();
+
+			$url = $doc->documentor_admin_url(array('page'=>'documentor-admin'));
+
+			$manage_link = '<a href="' . esc_attr( $url ) . '">'
+				. esc_html( __( 'Manage','documentorlite') ) . '</a>';
+
+			array_unshift( $links, $manage_link );
+
+			return $links;
 		}
 		// function for adding guides page to wp-admin
 		function documentor_admin_menu() {
 			// Add a new submenu under Options
-			add_menu_page( 'Documentor', 'Documentor', 'manage_options','documentor-admin', array(&$this, 'documentor_guides_page'));	
-			add_submenu_page( 'documentor-admin', 'Global Settings', 'Global Settings', 'manage_options','documentor-global-settings', array(&$this, 'documentor_global_settings'));
+			add_menu_page( 'Documentor', 'Documentor', 'upload_files','documentor-admin', array(&$this, 'documentor_guides_page'), DocumentorLite::documentor_plugin_url( 'core/images/logo.png'));	
+			add_submenu_page( 'documentor-admin', 'Global Settings', 'Global Settings', 'upload_files','documentor-global-settings', array(&$this, 'documentor_global_settings'));
 			//add meta box if WPML is active
-			if( isset($_GET['post']) && isset($_GET['action']) && $_GET['action'] == 'edit') {
-				$pid = $_GET['post'];
-				/*global $wpdb, $table_prefix;
-				$table_name = $table_prefix.DOCUMENTORLITE_SECTIONS;
-				$result = $wpdb->get_var( $wpdb->prepare( "SELECT sec_id FROM $table_name WHERE post_id = %d", $pid ) );*/
+			if( isset($_GET['trid']) || ( isset($_GET['post']) && isset($_GET['action']) && $_GET['action'] == 'edit' ) ) {
 				if( function_exists( 'add_meta_box' ) && function_exists('icl_plugin_action_links') ) {
 					$post_types = get_post_types(); 
 					foreach($post_types as $post_type) {

@@ -4,7 +4,7 @@ Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
 Requires at least: 3.6
 Tested up to: 4.1.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
@@ -33,7 +33,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Non intrusive styles, looks perfect on all the devices
 
 = Premium Version =
-[Documentor Premium](http://documentor.in/ "Documentor Premium Features") offers awesome features such as
+[Documentor Premium](https://documentor.in/ "Documentor Premium Features") offers awesome features such as
 
 * Multiple Skins
 * User Feedback form submission
@@ -43,7 +43,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Unlimited Documentations
 * Priority Support
 
-[Visit our Premium page](http://documentor.in/ "Documentor Premium Features")
+[Visit our Premium page](https://documentor.in/ "Documentor Premium Features")
 
 == Installation ==
 
@@ -81,6 +81,15 @@ There's 3 ways to install this plugin:
 Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
+
+= 1.0.1 =
+* Modified uninstall file code so that tables will not delete on deletion of Documentor Lite plugin if Documentor Pro is active
+* Added scrolling enable/disable option in basic settings
+* Added fixed menu enable/disable option in basic settings
+* Altered documentor table for documentor title to take title from different languages
+* Changed capability of Guide Manager to "upload files"
+* Changed icon of Documentor in admin menu at dashboard
+* Added Manage link at plugins page
 
 = 1.0 =
 * Hello World. :-)	
