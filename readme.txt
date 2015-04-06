@@ -33,7 +33,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Non intrusive styles, looks perfect on all the devices
 
 = Premium Version =
-[Documentor Premium](https://documentor.in/ "Documentor Premium Features") offers awesome features such as
+<a href="https://documentor.in/" rel="friend" title="Documentor Premium Features">Documentor Premium</a> offers awesome features such as
 
 * Multiple Skins
 * User Feedback form submission
@@ -43,7 +43,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Unlimited Documentations
 * Priority Support
 
-[Visit our Premium page](https://documentor.in/ "Documentor Premium Features")
+<a href="https://documentor.in/" rel="friend" title="Documentor Premium Features">Visit our Premium page</a>
 
 == Installation ==
 
