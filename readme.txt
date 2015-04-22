@@ -3,7 +3,7 @@ Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
 Requires at least: 3.6
-Tested up to: 4.1.1
+Tested up to: 4.2
 Stable tag: 1.0.1
 License: GPLv2 or later
 
