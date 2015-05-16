@@ -2,7 +2,7 @@
 Plugin Name: Documentor Lite
 Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
-Version: 1.0.1
+Version: 1.1
 Author: WebFanzine Media
 Author URI: http://www.webfanzine.com/
 Wordpress version supported: 3.6 and above
@@ -57,9 +57,18 @@ class DocumentorLite{
 			'seccont_custom' => '',
 			'seccont_fsize' => 14,
 			'seccont_fstyle' => 'normal',
-			'guide' => array()
+			'guide' => array(),
+			'scroll_size' => '3', 
+			'scroll_color' => '#F45349', 
+			'scroll_opacity' => '0.4',
+			'rtl_support' => '0',
+			'menu_position' => 'left',
+			'updated_date' => '0',
+			'scrolltop' => '1'
 		);
-		$this->documentor_global_options = array( 'custom_post' => 1 );
+		$this->documentor_global_options = array( 'custom_post' => 1,
+							'custom_styles' => ''
+						   );
 		$this->_register_hooks();
 		$this->include_files();
 		$this->create_custom_post();
@@ -70,7 +79,7 @@ class DocumentorLite{
 	{
 		if ( ! defined( 'DOCUMENTORLITE_TABLE' ) ) define('DOCUMENTORLITE_TABLE','documentor'); //Documentor TABLE NAME
 		if ( ! defined( 'DOCUMENTORLITE_SECTIONS' ) ) define('DOCUMENTORLITE_SECTIONS','documentor_sections'); //sections TABLE NAME
-		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.0.1",false);//Current Version of Documentor
+		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.1",false);//Current Version of Documentor
 		if ( ! defined( 'DOCUMENTORLITE_PLUGIN_BASENAME' ) )
 			define( 'DOCUMENTORLITE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		if ( ! defined( 'DOCUMENTORLITE_CSS_DIR' ) )
@@ -79,6 +88,7 @@ class DocumentorLite{
 	function _register_hooks()
 	{
 		add_action('plugins_loaded', array(&$this, 'documentor_update_db_check'));
+		add_action('wp_footer', array(&$this, 'documentor_custom_styles') );
 		load_plugin_textdomain('documentorlite', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 		if (!shortcode_exists( 'documentor' ) ) add_shortcode('documentor', array(&$this,'shortcode'));
 	}
@@ -131,9 +141,31 @@ class DocumentorLite{
 							type varchar(50) NOT NULL,
 							upvote int(5) NOT NULL,
 							downvote int(5) NOT NULL,
+							slug varchar(200) NOT NULL,
 							UNIQUE KEY sec_id(sec_id)
 						);";
 				$rs = $wpdb->query($sql);
+			}
+			//add column for slug in sections table v-1.1
+			if($wpdb->get_var("SHOW COLUMNS FROM $table_name LIKE 'slug'") != 'slug') {
+				// Add Column
+				$sql = "ALTER TABLE $table_name
+				ADD COLUMN slug varchar(200) NOT NULL";
+				$rs5 = $wpdb->query($sql);
+				
+				//update slug column of sections table with post_name column from posts table
+				$posts_table = $table_prefix."posts";
+				$sqlsel = "SELECT * FROM $table_name sec, $posts_table post WHERE sec.post_id = post.ID;";
+				$results = $wpdb->get_results($sqlsel);
+				if( $wpdb->num_rows > 0 ) {
+					$sqlupdate = "UPDATE $table_name
+						      SET slug = CASE post_id";
+					foreach( $results as $result ) {
+						$sqlupdate .= " WHEN $result->ID THEN '$result->post_name'";
+					}
+					$sqlupdate .= " END;";
+					$rs5 = $wpdb->query($sqlupdate);
+				}
 			}
 			update_option( "documentorlite_db_version", $documentorlite_db_version );
 			//global setting
@@ -160,22 +192,14 @@ class DocumentorLite{
 	}
 	
 	function include_files() { 
-		require_once (dirname (__FILE__) . '/core/includes/class.documentorLiteFonts.php');
-		require_once (dirname (__FILE__) . '/core/class.DocumentorLiteAdmin.php');
-		require_once (dirname (__FILE__) . '/core/class.documentorLiteGuide.php');
-		require_once (dirname (__FILE__) . '/core/class.documentorLiteSection.php');
-		require_once (dirname (__FILE__) . '/core/class.documentorLiteAjax.php');
+		require_once (dirname (__FILE__) . '/core/includes/fonts.php');
+		require_once (dirname (__FILE__) . '/core/admin.php');
+		require_once (dirname (__FILE__) . '/core/guide.php');
+		require_once (dirname (__FILE__) . '/core/section.php');
+		require_once (dirname (__FILE__) . '/core/ajax.php');
 	}
 	
 	function documentor_plugin_url( $path = '' ) {
-		global $wp_version;
-		if ( version_compare( $wp_version, '2.8', '<' ) ) { // Using WordPress 2.7
-			$folder = dirname( plugin_basename( __FILE__ ) );
-			if ( '.' != $folder )
-				$path = path_join( ltrim( $folder, '/' ), $path );
-
-				return plugins_url( $path );
-			}
 		return plugins_url( $path, __FILE__ );
 	}
 
@@ -264,6 +288,16 @@ class DocumentorLite{
 		);
 
 		return $messages;
+	}
+	function documentor_custom_styles() {
+		global $doclite_customstyles;
+		if( !isset( $doclite_customstyles ) or $doclite_customstyles < 1 ) {
+			$global_curr = get_option('documentor_global_options');
+			if( !empty( $global_curr['custom_styles'] ) ) {  ?>
+				<style type="text/css"><?php echo $global_curr['custom_styles'];?></style>
+			<?php }
+			$doclite_customstyles++;
+		}
 	}
 }
 

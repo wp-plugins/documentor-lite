@@ -50,9 +50,8 @@ jQuery(document).ready(function() {
 	jQuery(".documentor_editguide .docname").on('input keyup', function() {
 		jQuery("input.guidename").val(jQuery(this).val());
 	});
-	
-// Added for Google fonts
-/* This function loads second level of fonts on load depending on first level of fonts - start */
+	// Added for Google fonts
+	/* This function loads second level of fonts on load depending on first level of fonts - start */
 	jQuery( ".main-font" ).each(function() {
 		var font_type = jQuery(this).val();
 		var nm;
@@ -147,7 +146,7 @@ jQuery(document).ready(function() {
 
 	jQuery('.sub_settings').find("h2.sub-heading").on("click", function(){
 	var wrap=jQuery(this).parent('.toggle_settings'),
-	tabcontent=wrap.find("p, table, code, span, div, div.settingsdiv");
+	tabcontent=wrap.find("p, table, code, span.doc-settingtitle, div, div.settingsdiv");
 	jQuery(this).toggleClass("closed");
 	tabcontent.toggle();
 	});
@@ -321,7 +320,8 @@ jQuery(document).ready(function() {
 					jQuery('.doc-success-msg').html("<div class='validation-msg'>"+response+"</div>").show();
 				} else {
 					jQuery('.doc-success-msg').html(response).show();
-					jQuery(".addinlinesecform .txts").val('');
+					jQuery(".addsecform .txts").val('');
+					jQuery(".addsecform input[type='checkbox']").removeProp('checked');
 				}
 			});
 			return false;
@@ -351,7 +351,7 @@ jQuery(document).ready(function() {
 		if( inlinecntx.find("#wp-content-wrap").hasClass('html-active')) {
 			var icontent = inlinecntx.find("#content").val();
 		} else {
-			var icontent = inlinecntx.find("#content_ifr").contents().find("body").html();
+			var icontent = tinyMCE.activeEditor.getContent();
 		}
 		var sections_nonce = jQuery("input[name='documentor-sections-nonce']").val();
 		var data = {
@@ -381,13 +381,6 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
-	jQuery(".create-btn").click(function() {
-		if( jQuery('.eb-cs-blank').length > 0 ) {
-			jQuery(".eb-cs-blank").click();
-		} else {
-			jQuery(".eb-cs-post").click();
-		}
-	});
 	//set active tab
 	jQuery(".eb-cs-tab").click(function() {
 		jQuery('.doc-success-msg').html('').hide();
@@ -432,18 +425,23 @@ jQuery(document).ready(function() {
 		   	bindBehaviors(cnxt);
 		});
 	});
+	/* if Custom Posts are disabled from global settings then display posts tab contents */
+	if( jQuery('.eb-cs-blank').length < 1 && jQuery('.eb-cs-post').length > 0 ) {
+		jQuery('#post.eb-cs-post').trigger('click');
+	}
 	var bindReorder = function(scope) {
 		/* Reorder */
 		var updateOutput = function(e)
 		{
 			var list   = e.length ? e : jQuery(e.target),
 			output = list.data('output');
-			if (window.JSON) {
-			   output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
-			} else {
-			    output.val('JSON browser support required for this demo.');
+			if( typeof output !== "undefined" ) {
+				if (window.JSON) {
+				   output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+				} else {
+				    output.val('JSON browser support required for this demo.');
+				}
 			}
-			
 		};
 		jQuery( "#reorders" ).nestable({
 			 rootClass       : 'reorders',					
@@ -475,6 +473,7 @@ jQuery(document).ready(function() {
 			var docid = jQuery(this).parents('.table-row:first').find('.docid:first').val();
 			var section_id = jQuery(this).parents('.table-row:first').find('.section_id:first').val();
 			var postid = jQuery(this).parents('.table-row:first').find('.post-id:first').val();
+			var slug = jQuery(this).parents('.table-row:first').find('.sec-slug:first').val();
 			if( item_type == 'Link' ) {
 				linkurl = jQuery(this).parents('.table-row:first').find('.linkurl:first').val();
 				new_window = jQuery(this).parents('.table-row:first').find('.targetw:first').val();
@@ -493,18 +492,20 @@ jQuery(document).ready(function() {
 				'docid': docid,
 				'section_id': section_id,
 				'post_id': postid,
+				'slug' : slug,
 				'sections_nonce': sections_nonce
 			};
 			var docloader = jQuery("input[name='documentor-loader']").val();
 			jQuery(this).siblings(".docloader").append('<div class="doc-loader" style="background: url('+docloader+') 50% 50% ;background-repeat: no-repeat;width: 100px;height: 20px;margin: 5px auto;"></div>');
 			jQuery.post(ajaxurl, secdata, function(response) {
-				if( response != '' ) {
-					var res = response.substring(0, 5);
-					if( res == 'error' ) {
-						jQuery('#'+secdata['section_id']).find('.validation-msg').html(response);
-					}
+				var res = JSON.parse(response);
+				if( typeof res['error'] !== 'undefined' ) {
+					jQuery('#'+secdata['section_id']).find('.validation-msg:first').html(res['error']);
 				} 
-				jQuery('#'+secdata['section_id']).find(".doc-loader").remove();
+				if( typeof res['slug'] !== 'undefined' ) {
+					jQuery('#'+secdata['section_id']).find('.sec-slug:first').val(res['slug']);
+				} 
+				jQuery('#'+secdata['section_id']).find(".doc-loader:first").remove();
 			});
 			return false;
 		});
@@ -568,6 +569,7 @@ jQuery(document).ready(function() {
 				var docid = jQuery(this).find('.docid:first').val();
 				var postid = jQuery(this).find('.post-id:first').val();
 				var section_id = jQuery(this).find('.section_id:first').val();
+				var slug = jQuery(this).find('.sec-slug:first').val();
 				if( item_type == 'Link' ) {
 					linkurl = jQuery(this).find('.linkurl:first').val();
 					new_window = jQuery(this).find('.targetw:first').val();
@@ -587,6 +589,7 @@ jQuery(document).ready(function() {
 				sections['docid']=docid;
 				sections['section_id']=section_id;
 				sections['postid']=postid;
+				sections['slug'] = slug;
 				sectionObj[idx] = sections;
 			});
 			var sections_nonce = jQuery("input[name='documentor-sections-nonce']").val();

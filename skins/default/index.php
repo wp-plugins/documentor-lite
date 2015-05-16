@@ -46,7 +46,13 @@ class DocumentorLiteDisplaydefault{
 				if( $secdata->type == 3 ) {
 					$html .= '<li class="doc-actli">'.$mtitle;
 				} else {
-					$html .= '<li class="doc-actli"><a class="documentor-menu" href="#section-'.$secdata->sec_id.'" data-section-id="'.$secdata->sec_id.'" '.$cssarr['navmenu'].' >'.$mtitle.'</a>';
+					//pretty links
+					$linkhref = '#section-'.$secdata->sec_id;
+					if( !empty( $secdata->slug ) ) {
+						$linkhref = apply_filters( 'editable_slug', $secdata->slug );
+						$linkhref = '#'.$linkhref;
+					} 
+					$html .= '<li class="doc-actli"><a class="documentor-menu" href="'.$linkhref.'" data-section-id="'.$secdata->sec_id.'" '.$cssarr['navmenu'].' >'.$mtitle.'</a>';
 				}
 				if ( isset( $obj->children ) && $obj->children ) {
 					$html .= '<ol>';
@@ -77,7 +83,7 @@ class DocumentorLiteDisplaydefault{
 			$sectiondata = $ds->getdata();
 			$settings = $guide->get_settings();
 			$root = 'skins/'.$settings['skin'];
-			$tran_class = "";
+			$tran_class = $sectionid = "";
 			$scrolltopimg = $documentor->documentor_plugin_url( $root."/images/top.png" );
 			$linkpng = $documentor->documentor_plugin_url( $root."/images/link.png" );
 			if( !empty( $settings['animation'] ) ) {
@@ -93,8 +99,10 @@ class DocumentorLiteDisplaydefault{
 					} 
 				}
 			}
+			global $wpdb;
+			//new field added in v1.1
+			$settings['updated_date'] = isset( $settings['updated_date'] ) ? $settings['updated_date'] : 0;
 			foreach( $sectiondata as $secdata ) {	
-				//$html .='fffffffffffttttt';
 				$shtml = "";
 				$postid = $secdata->post_id;
 				if( $secdata->type == 0 ) $type = 'documentor-sections';
@@ -102,6 +110,11 @@ class DocumentorLiteDisplaydefault{
 				else if( $secdata->type == 2 ) $type = 'page';
 				else if( $secdata->type == 3 ) $type = 'link';
 				if( $secdata->type != 3 ) { //If not a link section
+					//pretty links
+					$sectionid = 'section-'.$secdata->sec_id;
+					if( !empty( $secdata->slug ) ) {
+						$sectionid = apply_filters( 'editable_slug', $secdata->slug );
+					}
 					//WPML
 					if( function_exists('icl_plugin_action_links') ) {	
 						$lang_post_id = icl_object_id( $postid , $type, true, ICL_LANGUAGE_CODE );
@@ -110,7 +123,9 @@ class DocumentorLiteDisplaydefault{
 					} else {
 						$section_title = get_post_meta( $postid, '_documentor_sectiontitle', true );
 					}
-					$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."#section-".$secdata->sec_id : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."#section-".$secdata->sec_id;
+					$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."#section-".$secdata->sec_id : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+					
+					$currsecurl = $currsecurl."#".$sectionid;
 					
 					$shtml.= $starttag.' class="doc-sec-title" '.$cssarr['sectitle'].'><span class="doc-sec-link"><img src="'.esc_url( $linkpng ).'" onclick="prompt(\'Press Ctrl + C, then Enter to copy to clipboard\',\''.$currsecurl.'\')"></span> '.$section_title.$endtag;
 					//front-end edit section
@@ -122,30 +137,27 @@ class DocumentorLiteDisplaydefault{
 					}
 				} 
 				$shtml.= '<input type="hidden" name="secid" class="hidden_secid" value="'.esc_attr($secdata->sec_id).'">';
-				$html.= '<div class="doc-section '.esc_attr($tran_class).'" id="section-'.esc_attr($secdata->sec_id).'" data-section-id="'.esc_attr($secdata->sec_id).'">';
+				$html.= '<div class="doc-section '.esc_attr($tran_class).'" id="'.esc_attr($sectionid).'" data-section-id="'.esc_attr($secdata->sec_id).'">';
 				$html .= $shtml;
 				$html .= '<div class="doc-sec-content" '.$cssarr['sectioncontent'].'>';
 				if( $secdata->type != 3 ) { //not link section
-					//WPML
-					if( function_exists('icl_plugin_action_links') ) {	
-						if( $secdata->type == 0 ) $type = 'documentor-sections';
-						else if( $secdata->type == 1 ) $type = 'post';
-						else if( $secdata->type == 2 ) $type = 'page';
-						$lang_post_id = icl_object_id( $postid , $type, true, ICL_LANGUAGE_CODE );
-						$post = get_post( $lang_post_id );
-					} else {
-						$post = get_post( $postid );
-					}
+					$post = get_post( $postid );
 					if( $post != null ) {
 						$pcontent = $post->post_content;
 						$html .= apply_filters( 'the_content' , $pcontent );
 					}
 				} 
 				$html .= '</div>';
+				//get last modified date
+				$modified_date = $wpdb->get_var("SELECT post_modified FROM {$wpdb->posts} WHERE ID = ".$postid);
+				$modified_date = date_create($modified_date);
+				$modified_date = date_format($modified_date, 'M d, Y');
 				if( $secdata->type != 3	) { //not link section
-					$html.= '<div class="doc-help"> 
-							<a class="scrollup" style="display: block;"><span class="icon-untitled"></span></a>
-						</div>';
+					$html.= '<div class="doc-help">';
+							if( $settings['updated_date'] == 1 ) {
+								$html.='<div class="doc-mdate">'.__('Last updated on','documentorlite').' '.$modified_date.'</div>';
+							}
+						$html.='</div>';
 				}
 				$html .= '</div>';
 				if ( isset( $obj->children ) && $obj->children ) {
@@ -165,7 +177,6 @@ class DocumentorLiteDisplaydefault{
 		$settings = $guideobj->get_settings();
 		$documentor = new DocumentorLite();
 		//enqueue required files
-		wp_enqueue_style( 'doc_'.$settings['skin'].'_css', $documentor->documentor_plugin_url( 'skins/default/style.css' ), false, DOCUMENTORLITE_VER, 'all');	
 		wp_enqueue_script( 'doc_fixedjs', $documentor->documentor_plugin_url( 'core/js/jquery.lockfixed.js' ), array('jquery'), DOCUMENTORLITE_VER, false);
 		wp_enqueue_script( 'doc_js', $documentor->documentor_plugin_url( 'core/js/documentor.js' ), array( 'jquery' ) );
 		wp_localize_script( 'doc_js', 'DocAjax', array( 'docajaxurl' => admin_url( 'admin-ajax.php' ) ) );
@@ -173,12 +184,23 @@ class DocumentorLiteDisplaydefault{
 		//create html structure
 		$html = "";
 		if( !empty( $guideobj->sections_order ) ) {
-			//style
-			$html .= '<style>.documentor-default .doc-menu{ width: 30%;float: left;}.documentor-default .doc-sec-container {width: 65%;float: right; }</style>';
+			//new field added in v1.1
+			$settings['scrolltop'] = isset( $settings['scrolltop'] ) ? $settings['scrolltop'] : 1;
+			//include skin stylesheet
+			$html .="<link rel='stylesheet' href='".$documentor->documentor_plugin_url( 'skins/default/style.css' )."' type='text/css' media='all' />";
+			$rtl_support = isset($settings['rtl_support']) ? $settings['rtl_support'] : '0'; 
+			$wrapclass = '';
+			if( $rtl_support == '1' ) $wrapclass = ' documentor-rtl';
 			//wrap div
-			$html .= '<div id="documentor-'.$this->docid.'" class="documentor-'.$settings['skin'].' documentor-wrap" data-docid = "'.$this->docid.'" >';
+			$html .= '<div id="documentor-'.$this->docid.'" class="documentor-'.$settings['skin'].' documentor-wrap'.$wrapclass.'" data-docid = "'.$this->docid.'" >';
 			$html .= '<input type="hidden" name="docid" class="hidden_docid" value="'.$this->docid.'">';
-			$html .= ' 	<div class="doc-menu" >';
+			$menupos = isset($settings['menu_position']) ? $settings['menu_position'] : 'left'; 
+			$menuclass = $sec_containerclass = '';
+			if( $menupos == 'right' ) {
+				$menuclass = ' doc-menuright';
+				$sec_containerclass = ' doc-seccontainer-left';
+			}
+			$html .= ' 	<div class="doc-menu'.$menuclass.'" ><div class="doc-menuinner">';
 			$obj = $guideobj->sections_order;
 			if( !empty( $obj ) ) {
 				$jsonObj = json_decode( $obj );
@@ -188,18 +210,23 @@ class DocumentorLiteDisplaydefault{
 				}
 				$html.='</ol>';
 			} 
-			$html.=	'</div>';
+			$html.=	'</div></div>';
 			if( !empty( $obj ) ) {
 				$jsonObj = json_decode( $obj );
-				$html.='<div class="doc-sec-container" id="documentor_seccontainer">';
+				$html.='<div class="doc-sec-container'.$sec_containerclass.'" id="documentor_seccontainer">';
 				$i = 0;
 				foreach( $jsonObj as $jobj ) {
 					$i++;
 					$html.= $this->buildFrontSections($jobj, $i);
 				}
 				$html.='</div>';
-			}        
-			$html .='</div><div class="cleardiv"> </div><div id="documentor-'.$this->docid.'-end"></div>' ;
+			}     
+			$clearclass = '';
+			if( $rtl_support == '1' ) { $clearclass = ' cleardiv-rtl'; }    
+			if( $settings['scrolltop'] == '1' ) {
+				$html .='<a class="scrollup" style="display: block;"><span class="icon-untitled"></span></a>';
+			}
+			$html .='</div><div class="cleardiv'.$clearclass.'"> </div><div id="documentor-'.$this->docid.'-end"></div>' ;
 			$secstyle ='';
 			if( $settings['indexformat'] == 1 ) {
 				$css = $guideobj->get_inline_css();
@@ -211,7 +238,10 @@ class DocumentorLiteDisplaydefault{
 				wp_enqueue_script( 'documentor_wowjs', $documentor->documentor_plugin_url( 'core/js/wow.js' ), array('jquery'), DOCUMENTORLITE_VER, false);
 			}
 			$settings['scrolling'] = ( !isset( $settings['scrolling'] )  ) ? 1 : $settings['scrolling']; 
-			$settings['fixmenu'] = ( !isset( $settings['fixmenu'] )  ) ? 1 : $settings['fixmenu']; 
+			$settings['fixmenu'] = ( !isset( $settings['fixmenu'] )  ) ? 1 : $settings['fixmenu'];
+			$settings['scroll_size'] = ( !isset( $settings['scroll_size'] )  ) ? 3 : $settings['scroll_size']; 
+			$settings['scroll_color'] = ( !isset( $settings['scroll_color'] )  ) ? '#F45349' : $settings['scroll_color']; 
+			$settings['scroll_opacity'] = ( !isset( $settings['scroll_opacity'] )  ) ? 0.4 : $settings['scroll_opacity'];  
 			$script =  '<script type="text/javascript">
 			jQuery(document).ready(function(){
 				jQuery("#documentor-'.$this->docid.'").documentor({
@@ -222,7 +252,11 @@ class DocumentorLiteDisplaydefault{
 					actnavbg_default: "'.$settings['actnavbg_default'].'",
 					actnavbg_color	: "'.$settings['actnavbg_color'].'",
 					scrolling	: "'.$settings['scrolling'].'",
-					fixmenu		: "'.$settings['fixmenu'].'"
+					fixmenu		: "'.$settings['fixmenu'].'",
+					skin		: "default",
+					scrollBarSize	: "'.$settings['scroll_size'].'",
+					scrollBarColor	: "'.$settings['scroll_color'].'",
+					scrollBarOpacity: "'.$settings['scroll_opacity'].'"
 				});	
 			});</script>'; 
 			$html .= $script;

@@ -3,7 +3,7 @@ Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
 Requires at least: 3.6
-Tested up to: 4.2
+Tested up to: 4.1.1
 Stable tag: 1.0.1
 License: GPLv2 or later
 
@@ -33,7 +33,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Non intrusive styles, looks perfect on all the devices
 
 = Premium Version =
-<a href="https://documentor.in/" rel="friend" title="Documentor Premium Features">Documentor Premium</a> offers awesome features such as
+[Documentor Premium](https://documentor.in/ "Documentor Premium Features") offers awesome features such as
 
 * Multiple Skins
 * User Feedback form submission
@@ -43,7 +43,7 @@ Documentor was built with the idea to make plugin, theme or any other product de
 * Unlimited Documentations
 * Priority Support
 
-<a href="https://documentor.in/" rel="friend" title="Documentor Premium Features">Visit our Premium page</a>
+[Visit our Premium page](https://documentor.in/ "Documentor Premium Features")
 
 == Installation ==
 
@@ -81,6 +81,27 @@ There's 3 ways to install this plugin:
 Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
+
+= 1.1 =
+
+* New - Show 'Last updated on Date' under each section of documentation
+* New - RTL Support  
+* New - Option to specify menu Position (left or right)
+* New - Option for Scrollbar settings (size, color, opacity)
+* New - Back to top button enable/disable. It's position is changed ( fixed at bottom right corner of window )
+* New - Custom styles on Global Settings
+* New - Added slug for each section which is used as section link.
+* Fix - Responsiveness
+* Fix - Stylesheet is included before document
+* Fix - On certain servers PHP error and white screen due to certain file names.
+* New - Language Files .mo and .po of 6 languages
+  * French
+  * German
+  * Spanish
+  * Dutch (Netherlands) 
+  * Russian
+  * Italian
+
 
 = 1.0.1 =
 * Modified uninstall file code so that tables will not delete on deletion of Documentor Lite plugin if Documentor Pro is active

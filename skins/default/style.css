@@ -11,7 +11,6 @@
 	font-weight: bold;
 	margin-bottom: auto;
 }
-
 .documentor-default .doc-menu li{
 	line-height: 2;
 }
@@ -31,26 +30,11 @@
 }
 .documentor-default .doc-menu {
 	width:30%;
-	/*max-width:150px;
-	width: 100%;*/
 	height:100%;
 	bottom:0; 
 	float:left; 
 	padding-top: 25px;
 	overflow: auto;
-}
-.documentor-default .doc-menu::-webkit-scrollbar {
-	width: 6px;
-}
- 
-.documentor-default .doc-menu::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    border-radius: 10px;
-}
- 
-.documentor-default .doc-menu::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.7); 
 }
 .documentor-default .doc-menu ol {
 	padding: 0;
@@ -64,8 +48,6 @@
 }
 .documentor-default .doc-sec-container {
 	width:65%; 
-	/*max-width: 280px;
-	width:100%;*/
 	float: right;
 	margin-left: 20px;
 	padding-top: 25px;
@@ -91,8 +73,6 @@
 	float: right;
 }
 /**/
-
-
 /* navigation */
 .documentor-default .doc-menu.stick {
     position: fixed;
@@ -105,8 +85,8 @@
     text-decoration: none;
     outline: none;
     padding: 8px;
+    border: none;
 }
-
 .documentor-default .doc-menu a.doc-acta {
     font-weight: bold;
 }
@@ -140,10 +120,50 @@
 /*scrolltop*/
 .documentor-default .doc-help {
 	position: relative;
-	min-height: 30px;
+	margin: 20px 0;
 }
 .documentor-default .doc-help span {
 	margin: 0 5px;
+}
+/*modified date*/
+.documentor-default .doc-help .doc-mdate{
+	display: inline-block;
+	text-decoration: none;
+	font-family: Georgia,"Times New Roman",Times,serif;
+	font-style: italic;
+	color: #a0a0a0;
+	font-size: 12px;
+}
+/* menu position right */
+.documentor-default .doc-menuright {
+	float: right; 
+}
+.documentor-default .doc-seccontainer-left {
+	float: left; 
+}
+/* style for rtl support */
+.documentor-default.documentor-rtl, .documentor-default.documentor-rtl .doc-menu {
+	float: right;
+	text-align: right;
+	direction: rtl;
+}
+.documentor-default.documentor-rtl .doc-sec-container {
+	float: left;
+	text-align: right;
+	direction: rtl;
+}
+.documentor-default.documentor-rtl .scrollup {
+	left: 0;
+	right: auto;
+}
+.documentor-default.documentor-rtl .doc-menu ol {
+	padding: 6px 25px 6px 0;
+}
+.documentor-default.documentor-rtl .doc-sec-link {
+	float: left;
+}
+.cleardiv.cleardiv-rtl {
+	clear: right;
 }
 /* font */
 @font-face {
@@ -170,35 +190,32 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 .icon-untitled:before {
 	content: "\f106";
 }
 
-.documentor-default .doc-help .scrollup {
-	padding: 5px 6px;
-	border-radius: 4px;
+.documentor-default .scrollup {
+	background: #363636;
 	background: rgba(100, 100, 100, 0.4);
-	position: fixed;
-	bottom: 48px;
-	right: 32px;
-	opacity: 0.89;
-	filter: alpha(opacity=89);
-	z-index: 499841;
-	position: absolute;
-	right: 20px;
-	top: 0;
-	vertical-align: middle;
+	color: #FFF;
+	bottom: 4%;
 	cursor: pointer;
-	opacity: 0;
+	display: none;
+	position: fixed;
+	right: 20px;
+	z-index: 999;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	width: 40px;
+	border-radius: 4px;
+	-webkit-transition: background-color 0.3s linear;
+	-moz-transition: background-color 0.3s linear;
+	-o-transition: background-color 0.3s linear;
 	transition: background-color 0.3s linear;
-	height: 30px;
-	text-decoration: none;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	border: none;
 }
-.documentor-default .doc-help .scrollup:hover {
+.documentor-default .scrollup:hover {
 	background-color: #F45349;
 	text-decoration: none;	
 }

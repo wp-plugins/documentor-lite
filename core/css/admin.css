@@ -131,10 +131,14 @@ code {
 }
 /*Minmax img*/
 .toggle_img {
+	background: url('../images/close.png');
 	width: 20px;
 	height: 20px;
 	float: right;
 	cursor: pointer;
+}
+.sub-heading.closed .toggle_img {
+	background: url('../images/info.png');
 }
 div.content ul, div.content p {
 	padding:0;
@@ -478,7 +482,7 @@ input.cmn-toggle-round:checked + label:after {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
 	box-shadow: 0 1px 1px rgba(0,0,0,.04);
 	box-sizing: border-box;
-	min-height: 650px;
+	min-height: 250px;
 	padding-top: 10px;
 }
 .eb-cs-tab {
