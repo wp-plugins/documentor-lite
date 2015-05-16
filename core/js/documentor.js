@@ -1,0 +1,418 @@
+//scrollTo function
+jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
+    if (!(this instanceof jQuery)) return jQuery.fn.docuScrollTo.apply(jQuery('html,body'), arguments);
+
+    options = jQuery.extend({}, {
+        gap: {
+            x: 0,
+            y: 0
+        },
+        animation: {
+            easing: 'swing',
+            duration: 1000,
+            complete: jQuery.noop,
+            step: jQuery.noop
+        }
+    }, options);
+
+    return this.each(function(){
+        var elem = jQuery(this);
+	elem.stop().animate({
+            scrollLeft: !isNaN(Number(x)) ? x : jQuery(y).offset().left + options.gap.x,
+            scrollTop: !isNaN(Number(y)) ? y : jQuery(y).offset().top + options.gap.y
+	}, options.animation);
+    });
+};
+;(function($){
+	jQuery.fn.documentor=function(args){
+		var defaults= {
+			docid		: '1',
+			animation	: '',
+			indexformat	: '1',
+			secstyle	: '',
+			actnavbg_default: '0',
+			actnavbg_color	: '#f3b869',
+			scrolling	: "1",
+			fixmenu		: "1",
+			skin		: "default",
+			scrollBarSize	: "3",
+			scrollBarColor	: "#F45349",
+			scrollBarOpacity: "0.4"
+		}
+		
+		var options=jQuery.extend({},defaults,args);
+		var documentHandle = options.docid;
+		if(options.animation.length > 0 ) {
+			wow = new WOW({
+				boxClass:     "wow",      
+				animateClass: "documentor-animated", 
+				offset:       0,          
+				mobile:       true,       
+				live:         true        
+			});
+			wow.init();
+		}
+		if(options.indexformat == '1') {
+			jQuery("head").append("<style type=\"text/css\"> #"+documentHandle+" ol {counter-reset: item ;}#"+documentHandle+" ol.doc-menu {margin-top: 20px;}#"+documentHandle+" ol li {display: block;}#"+documentHandle+" ol li:before {content: counters(item, \".\") \".\";counter-increment: item;"+options.secstyle+"}</style>");
+		} else {
+			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" ol {list-style: none;}#"+documentHandle+" li {list-style: none;}</style>");
+		}
+		if(options.actnavbg_default != '1' && options.actnavbg_color.length > 0 ) {
+			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" .doc-menu ol > li.doc-acta{background-color: "+options.actnavbg_color+"}</style>");
+		}
+		if( options.fixmenu == 1 ) {
+			var docEnd = jQuery("#"+documentHandle+"-end").position(); //cache the position
+			jQuery.lockfixed("#"+documentHandle+" .doc-menu",{offset: {top: 0, bottom: (document.body.clientHeight - docEnd.top)}});
+		}
+		//js
+		jQuery(this).find(".doc-menu a.documentor-menu:first, .doc-menu li.doc-actli:first").addClass('doc-acta');
+			
+		/**
+		 * This part causes smooth scrolling using scrollto function
+		*/
+		jQuery(this).find(".doc-menu a.documentor-menu").click(function(evn){
+			if( options.scrolling == 1 ) {
+				evn.preventDefault();
+			}
+			jQuery(this).parents('.doc-menu:first').find('a.documentor-menu, li.doc-actli').removeClass('doc-acta');
+			jQuery(this).addClass('doc-acta');
+			jQuery(this).parents('li.doc-actli:first').addClass('doc-acta');
+			/* Do not apply animation effect if click on menu item */
+			jQuery("#"+documentHandle).find(".documentor-section").css({"visibility":"visible","-webkit-animation":"none"});
+			/**/
+			if( options.enable_ajax == '1' ) {
+				var secid = jQuery( this ).attr("data-section-id");
+				var docid = jQuery( this ).parents(".documentor-wrap:first").find(".hidden_docid").val();
+				var data = {
+					'action': 'doc_get_ajaxcontent',
+					'secid': secid,
+					'docid': docid
+				};
+				//display loader
+				jQuery("#"+documentHandle).find(".doc-sec-container").empty();
+				jQuery("#"+documentHandle).find(".doc-sec-container").append('<div class="doc-loader"></div>');
+				jQuery.post(DocAjax.docajaxurl, data, function(response) {
+					if( response != "0" ) {
+						jQuery("#"+documentHandle).find('.doc-sec-container').html(response);
+					}
+				}).always( function() { 
+					var cnxt=jQuery("#"+documentHandle).find('#section-'+data['secid']);
+				   	bindsectionBehaviour(cnxt);
+				 });
+			 }
+			 if( jQuery(this.hash).length > 0 && options.scrolling == 1 ) {
+			 	jQuery('html,body').docuScrollTo( this.hash, this.hash ); 
+			}
+		
+		});
+		           
+		/**
+		 * This part handles the highlighting functionality.
+		 */
+		var aChildren = jQuery(this).find(".doc-menu li.doc-actli").children('a.documentor-menu'); // find the a children of the list items
+		var aArray = []; // create the empty aArray
+		for (var i=0; i < aChildren.length; i++) {    
+			var aChild = aChildren[i];
+			var ahref = jQuery(aChild).attr('href');
+			aArray.push(ahref);
+		} // this for loop fills the aArray with attribute href values
+		jQuery(window).scroll(function(){
+			var window_top = jQuery(window).scrollTop() + 12; // the "12" should equal the margin-top value for nav.stick
+			var windowPos = jQuery(window).scrollTop(); // get the offset of the window from the top of page
+			var windowHeight = jQuery(window).height(); // get the height of the window
+			var docHeight = jQuery(document).height();
+	
+			if(windowPos + windowHeight == docHeight) {
+				if (!jQuery("#"+documentHandle+" .doc-menu li:last-child a").hasClass("doc-acta")) {
+				    var navActiveCurrent = jQuery("#"+documentHandle+" .doc-acta").attr("href");
+				    jQuery("#"+documentHandle+" a[href='" + navActiveCurrent + "']").removeClass("doc-acta");
+				    jQuery("#"+documentHandle+" .doc-menu li:last-child a").addClass("doc-acta");
+				}
+			}
+			
+			clearTimeout(jQuery.data(this, 'scrollTimer'));
+			jQuery.data(this, 'scrollTimer', setTimeout(function() {
+				// do something
+				for (var i=0; i < aArray.length; i++) {
+					if( jQuery(aArray[i]).length > 0 ) {
+						var theID = aArray[i];
+						var divPos = jQuery(theID).offset().top; // get the offset of the div from the top of page
+						var divHeight = jQuery(theID).height(); // get the height of the div in question
+						if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+							jQuery("#"+documentHandle+" a[href='" + theID + "']").addClass("doc-acta");
+						} else {
+							jQuery("#"+documentHandle+" a[href='" + theID + "']").removeClass("doc-acta");
+						}
+					}
+				}
+				if(jQuery("#"+documentHandle+" a.doc-acta").length<=0) {
+					jQuery("#"+documentHandle+" .doc-menu a.documentor-menu:first").addClass("doc-acta");
+				}
+				jQuery("#"+documentHandle+" .doc-menu a.documentor-menu.doc-acta").parent('li').addClass("doc-acta");
+				jQuery("#"+documentHandle+" .doc-menu a:not(.doc-acta)").parent('li').removeClass("doc-acta");
+			}, 200));
+		});
+		//right positioned menu
+		jQuery(window).scroll(function(){
+			if( jQuery("#"+documentHandle+" .doc-menuright.doc-menufixed").length > 0 ) {
+				var mleft = jQuery("#"+documentHandle).outerWidth()-jQuery("#"+documentHandle+" .doc-menuright.doc-menufixed").outerWidth();
+				jQuery("#"+documentHandle+" .doc-menuright.doc-menufixed").css('margin-left',mleft+'px');
+			} else {
+				jQuery("#"+documentHandle+" .doc-menuright").css('margin-left','0px');
+			}
+		});
+		/*show section link*/
+		jQuery("#"+documentHandle).find(".doc-section").hover(function(){
+			jQuery(this).find(".doc-sec-link").stop(true,true).animate({'opacity':'0.8'},1000);
+		},function() {
+			jQuery(this).find(".doc-sec-link").stop(true,true).animate({'opacity':'0'},1000);
+		}); 
+		/*show scrolltop button*/
+		jQuery("body").hover(function(){
+			jQuery("#"+documentHandle+" .scrollup").stop(true,true).animate({'opacity':'0.8'},1000);
+		},function() {
+			jQuery("#"+documentHandle+" .scrollup").stop(true,true).animate({'opacity':'0'},1000);
+		});	 
+		/*scrolltop*/
+		jQuery("#"+documentHandle).find(".scrollup").on('click', function() {
+			jQuery("html, body").animate({scrollTop:jQuery("#"+documentHandle).offset().top-50}, 600);
+		});
+		//scroll bar js
+		 jQuery("#"+documentHandle+" .doc-menuinner").slimScroll({
+			  size: options.scrollBarSize+'px', 
+			  height: '100%', 
+			  color: options.scrollBarColor, 
+			  opacity: options.scrollBarOpacity,
+		});	
+	}
+})(jQuery);
+
+/*! Copyright (c) 2011 Piotr Rochala (http://rocha.la)
+ * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *
+ * Version: 1.3.0
+ *
+ */
+(function(f) {
+    jQuery.fn.extend({
+        slimScroll: function(h) {
+            var a = f.extend({
+                width: "auto",
+                height: "250px",
+                size: "7px",
+                color: "#000",
+                position: "right",
+                distance: "0px",
+                start: "top",
+                opacity: 0.4,
+                alwaysVisible: !1,
+                disableFadeOut: !1,
+                railVisible: !1,
+                railColor: "#333",
+                railOpacity: 0.2,
+                railDraggable: !0,
+                railClass: "slimScrollRail",
+                barClass: "slimScrollBar",
+                wrapperClass: "slimScrollDiv",
+                allowPageScroll: !1,
+                wheelStep: 20,
+                touchScrollStep: 200,
+                borderRadius: "7px",
+                railBorderRadius: "7px"
+            }, h);
+            this.each(function() {
+                function r(d) {
+                    if (s) {
+                        d = d ||
+                            window.event;
+                        var c = 0;
+                        d.wheelDelta && (c = -d.wheelDelta / 120);
+                        d.detail && (c = d.detail / 3);
+                        f(d.target || d.srcTarget || d.srcElement).closest("." + a.wrapperClass).is(b.parent()) && m(c, !0);
+                        d.preventDefault && !k && d.preventDefault();
+                        k || (d.returnValue = !1)
+                    }
+                }
+
+                function m(d, f, h) {
+                    k = !1;
+                    var e = d,
+                        g = b.outerHeight() - c.outerHeight();
+                    f && (e = parseInt(c.css("top")) + d * parseInt(a.wheelStep) / 100 * c.outerHeight(), e = Math.min(Math.max(e, 0), g), e = 0 < d ? Math.ceil(e) : Math.floor(e), c.css({
+                        top: e + "px"
+                    }));
+                    l = parseInt(c.css("top")) / (b.outerHeight() - c.outerHeight());
+                    e = l * (b[0].scrollHeight - b.outerHeight());
+                    h && (e = d, d = e / b[0].scrollHeight * b.outerHeight(), d = Math.min(Math.max(d, 0), g), c.css({
+                        top: d + "px"
+                    }));
+                    b.scrollTop(e);
+                    b.trigger("slimscrolling", ~~e);
+                    v();
+                    p()
+                }
+
+                function C() {
+                    window.addEventListener ? (this.addEventListener("DOMMouseScroll", r, !1), this.addEventListener("mousewheel", r, !1)) : document.attachEvent("onmousewheel", r)
+                }
+
+                function w() {
+                    u = Math.max(b.outerHeight() / b[0].scrollHeight * b.outerHeight(), D);
+                    c.css({
+                        height: "20%"
+                    });
+                    var a = u == b.outerHeight() ? "none" : "block";
+                    c.css({
+                        display: a
+                    })
+                }
+
+                function v() {
+                    w();
+                    clearTimeout(A);
+                    l == ~~l ? (k = a.allowPageScroll, B != l && b.trigger("slimscroll", 0 == ~~l ? "top" : "bottom")) : k = !1;
+                    B = l;
+                    u >= b.outerHeight() ? k = !0 : (c.stop(!0, !0).fadeIn("fast"), a.railVisible && g.stop(!0, !0).fadeIn("fast"))
+                }
+
+                function p() {
+                    a.alwaysVisible || (A = setTimeout(function() {
+                        a.disableFadeOut && s || (x || y) || (c.fadeOut("slow"), g.fadeOut("slow"))
+                    }, 1E3))
+                }
+                var s, x, y, A, z, u, l, B, D = 30,
+                    k = !1,
+                    b = f(this);
+                if (b.parent().hasClass(a.wrapperClass)) {
+                    var n = b.scrollTop(),
+                        c = b.parent().find("." + a.barClass),
+                        g = b.parent().find("." + a.railClass);
+                    w();
+                    if (f.isPlainObject(h)) {
+                        if ("height" in h && "auto" == h.height) {
+                            b.parent().css("height", "auto");
+                            b.css("height", "auto");
+                            var q = b.parent().parent().height();
+                            b.parent().css("height", q);
+                            b.css("height", q)
+                        }
+                        if ("scrollTo" in h) n = parseInt(a.scrollTo);
+                        else if ("scrollBy" in h) n += parseInt(a.scrollBy);
+                        else if ("destroy" in h) {
+                            c.remove();
+                            g.remove();
+                            b.unwrap();
+                            return
+                        }
+                        m(n, !1, !0)
+                    }
+                } else {
+                    a.height = "auto" == a.height ? b.parent().height() : a.height;
+                    n = f("<div></div>").addClass(a.wrapperClass).css({
+                        position: "relative",
+                        overflow: "hidden",
+                        width: a.width,
+                        height: a.height
+                    });
+                    b.css({
+                        overflow: "hidden",
+                        width: a.width,
+                        height: a.height
+                    });
+                    var g = f("<div></div>").addClass(a.railClass).css({
+                            width: a.size,
+                            height: "100%",
+                            position: "absolute",
+                            top: 0,
+                            display: a.alwaysVisible && a.railVisible ? "block" : "none",
+                            "border-radius": a.railBorderRadius,
+                            background: a.railColor,
+                            opacity: a.railOpacity,
+                            zIndex: 90
+                        }),
+                        c = f("<div></div>").addClass(a.barClass).css({
+                            background: a.color,
+                            width: a.size,
+                            position: "absolute",
+                            top: 0,
+                            opacity: a.opacity,
+                            display: a.alwaysVisible ?
+                                "block" : "none",
+                            "border-radius": a.borderRadius,
+                            BorderRadius: a.borderRadius,
+                            MozBorderRadius: a.borderRadius,
+                            WebkitBorderRadius: a.borderRadius,
+                            zIndex: 99
+                        }),
+                        q = "right" == a.position ? {
+                            right: a.distance
+                        } : {
+                            left: a.distance
+                        };
+                    g.css(q);
+                    c.css(q);
+                    b.wrap(n);
+                    b.parent().append(c);
+                    b.parent().append(g);
+                    a.railDraggable && c.bind("mousedown", function(a) {
+                        var b = f(document);
+                        y = !0;
+                        t = parseFloat(c.css("top"));
+                        pageY = a.pageY;
+                        b.bind("mousemove.slimscroll", function(a) {
+                            currTop = t + a.pageY - pageY;
+                            c.css("top", currTop);
+                            m(0, c.position().top, !1)
+                        });
+                        b.bind("mouseup.slimscroll", function(a) {
+                            y = !1;
+                            p();
+                            b.unbind(".slimscroll")
+                        });
+                        return !1
+                    }).bind("selectstart.slimscroll", function(a) {
+                        a.stopPropagation();
+                        a.preventDefault();
+                        return !1
+                    });
+                    g.hover(function() {
+                        v()
+                    }, function() {
+                        p()
+                    });
+                    c.hover(function() {
+                        x = !0
+                    }, function() {
+                        x = !1
+                    });
+                    b.hover(function() {
+                        s = !0;
+                        v();
+                        p()
+                    }, function() {
+                        s = !1;
+                        p()
+                    });
+                    b.bind("touchstart", function(a, b) {
+                        a.originalEvent.touches.length && (z = a.originalEvent.touches[0].pageY)
+                    });
+                    b.bind("touchmove", function(b) {
+                        k || b.originalEvent.preventDefault();
+                        b.originalEvent.touches.length &&
+                            (m((z - b.originalEvent.touches[0].pageY) / a.touchScrollStep, !0), z = b.originalEvent.touches[0].pageY)
+                    });
+                    w();
+                    "bottom" === a.start ? (c.css({
+                        top: b.outerHeight() - c.outerHeight()
+                    }), m(0, !0)) : "top" !== a.start && (m(f(a.start).position().top, null, !0), a.alwaysVisible || c.hide());
+                    C()
+                }
+            });
+            return this
+        }
+    });
+    jQuery.fn.extend({
+        slimscroll: jQuery.fn.slimScroll
+    })
+})(jQuery);
