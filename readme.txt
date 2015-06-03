@@ -1,4 +1,4 @@
-=== Documentor Lite ===
+=== Documentor - Create Product Documentation ===
 Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
