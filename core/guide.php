@@ -587,6 +587,7 @@ class DocumentorLiteGuide{
 						  <a id="options-group-1-tab" class="nav-tab sections-tab <?php if( isset( $class0 ) ) echo $class0; ?>" title="Sections" href="<?php echo esc_url(admin_url('admin.php?page=documentor-admin&action=edit&id='.$this->docid.'&tab=sections')); ?>"><?php _e('Sections','documentorlite'); ?></a> 
 						  <a id="options-group-2-tab" class="nav-tab settings-tab <?php if( isset( $class1 ) ) echo $class1; ?>" title="Settings" href="<?php echo esc_url(admin_url('admin.php?page=documentor-admin&action=edit&id='.$this->docid.'&tab=settings')); ?>"><?php _e('Settings','documentorlite'); ?></a>
 						  <a id="options-group-3-tab" class="nav-tab embedcode-tab <?php if( isset( $class2 ) ) echo $class2; ?>" title="Embed code" href="<?php echo esc_url(admin_url('admin.php?page=documentor-admin&action=edit&id='.$this->docid.'&tab=embedcode')); ?>"><?php _e('Embed Code','documentorlite'); ?></a>
+						   <a id="options-group-4-tab" class="nav-tab pro-tab" title="<?php _e('Documentor Pro','documentorlite'); ?>" href="https://documentor.in/" target="_blank"><?php _e('Documentor Pro','documentorlite'); ?></a>
 					</h2>
 				<?php } 
 				if( ( isset( $tabindex ) && $tabindex == 'sections' ) || empty( $tabindex )) { ?>

@@ -35,9 +35,9 @@
 				 * while prettier to use position: fixed (less jitter when scrolling)
 				 * iOS 5+ + Android has fixed support, but issue with toggeling between fixed and not and zoomed view
 				 */
-				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS ([0-9])_/) || navigator.userAgent.match(/\bAndroid ([0-9])\./i)){
+				/*if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS ([0-9])_/) || navigator.userAgent.match(/\bAndroid ([0-9])\./i)){
 					pos_not_fixed = true;
-				}
+				}*/
 
 				/*
 				// adds throttle to position calc; modern browsers should handle resize event fine

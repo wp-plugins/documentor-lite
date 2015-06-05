@@ -211,6 +211,12 @@ a.create-btn:hover {
 .nav-tab-wrapper .nav_tab_active {
 	background-color: #fff;
 }
+/*pro tab*/
+.nav-tab-wrapper .pro-tab {
+	background-color: #E26A6A;
+ 	color: #eee;
+ 	outline: 0;
+}
 .edit-guidetitle {
 	font-size: 28px;
 	padding: 20px 0; 

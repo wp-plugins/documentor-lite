@@ -254,7 +254,7 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
                 }
 
                 function C() {
-                    window.addEventListener ? (this.addEventListener("DOMMouseScroll", r, !1), this.addEventListener("mousewheel", r, !1)) : document.attachEvent("onmousewheel", r)
+                    window.addEventListener ? (this.addEventListener("DOMMouseScroll", r, !1), this.addEventListener("mousewheel", r, !1), this.addEventListener("MozMousePixelScroll", r, !1)) : document.attachEvent("onmousewheel", r)
                 }
 
                 function w() {
@@ -416,3 +416,4 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
         slimscroll: jQuery.fn.slimScroll
     })
 })(jQuery);
+

@@ -35,6 +35,7 @@
 	float:left; 
 	padding-top: 25px;
 	overflow: auto;
+	-webkit-backface-visibility: hidden;
 }
 .documentor-default .doc-menu ol {
 	padding: 0;
@@ -54,6 +55,7 @@
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
 }
 /*Decimal indexing*/
 .documentor-default .doc-section {

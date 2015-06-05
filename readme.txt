@@ -1,10 +1,10 @@
-=== Documentor - Create Product Documentation ===
+=== Documentor Lite ===
 Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
 Requires at least: 3.6
 Tested up to: 4.2.2
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
@@ -82,6 +82,10 @@ Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
 
+= 1.1.1 =
+
+* Fix - Scroll content and menu issue on iOS devices
+
 = 1.1 =
 
 * New - Show 'Last updated on Date' under each section of documentation
@@ -116,4 +120,4 @@ Please check the plugin page for FAQs and how-tos
 * Hello World. :-)	
 
 == Upgrade Notice ==
-First release!
+Graceful update, no impacts.

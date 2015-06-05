@@ -178,7 +178,7 @@ class DocumentorLiteDisplaydefault{
 		$documentor = new DocumentorLite();
 		//enqueue required files
 		wp_enqueue_script( 'doc_fixedjs', $documentor->documentor_plugin_url( 'core/js/jquery.lockfixed.js' ), array('jquery'), DOCUMENTORLITE_VER, false);
-		wp_enqueue_script( 'doc_js', $documentor->documentor_plugin_url( 'core/js/documentor.js' ), array( 'jquery' ) );
+		wp_enqueue_script( 'doc_js', $documentor->documentor_plugin_url( 'core/js/documentor.js' ), array( 'jquery' ), DOCUMENTORLITE_VER );
 		wp_localize_script( 'doc_js', 'DocAjax', array( 'docajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		
 		//create html structure
