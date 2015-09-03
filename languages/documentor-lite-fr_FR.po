@@ -1,0 +1,2026 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Aug 05 2015 11:48:21 GMT+0530 (IST)\n"
+"PO-Revision-Date: Thu Sep 03 2015 11:46:28 GMT+0530 (IST)\n"
+"Last-Translator: admin <sagar.katarnaware@webfanzine.com>\n"
+"Language-Team: \n"
+"Language: French (France)\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: fr_FR\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../documentor.php:419
+msgctxt "post type general name"
+msgid "Sections"
+msgstr "Sections"
+
+#: ../documentor.php:420
+msgctxt "post type singular name"
+msgid "Section"
+msgstr "Section"
+
+#: ../documentor.php:421
+msgctxt "documentor"
+msgid "Add New"
+msgstr ""
+"Ajouter\n"
+" un \n"
+"nouveau\n"
+
+#: ../documentor.php:422
+msgid "Add New Documentor Section"
+msgstr ""
+"Ajouter\n"
+" \n"
+"nouvel\n"
+" \n"
+"article\n"
+" \n"
+"Documentor\n"
+
+#: ../documentor.php:423
+msgid "Edit Documentor Section"
+msgstr ""
+"Modifier\n"
+" \n"
+"l'article\n"
+" \n"
+"Documentor"
+
+#: ../documentor.php:424
+msgid "New Documentor Section"
+msgstr ""
+"Nouvelle\n"
+" \n"
+"Section\n"
+" \n"
+"Documentor\n"
+
+#: ../documentor.php:425
+msgid "All Documentor Sections"
+msgstr ""
+"Toutes les\n"
+" \n"
+"Sections\n"
+" \n"
+"Documentor"
+
+#: ../documentor.php:426
+msgid "View Documentor Section"
+msgstr ""
+"Vue\n"
+" \n"
+"Documentor\n"
+" \n"
+"Section"
+
+#: ../documentor.php:427
+msgid "Search Documentor Sections"
+msgstr ""
+"Rechercher\n"
+" \n"
+"Documentor\n"
+" \n"
+"Sections\n"
+
+#: ../documentor.php:428
+msgid "No Documentor sections found"
+msgstr ""
+"Pas\n"
+" \n"
+"trouvées\n"
+" de \n"
+"sections\n"
+" \n"
+"Documentor\n"
+
+#: ../documentor.php:429
+msgid "No Documentor section found in Trash"
+msgstr "Pas trouvée dans la poubelle de la section Documentor\n"
+
+#: ../documentor.php:455
+#, php-format
+msgid "Documentor Section updated. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+"Documentor Section de mise à jour. <a href=\"%s\"> article de vue "
+"Documentor</a>"
+
+#: ../documentor.php:456
+msgid "Custom field updated."
+msgstr ""
+"Champ\n"
+" \n"
+"personnalisé\n"
+" \n"
+"mis à jour\n"
+".\n"
+
+#: ../documentor.php:457
+msgid "Custom field deleted."
+msgstr ""
+"Champ\n"
+" \n"
+"personnalisé\n"
+" \n"
+"mis à jour\n"
+"."
+
+#: ../documentor.php:458
+msgid "Documentor Section updated."
+msgstr ""
+"Documentor\n"
+" \n"
+"Section\n"
+" de \n"
+"mise à jour\n"
+"."
+
+#. translators: %s: date and time of the revision
+#: ../documentor.php:460
+#, php-format
+msgid "Documentor section restored to revision from %s"
+msgstr ""
+"Section\n"
+" \n"
+"Documentor\n"
+" \n"
+"restaurée\n"
+" \n"
+"à\n"
+" la \n"
+"révision\n"
+" \n"
+"de\n"
+" \n"
+"%s\n"
+
+#: ../documentor.php:461
+#, php-format
+msgid "Documentor Section published. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+"Documentor\n"
+" \n"
+"article\n"
+" \n"
+"publié\n"
+".\n"
+" <a href=\"%s\"> \n"
+"article\n"
+" de \n"
+"vue\n"
+" \n"
+"Documentor\n"
+"</a>"
+
+#: ../documentor.php:462
+msgid "Section saved."
+msgstr ""
+"Section\n"
+" \n"
+"sauvée\n"
+"."
+
+#: ../documentor.php:463
+#, php-format
+msgid ""
+"Documentor Section submitted. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+"Section\n"
+" \n"
+"Documentor\n"
+" \n"
+"soumise\n"
+".\n"
+" <a target=\"_blank\" href=\"%s\"> \n"
+"Section\n"
+" \n"
+"Documentor\n"
+"aperçu\n"
+"</a>"
+
+#: ../documentor.php:464
+#, php-format
+msgid ""
+"Documentor Sections scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Documentor Section</a>"
+msgstr ""
+"Sections\n"
+" \n"
+"Documentor\n"
+" \n"
+"prévue\n"
+" \n"
+"pour\n"
+" \n"
+":\n"
+" <strong>\n"
+"%1$ s\n"
+"</strong>\n"
+".\n"
+" <a target=\"_blank\" href=\"%2$s\"> \n"
+"Section\n"
+" \n"
+"Documentor\n"
+" \n"
+"aperçu\n"
+"</a>"
+
+#. translators: Publish box date format, see http://php.net/date
+#: ../documentor.php:466
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: ../documentor.php:467
+#, php-format
+msgid ""
+"Documentor Section draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+"Projet\n"
+" \n"
+"d'article\n"
+" \n"
+"Documentor\n"
+" \n"
+"mis à jour\n"
+".\n"
+" <a target=\"_blank\" href=\"%s\"> \n"
+"Section\n"
+"Documentor\n"
+" \n"
+"aperçu\n"
+"</a>\n"
+
+#: ../documentor.php:516
+msgid "Documentation"
+msgstr "Documentation"
+
+#: ../skins/broad/index.php:210 ../skins/broad/index.php:431 ..
+#: /skins/default/index.php:206 ../skins/default/index.php:427 ..
+#: /skins/cherry/index.php:187 ../skins/cherry/index.php:399 ../skins/bar/index.
+#: php:204 ../skins/bar/index.php:425 ../skins/mint/index.php:208 ..
+#: /skins/mint/index.php:431 ../core/guide.php:228 ../core/guide.php:1045 ..
+#: /core/guide.php:2474 ../core/guide.php:2570 ../core/admin.php:559
+msgid "Edit"
+msgstr "Edit"
+
+#: ../skins/broad/index.php:260 ../skins/broad/index.php:309 ../skins/broad/index.
+#: php:491 ../skins/default/index.php:256 ../skins/default/index.php:305 ..
+#: /skins/default/index.php:487 ../skins/cherry/index.php:236 ..
+#: /skins/cherry/index.php:283 ../skins/cherry/index.php:459 ../skins/bar/index.
+#: php:253 ../skins/bar/index.php:300 ../skins/bar/index.php:485 ..
+#: /skins/mint/index.php:257 ../skins/mint/index.php:304 ../skins/mint/index.php:
+#: 491
+msgid "Was this helpful?"
+msgstr ""
+"Était\n"
+"-\n"
+"ce\n"
+" \n"
+"utile\n"
+" \n"
+"?"
+
+#: ../skins/broad/index.php:266 ../skins/broad/index.php:315 ../skins/broad/index.
+#: php:496 ../skins/default/index.php:262 ../skins/default/index.php:311 ..
+#: /skins/default/index.php:492 ../skins/cherry/index.php:241 ..
+#: /skins/cherry/index.php:288 ../skins/cherry/index.php:464 ../skins/bar/index.
+#: php:258 ../skins/bar/index.php:305 ../skins/bar/index.php:490 ..
+#: /skins/mint/index.php:262 ../skins/mint/index.php:309 ../skins/mint/index.php:
+#: 496
+msgid "Suggest edit"
+msgstr ""
+"Suggérer\n"
+" de \n"
+"modifier"
+
+#: ../skins/broad/index.php:269 ../skins/broad/index.php:318 ../skins/broad/index.
+#: php:499 ../skins/default/index.php:265 ../skins/default/index.php:314 ..
+#: /skins/default/index.php:495 ../skins/cherry/index.php:244 ..
+#: /skins/cherry/index.php:291 ../skins/cherry/index.php:467 ../skins/bar/index.
+#: php:261 ../skins/bar/index.php:308 ../skins/bar/index.php:493 ..
+#: /skins/mint/index.php:265 ../skins/mint/index.php:312 ../skins/mint/index.php:
+#: 499
+msgid "Last updated on"
+msgstr ""
+"Dernière\n"
+" \n"
+"mise à jour\n"
+" \n"
+"sur"
+
+#: ../skins/broad/index.php:274 ../skins/broad/index.php:323 ../skins/broad/index.
+#: php:504 ../skins/default/index.php:270 ../skins/default/index.php:319 ..
+#: /skins/default/index.php:500 ../skins/cherry/index.php:249 ..
+#: /skins/cherry/index.php:296 ../skins/cherry/index.php:472 ../skins/bar/index.
+#: php:266 ../skins/bar/index.php:313 ../skins/bar/index.php:498 ..
+#: /skins/mint/index.php:270 ../skins/mint/index.php:317 ../skins/mint/index.php:
+#: 504
+msgid " users found this section helpful"
+msgstr "utilisateurs ont trouvé cet article utile"
+
+#: ../skins/broad/index.php:336 ../skins/broad/index.php:526 ..
+#: /skins/default/index.php:332 ../skins/default/index.php:521 ..
+#: /skins/cherry/index.php:307 ../skins/cherry/index.php:496 ../skins/bar/index.
+#: php:325 ../skins/bar/index.php:520 ../skins/mint/index.php:330 ..
+#: /skins/mint/index.php:528 ../core/guide.php:2502 ../core/guide.php:2598
+msgid "Next"
+msgstr "Prochaine"
+
+#: ../skins/broad/index.php:492 ../skins/default/index.php:488 ..
+#: /skins/cherry/index.php:460 ../skins/bar/index.php:486 ../skins/mint/index.php:
+#: 492
+msgid "Yes"
+msgstr "Oui"
+
+#: ../skins/broad/index.php:493 ../skins/default/index.php:489 ..
+#: /skins/cherry/index.php:461 ../skins/bar/index.php:487 ../skins/mint/index.php:
+#: 493
+msgid "No"
+msgstr "Pas"
+
+#: ../skins/broad/index.php:519 ../skins/default/index.php:514 ..
+#: /skins/cherry/index.php:489 ../skins/bar/index.php:513 ../skins/mint/index.php:
+#: 521 ../core/guide.php:2493 ../core/guide.php:2588
+msgid "Previous"
+msgstr "Précédent"
+
+#: ../skins/broad/index.php:583 ../skins/broad/index.php:605 ..
+#: /skins/default/index.php:578 ../skins/default/index.php:600 ..
+#: /skins/cherry/index.php:552 ../skins/cherry/index.php:574 ../skins/bar/index.
+#: php:575 ../skins/bar/index.php:597 ../skins/mint/index.php:583 ..
+#: /skins/mint/index.php:605
+msgid "Search in Document"
+msgstr "Rechercher dans le Document"
+
+#: ../skins/broad/index.php:690 ../skins/default/index.php:684 ..
+#: /skins/cherry/index.php:657 ../skins/bar/index.php:678 ../skins/mint/index.php:
+#: 689
+msgid "Author: "
+msgstr "Auteur :"
+
+#: ../skins/broad/index.php:694 ../skins/default/index.php:688 ..
+#: /skins/cherry/index.php:661 ../skins/bar/index.php:682 ../skins/mint/index.php:
+#: 693
+msgid "Version: "
+msgstr "Version:"
+
+#: ../skins/broad/index.php:699 ../skins/default/index.php:693 ..
+#: /skins/cherry/index.php:666 ../skins/bar/index.php:687 ../skins/mint/index.php:
+#: 698
+msgid "Dated: "
+msgstr "En date du :"
+
+#: ../skins/broad/index.php:729 ../skins/default/index.php:718 ..
+#: /skins/cherry/index.php:691 ../skins/bar/index.php:712 ../skins/mint/index.php:
+#: 723
+msgid "Suggest Edit"
+msgstr ""
+"Suggérer\n"
+" de \n"
+"modifier"
+
+#: ../core/section.php:92 ../core/section.php:169 ../core/section.php:250
+msgid "Section added successfully!!!"
+msgstr ""
+"Section\n"
+" \n"
+"ajoutée\n"
+" \n"
+"avec succès!!!\n"
+"\n"
+
+#: ../core/section.php:449 ../core/guide.php:233 ../core/guide.php:1079
+msgid "Menu Title"
+msgstr ""
+"Titre\n"
+" \n"
+"menu"
+
+#: ../core/section.php:450 ../core/guide.php:234 ../core/guide.php:237 ..
+#: /core/guide.php:1080
+msgid "Enter Menu Title"
+msgstr ""
+"Entrez\n"
+" le \n"
+"titre\n"
+" du \n"
+"Menu"
+
+#: ../core/section.php:453
+msgid "Link URL"
+msgstr ""
+"Lien\n"
+" \n"
+"URL"
+
+#: ../core/section.php:459 ../core/guide.php:245
+msgid "Open in new window"
+msgstr ""
+"Ouvrir\n"
+" \n"
+"dans\n"
+" une \n"
+"nouvelle\n"
+" \n"
+"fenêtre\n"
+"\n"
+
+#: ../core/section.php:461 ../core/guide.php:1111 ../core/guide.php:2506 ..
+#: /core/guide.php:2602
+msgid "Insert"
+msgstr "Insert"
+
+#: ../core/section.php:486 ../core/section.php:568
+msgid ""
+"You have already given your feedback to this section. You can again give "
+"feedback for the same section after 24hrs"
+msgstr ""
+"Vous\n"
+" \n"
+"avez\n"
+" \n"
+"déjà\n"
+" \n"
+"donné\n"
+" \n"
+"vos\n"
+" \n"
+"commentaires\n"
+" \n"
+"à\n"
+" \n"
+"cet\n"
+" \n"
+"article\n"
+".\n"
+" \n"
+"Vous\n"
+" \n"
+"pouvez\n"
+" \n"
+"à nouveau\n"
+"donner\n"
+" \n"
+"vos commentaires\n"
+" \n"
+"dans\n"
+" \n"
+"la\n"
+" \n"
+"même\n"
+" \n"
+"section\n"
+" \n"
+"après\n"
+" \n"
+"24h"
+
+#: ../core/section.php:513 ../core/guide.php:1800 ../core/guide.php:1862 ..
+#: /core/guide.php:2456 ../core/guide.php:2552
+msgid "Name"
+msgstr "Nom"
+
+#: ../core/section.php:518 ../core/guide.php:1650 ../core/guide.php:1808 ..
+#: /core/guide.php:1836 ../core/guide.php:1870 ../core/guide.php:1898
+msgid "Email"
+msgstr "Messagerie\n"
+
+#: ../core/section.php:523
+msgid "Post your feedback..."
+msgstr ""
+"Envoyez\n"
+" \n"
+"vos\n"
+" \n"
+"commentaires..."
+
+#: ../core/section.php:533
+msgid "Captcha : "
+msgstr "Captcha :"
+
+#: ../core/section.php:636 ../core/section.php:780
+msgid "Please select Guide manager at settings panel to whom suggestion will be send"
+msgstr ""
+"S'il vous plaît\n"
+" \n"
+"sélectionnez\n"
+" \n"
+"Gestionnaire\n"
+" de \n"
+"Guide\n"
+" \n"
+"au\n"
+" \n"
+"panneau\n"
+" \n"
+"Paramètres\n"
+" \n"
+"auxquels\n"
+"la \n"
+"suggestion\n"
+" \n"
+"sera\n"
+" \n"
+"envoyé"
+
+#: ../core/section.php:667 ../core/section.php:808
+msgid "Please provide email address"
+msgstr ""
+"S'il vous plaît\n"
+" \n"
+"fournir\n"
+" \n"
+"adresse\n"
+" \n"
+"email\n"
+
+#: ../core/section.php:673 ../core/section.php:814
+msgid "Invaild email address"
+msgstr ""
+"Adresse\n"
+" \n"
+"e-mail\n"
+" \n"
+"Invaild\n"
+
+#: ../core/section.php:679
+msgid "Please add your feedback"
+msgstr ""
+"S'il vous plaît\n"
+" \n"
+"ajouter\n"
+" \n"
+"vos\n"
+" \n"
+"commentaires\n"
+
+#: ../core/section.php:684 ../core/section.php:825
+msgid "Please enter captcha"
+msgstr "Veuillez entrer le captcha"
+
+#: ../core/section.php:694 ../core/section.php:834
+msgid "Invalid Captcha Entered"
+msgstr ""
+"Invalid\n"
+" \n"
+"Captcha\n"
+" \n"
+"est entré"
+
+#: ../core/section.php:820
+msgid "Please add your suggestion"
+msgstr "Veuillez ajouter votre suggestion"
+
+#: ../core/section.php:1128 ../core/guide.php:2916
+msgid "PDF generated successfully"
+msgstr ""
+"PDF\n"
+" \n"
+"généré\n"
+" \n"
+"avec succès\n"
+
+#: ../core/guide.php:229
+msgid "Comments/Suggestion"
+msgstr "Commentaires/Suggestion"
+
+#: ../core/guide.php:236 ../core/guide.php:1083 ../core/guide.php:1423 ..
+#: /core/guide.php:2040
+msgid "Section Title"
+msgstr ""
+"Titre\n"
+" de \n"
+"section"
+
+#: ../core/guide.php:241 ../core/guide.php:1642
+msgid "Link"
+msgstr "Lien"
+
+#: ../core/guide.php:249
+msgid "Slug"
+msgstr "Limace"
+
+#: ../core/guide.php:250
+msgid "Enter slug"
+msgstr ""
+"Entrez\n"
+" la \n"
+"limace"
+
+#: ../core/guide.php:253
+msgid "Feedback count"
+msgstr "Comte de rétroaction"
+
+#: ../core/guide.php:255
+msgid "Upvotes"
+msgstr "Upvotes"
+
+#: ../core/guide.php:257
+msgid "Downvotes"
+msgstr "Downvotes"
+
+#: ../core/guide.php:259
+msgid "Reset"
+msgstr "Remise à zéro"
+
+#: ../core/guide.php:267
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../core/guide.php:269
+msgid "Remove"
+msgstr "Supprimer\n"
+
+#: ../core/guide.php:271
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../core/guide.php:273 ../core/guide.php:1035
+msgid "Generate PDF"
+msgstr ""
+"Générer\n"
+" \n"
+"PDF\n"
+
+#: ../core/guide.php:642
+msgid "error: Guide name could not be blank"
+msgstr ""
+"erreur\n"
+" \n"
+":\n"
+" \n"
+"nom\n"
+" de \n"
+"Guide\n"
+" ne \n"
+"pourrait\n"
+" \n"
+"pas\n"
+" \n"
+"être\n"
+" \n"
+"vide"
+
+#: ../core/guide.php:704
+msgid "error: slug could not be blank."
+msgstr ""
+"erreur\n"
+" \n"
+":\n"
+" \n"
+"slug\n"
+" ne \n"
+"pourrait\n"
+" \n"
+"pas\n"
+" \n"
+"être\n"
+" \n"
+"vide\n"
+"."
+
+#: ../core/guide.php:708
+msgid "error: menu title could not be blank."
+msgstr ""
+"erreur\n"
+" \n"
+":\n"
+" \n"
+"titre\n"
+" du \n"
+"menu\n"
+" ne \n"
+"pourrait\n"
+" \n"
+"pas\n"
+" \n"
+"être\n"
+" \n"
+"vierge\n"
+"."
+
+#: ../core/guide.php:710
+msgid "error: section title could not be blank."
+msgstr ""
+"erreur\n"
+" \n"
+":\n"
+" \n"
+"titre\n"
+" de \n"
+"section\n"
+" ne \n"
+"pourrait\n"
+" \n"
+"pas\n"
+" \n"
+"être\n"
+" \n"
+"vierge\n"
+"."
+
+#: ../core/guide.php:718
+msgid "error: link url could not be blank."
+msgstr ""
+"erreur\n"
+" \n"
+":\n"
+" \n"
+"lien\n"
+" \n"
+"url\n"
+" ne \n"
+"peut\n"
+" \n"
+"pas\n"
+" \n"
+"être\n"
+" \n"
+"vierge\n"
+"."
+
+#: ../core/guide.php:1001 ../core/guide.php:1001
+msgid "Sections"
+msgstr "Sections"
+
+#: ../core/guide.php:1002 ../core/guide.php:1002
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../core/guide.php:1005
+msgid "Related documnets"
+msgstr ""
+"Documents\n"
+" \n"
+"connexes"
+
+#: ../core/guide.php:1005 ../core/guide.php:1729
+msgid "Related"
+msgstr "Associés"
+
+#: ../core/guide.php:1007
+msgid "Embed code"
+msgstr ""
+"Code\n"
+" \n"
+"d'intégration"
+
+#: ../core/guide.php:1007
+msgid "Embed Code"
+msgstr ""
+"Code\n"
+" \n"
+"d'intégration"
+
+#: ../core/guide.php:1013 ../core/guide.php:1013
+msgid "Add Section"
+msgstr ""
+"Ajouter\n"
+" la \n"
+"Section"
+
+#: ../core/guide.php:1036
+msgid "Reset Feedback Counts"
+msgstr "Réinitialiser les comtes de Feedback"
+
+#: ../core/guide.php:1054
+msgid "Inline"
+msgstr "Inline"
+
+#: ../core/guide.php:1069
+msgid "Links"
+msgstr "Liens"
+
+#: ../core/guide.php:1084
+msgid "Enter Section Title"
+msgstr ""
+"Entrez\n"
+" le \n"
+"titre\n"
+" de \n"
+"Section"
+
+#: ../core/guide.php:1087
+msgid "Content"
+msgstr "Contenu"
+
+#: ../core/guide.php:1120
+msgid "Back to Edit"
+msgstr ""
+"Retour\n"
+" \n"
+"à\n"
+" \n"
+"Edit"
+
+#: ../core/guide.php:1132
+msgid "Basic Settings"
+msgstr ""
+"Réglages\n"
+" de \n"
+"base"
+
+#: ../core/guide.php:1139
+msgid "Skin"
+msgstr "Peau"
+
+#: ../core/guide.php:1157
+msgid "Section Animation"
+msgstr ""
+"Section\n"
+" \n"
+"Animation"
+
+#: ../core/guide.php:1162
+msgid "Attention Seekers"
+msgstr ""
+
+#: ../core/guide.php:1163
+msgid "bounce"
+msgstr ""
+
+#: ../core/guide.php:1164
+msgid "flash"
+msgstr ""
+
+#: ../core/guide.php:1165
+msgid "pulse"
+msgstr ""
+
+#: ../core/guide.php:1166
+msgid "rubberBand"
+msgstr ""
+
+#: ../core/guide.php:1167
+msgid "shake"
+msgstr ""
+
+#: ../core/guide.php:1168
+msgid "swing"
+msgstr ""
+
+#: ../core/guide.php:1169
+msgid "tada"
+msgstr ""
+
+#: ../core/guide.php:1170
+msgid "wobble"
+msgstr ""
+
+#: ../core/guide.php:1172
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: ../core/guide.php:1173
+msgid "bounceIn"
+msgstr ""
+
+#: ../core/guide.php:1174
+msgid "bounceInDown"
+msgstr ""
+
+#: ../core/guide.php:1175
+msgid "bounceInLeft"
+msgstr ""
+
+#: ../core/guide.php:1176
+msgid "bounceInRight"
+msgstr ""
+
+#: ../core/guide.php:1177
+msgid "bounceInUp"
+msgstr ""
+
+#: ../core/guide.php:1180
+msgid "Fading Entrances"
+msgstr ""
+
+#: ../core/guide.php:1181
+msgid "fadeIn"
+msgstr ""
+
+#: ../core/guide.php:1182
+msgid "fadeInDown"
+msgstr ""
+
+#: ../core/guide.php:1183
+msgid "fadeInDownBig"
+msgstr ""
+
+#: ../core/guide.php:1184
+msgid "fadeInLeft"
+msgstr ""
+
+#: ../core/guide.php:1185
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: ../core/guide.php:1186
+msgid "fadeInRight"
+msgstr ""
+
+#: ../core/guide.php:1187
+msgid "fadeInRightBig"
+msgstr ""
+
+#: ../core/guide.php:1188
+msgid "fadeInUp"
+msgstr ""
+
+#: ../core/guide.php:1189
+msgid "fadeInUpBig"
+msgstr ""
+
+#: ../core/guide.php:1192
+msgid "Flippers"
+msgstr ""
+
+#: ../core/guide.php:1193
+msgid "flip"
+msgstr ""
+
+#: ../core/guide.php:1194
+msgid "flipInX"
+msgstr ""
+
+#: ../core/guide.php:1195
+msgid "flipInY"
+msgstr ""
+
+#: ../core/guide.php:1198
+msgid "Lightspeed"
+msgstr ""
+
+#: ../core/guide.php:1199
+msgid "lightSpeedIn"
+msgstr ""
+
+#: ../core/guide.php:1202
+msgid "Rotating Entrances"
+msgstr ""
+
+#: ../core/guide.php:1203
+msgid "rotateIn"
+msgstr ""
+
+#: ../core/guide.php:1204
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: ../core/guide.php:1205
+msgid "rotateInDownRight"
+msgstr ""
+
+#: ../core/guide.php:1206
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: ../core/guide.php:1207
+msgid "rotateInUpRight"
+msgstr ""
+
+#: ../core/guide.php:1210
+msgid "Specials"
+msgstr ""
+
+#: ../core/guide.php:1211
+msgid "hinge"
+msgstr ""
+
+#: ../core/guide.php:1212
+msgid "rollIn"
+msgstr ""
+
+#: ../core/guide.php:1215
+msgid "Zoom Entrances"
+msgstr ""
+
+#: ../core/guide.php:1216
+msgid "zoomIn"
+msgstr ""
+
+#: ../core/guide.php:1217
+msgid "zoomInDown"
+msgstr ""
+
+#: ../core/guide.php:1218
+msgid "zoomInLeft"
+msgstr ""
+
+#: ../core/guide.php:1219
+msgid "zoomInRight"
+msgstr ""
+
+#: ../core/guide.php:1220
+msgid "zoomInUp"
+msgstr ""
+
+#: ../core/guide.php:1223
+msgid "Slide Entrances"
+msgstr ""
+
+#: ../core/guide.php:1224
+msgid "slideInDown"
+msgstr ""
+
+#: ../core/guide.php:1225
+msgid "slideInLef"
+msgstr ""
+
+#: ../core/guide.php:1226
+msgid "slideInRight"
+msgstr ""
+
+#: ../core/guide.php:1227
+msgid "slideInUp"
+msgstr ""
+
+#: ../core/guide.php:1240
+msgid "Indexing Format"
+msgstr ""
+"Format\n"
+" \n"
+"d'indexation"
+
+#: ../core/guide.php:1251
+msgid "Guide Title"
+msgstr "Titre de guide"
+
+#: ../core/guide.php:1258 ../core/guide.php:1659 ../core/guide.php:1668 ..
+#: /core/guide.php:1786
+msgid "Options"
+msgstr "Options"
+
+#: ../core/guide.php:1263
+msgid "Scrolling"
+msgstr "Défilement"
+
+#: ../core/guide.php:1275
+msgid "Fixed Menu"
+msgstr ""
+"Menu\n"
+" \n"
+"fixe"
+
+#: ../core/guide.php:1287
+msgid "Top Margin for Menu"
+msgstr "Marge supérieure pour Menu"
+
+#: ../core/guide.php:1289 ../core/guide.php:1377 ../core/guide.php:1475 ..
+#: /core/guide.php:1534 ../core/guide.php:2246
+msgid "px"
+msgstr "PX"
+
+#: ../core/guide.php:1298
+msgid "Menu Position"
+msgstr ""
+"Position\n"
+" du \n"
+"menu"
+
+#: ../core/guide.php:1308
+msgid "Toggle child menu"
+msgstr "Menu enfant bascule"
+
+#: ../core/guide.php:1319
+msgid "Extras on Section hover"
+msgstr "Options au survol de la Section"
+
+#: ../core/guide.php:1331 ../core/guide.php:1394 ../core/guide.php:1420 ..
+#: /core/guide.php:1492 ../core/guide.php:1566 ../core/guide.php:1599 ..
+#: /core/guide.php:2310
+msgid "Save Changes"
+msgstr ""
+"Enregistrer\n"
+" les \n"
+"modifications"
+
+#: ../core/guide.php:1338
+msgid "Formatting"
+msgstr "Mise en forme"
+
+#: ../core/guide.php:1340
+msgid "Nav Menu Title"
+msgstr ""
+"Nav\n"
+" \n"
+"Menu\n"
+" \n"
+"titre"
+
+#: ../core/guide.php:1343 ../core/guide.php:1402 ../core/guide.php:1442 ..
+#: /core/guide.php:1501 ../core/guide.php:2211
+msgid "Use theme default"
+msgstr ""
+"Thème\n"
+" \n"
+"par défaut"
+
+#: ../core/guide.php:1354 ../core/guide.php:1413 ../core/guide.php:1453 ..
+#: /core/guide.php:1512 ../core/guide.php:1585 ../core/guide.php:2221
+msgid "Color"
+msgstr "Couleur"
+
+#: ../core/guide.php:1359 ../core/guide.php:1458 ../core/guide.php:1517 ..
+#: /core/guide.php:1994 ../core/guide.php:2010 ../core/guide.php:2026 ..
+#: /core/guide.php:2043 ../core/guide.php:2060 ../core/guide.php:2228 ..
+#: /core/includes/fonts.php:279
+msgid "Font"
+msgstr "Polices"
+
+#: ../core/guide.php:1376 ../core/guide.php:1474 ../core/guide.php:1533 ..
+#: /core/guide.php:2001 ../core/guide.php:2017 ../core/guide.php:2034 ..
+#: /core/guide.php:2051 ../core/guide.php:2068 ../core/guide.php:2245
+msgid "Font Size"
+msgstr ""
+"Taille\n"
+" de \n"
+"police"
+
+#: ../core/guide.php:1381 ../core/guide.php:1479 ../core/guide.php:1538 ..
+#: /core/guide.php:2250
+msgid "Font Style"
+msgstr ""
+"Style\n"
+" de \n"
+"police"
+
+#: ../core/guide.php:1383 ../core/guide.php:1481 ../core/guide.php:1540 ..
+#: /core/guide.php:2253
+msgid "Bold"
+msgstr "Bold"
+
+#: ../core/guide.php:1384 ../core/guide.php:1482 ../core/guide.php:1541 ..
+#: /core/guide.php:2254
+msgid "Bold Italic"
+msgstr ""
+"Gras\n"
+" \n"
+"italique"
+
+#: ../core/guide.php:1385 ../core/guide.php:1483 ../core/guide.php:1542 ..
+#: /core/guide.php:2255
+msgid "Italic"
+msgstr "Italic"
+
+#: ../core/guide.php:1386 ../core/guide.php:1484 ../core/guide.php:1543 ..
+#: /core/guide.php:2256
+msgid "Normal"
+msgstr "Normal"
+
+#: ../core/guide.php:1397
+msgid "Active Nav Menu Background"
+msgstr ""
+"Active\n"
+" \n"
+"Nav\n"
+" \n"
+"Menu\n"
+" \n"
+"arrière-plan"
+
+#: ../core/guide.php:1428 ../core/guide.php:2197
+msgid "Element"
+msgstr "Element"
+
+#: ../core/guide.php:1495 ../core/guide.php:2057
+msgid "Section Content"
+msgstr ""
+"Contenu\n"
+" de la \n"
+"section\n"
+
+#: ../core/guide.php:1549
+msgid "Last Updated Date"
+msgstr "Dernière mise à jour"
+
+#: ../core/guide.php:1569
+msgid "Scrollbar"
+msgstr ""
+"Barre de \n"
+"défilement"
+
+#: ../core/guide.php:1579
+msgid "size"
+msgstr "taille"
+
+#: ../core/guide.php:1591
+msgid "Opacity"
+msgstr "Opacité"
+
+#: ../core/guide.php:1606
+msgid "Advanced Settings"
+msgstr ""
+"Paramètres\n"
+" \n"
+"avancés"
+
+#: ../core/guide.php:1611
+msgid "Load sections using AJAX"
+msgstr ""
+"Charger\n"
+" des \n"
+"sections\n"
+" \n"
+"à l'aide\n"
+" \n"
+"d'AJAX"
+
+#: ../core/guide.php:1622
+msgid "Search Box"
+msgstr "Boîte de recherche"
+
+#: ../core/guide.php:1633
+msgid "Buttons"
+msgstr "Buttons"
+
+#: ../core/guide.php:1658
+msgid "Save PDF"
+msgstr ""
+"Enregistrer\n"
+" \n"
+"PDF"
+
+#: ../core/guide.php:1667
+msgid "Print"
+msgstr "Imprimer"
+
+#: ../core/guide.php:1675
+msgid "Users can suggest Edits"
+msgstr "Users can suggest Edits"
+
+#: ../core/guide.php:1682 ../core/guide.php:1712 ../core/guide.php:1772
+msgid "Format"
+msgstr "Format"
+
+#: ../core/guide.php:1686
+msgid "Guide Manager"
+msgstr ""
+"Guide\n"
+" \n"
+"Manager"
+
+#: ../core/guide.php:1704
+msgid "Visitor's Feedback"
+msgstr ""
+"Rétroaction\n"
+" \n"
+"du visiteur"
+
+#: ../core/guide.php:1718
+msgid "Feedback Count"
+msgstr "Comte de rétroaction"
+
+#: ../core/guide.php:1740
+msgid "RTL Support"
+msgstr ""
+"Soutien\n"
+" \n"
+"RTL"
+
+#: ../core/guide.php:1752
+msgid "Back to Top button"
+msgstr "Retour à bouton du haut"
+
+#: ../core/guide.php:1764
+msgid "Social Sharing"
+msgstr "Partage social"
+
+#: ../core/guide.php:1778
+msgid "Attach Product"
+msgstr "Attacher le produit"
+
+#: ../core/guide.php:1794
+msgid "Suggest Edit Format"
+msgstr ""
+"Suggérer\n"
+" de \n"
+"modifier\n"
+" \n"
+"Format\n"
+
+#: ../core/guide.php:1796 ../core/guide.php:1858
+msgid "Form"
+msgstr "Formulaire\n"
+
+#: ../core/guide.php:1816 ../core/guide.php:1878
+msgid "Extra Input Fields"
+msgstr ""
+"Champs\n"
+" \n"
+"d'entrée\n"
+" \n"
+"supplémentaire"
+
+#: ../core/guide.php:1820
+msgid "Message Box"
+msgstr ""
+"Boîte\n"
+" de \n"
+"message"
+
+#: ../core/guide.php:1828 ../core/guide.php:1890
+msgid "Captcha"
+msgstr "Captcha"
+
+#: ../core/guide.php:1839 ../core/guide.php:1901
+msgid "Subject"
+msgstr "Objet"
+
+#: ../core/guide.php:1843 ../core/guide.php:1905
+msgid "Thank You Message"
+msgstr ""
+"Message\n"
+" de \n"
+"remerciement"
+
+#: ../core/guide.php:1856
+msgid "User Feedback Format"
+msgstr ""
+"Format\n"
+" de \n"
+"rétroaction\n"
+" \n"
+"d'utilisateur"
+
+#: ../core/guide.php:1882
+msgid "Feedback Text"
+msgstr ""
+"Texte\n"
+" de \n"
+"rétroaction"
+
+#: ../core/guide.php:1917
+msgid "PDF Options"
+msgstr ""
+"Options\n"
+" \n"
+"PDF"
+
+#: ../core/guide.php:1919
+msgid "Author"
+msgstr "Author"
+
+#: ../core/guide.php:1923
+msgid "Guide Subtitle"
+msgstr ""
+"Sous-titre\n"
+" de \n"
+"guide"
+
+#: ../core/guide.php:1927
+msgid "PDF Header"
+msgstr "En-tête PDF"
+
+#: ../core/guide.php:1934
+msgid "Header on First Page"
+msgstr "En-tête sur la première Page"
+
+#: ../core/guide.php:1943
+msgid "Logo"
+msgstr "Logo"
+
+#: ../core/guide.php:1944 ../core/guide.php:2295
+msgid "Enter URL or upload image"
+msgstr "Entrez l'URL ou télécharger image"
+
+#: ../core/guide.php:1945 ../core/guide.php:2296
+msgid "Upload"
+msgstr "Télécharger"
+
+#: ../core/guide.php:1948
+msgid "Logo Width"
+msgstr "Largeur de logo"
+
+#: ../core/guide.php:1949
+msgid "pixels"
+msgstr ""
+
+#: ../core/guide.php:1952
+msgid "Header text"
+msgstr "Texte de l'en-tête"
+
+#: ../core/guide.php:1956
+msgid "Text Color"
+msgstr "Couleur du texte"
+
+#: ../core/guide.php:1960
+msgid "Header border"
+msgstr "Bordure de l'en-tête"
+
+#: ../core/guide.php:1968
+msgid "Border Color"
+msgstr "Couleur de la bordure"
+
+#: ../core/guide.php:1972
+msgid "PDF Footer"
+msgstr "Pied de page PDF"
+
+#: ../core/guide.php:1978
+msgid "Footer on First Page"
+msgstr "Pied de page sur la première Page"
+
+#: ../core/guide.php:1987
+msgid "Footer text"
+msgstr "Texte de pied de page"
+
+#: ../core/guide.php:1991
+msgid "PDF Title"
+msgstr ""
+"Titre\n"
+" \n"
+"PDF"
+
+#: ../core/guide.php:2007
+msgid "PDF Subtitle"
+msgstr ""
+"Sous-titre\n"
+" \n"
+"PDF"
+
+#: ../core/guide.php:2023
+msgid "TOC Menu Title"
+msgstr ""
+"Titre\n"
+" \n"
+"Menu\n"
+" \n"
+"table des matières\n"
+
+#: ../core/guide.php:2081
+msgid "Print Options"
+msgstr "Options d'impression\n"
+
+#: ../core/guide.php:2083
+msgid "Use window print"
+msgstr "Utiliser la fenêtre impression"
+
+#: ../core/guide.php:2102
+msgid "Social Share Options"
+msgstr "Options sur actions sociales"
+
+#: ../core/guide.php:2104
+msgid "Select Social buttons"
+msgstr "Sélectionnez les boutons sociaux"
+
+#: ../core/guide.php:2108
+msgid "Facebook"
+msgstr ""
+
+#: ../core/guide.php:2116
+msgid "Twitter"
+msgstr ""
+
+#: ../core/guide.php:2124
+msgid "Google Plus"
+msgstr ""
+
+#: ../core/guide.php:2131
+msgid ""
+"To get the count of Google Plus shares, please enable the curl extension of "
+"PHP"
+msgstr ""
+"Pour obtenir le nombre de Google Plus actions, veuillez activer l'extension "
+"curl de PHP"
+
+#: ../core/guide.php:2135
+msgid "Pinterest"
+msgstr ""
+
+#: ../core/guide.php:2143
+msgid "Select Format"
+msgstr "Sélectionnez le Format"
+
+#: ../core/guide.php:2164
+msgid "Display Share Count"
+msgstr "Nombre d'actions affichage"
+
+#: ../core/guide.php:2167
+msgid "Share Count"
+msgstr "Nombre d'actions"
+
+#: ../core/guide.php:2175
+msgid "Position"
+msgstr "Position"
+
+#: ../core/guide.php:2179
+msgid "Top"
+msgstr "Retour au début"
+
+#: ../core/guide.php:2182
+msgid "Bottom"
+msgstr "Bas"
+
+#: ../core/guide.php:2194 ../core/guide.php:2269
+msgid "Guide Title Formatting"
+msgstr "Titre de guide de mise en forme"
+
+#: ../core/guide.php:2272
+msgid "Product Name"
+msgstr "Nom du produit"
+
+#: ../core/guide.php:2279
+msgid "Product Version"
+msgstr "Version du produit"
+
+#: ../core/guide.php:2286
+msgid "Product Link"
+msgstr "Lien produit"
+
+#: ../core/guide.php:2293
+msgid "Product Image"
+msgstr "Image du produit"
+
+#: ../core/guide.php:2336 ../core/admin.php:531 ../core/admin.php:539
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../core/guide.php:2343 ../core/admin.php:532 ../core/admin.php:540
+msgid "Template Tag"
+msgstr ""
+"Balise\n"
+" de \n"
+"modèle"
+
+#: ../core/guide.php:2368 ../core/admin.php:530 ../core/admin.php:538
+msgid "Title"
+msgstr "Titre\n"
+
+#: ../core/guide.php:2455 ../core/guide.php:2551
+msgid "ID"
+msgstr "ID"
+
+#: ../core/guide.php:2457 ../core/guide.php:2553
+msgid "Edit Link"
+msgstr "Modifier lien"
+
+#: ../core/guide.php:2491 ../core/guide.php:2586
+msgid "Page"
+msgstr "Page"
+
+#: ../core/guide.php:2491 ../core/guide.php:2586
+msgid "of"
+msgstr "de"
+
+#: ../core/guide.php:2492 ../core/guide.php:2587
+msgid "First"
+msgstr "Première"
+
+#: ../core/guide.php:2503 ../core/guide.php:2599
+msgid "Last"
+msgstr "Dernière"
+
+#: ../core/guide.php:2511
+msgid "Enter search text"
+msgstr ""
+"Entrez\n"
+" le \n"
+"texte\n"
+" de \n"
+"recherche\n"
+
+#: ../core/guide.php:2517 ../core/guide.php:2605
+msgid "No entries found"
+msgstr "Aucune entrée trouvée"
+
+#: ../core/guide.php:2631
+msgid ""
+"This is a preview of your document. Features like print, scroll to "
+"particular section, animations, search are not available in Preview. Once "
+"you embed the document on front-end, those effects will be functional!"
+msgstr ""
+"Il s'agit d'un aperçu de votre document. Fonctionnalités telles qu'imprimer, "
+"faites défiler jusqu'à la section particulière, animations, recherche ne "
+"sont pas disponibles dans l'aperçu. Une fois que vous incorporez le document "
+"sur le frontal, ces effets seront fonctionnels !"
+
+#: ../core/admin.php:37 ../core/admin.php:49
+msgid "Manage"
+msgstr "Gérer\n"
+
+#: ../core/admin.php:46 ../core/admin.php:46 ../core/admin.php:55
+msgid "Documentor"
+msgstr "Documentor"
+
+#: ../core/admin.php:48 ../core/admin.php:48
+msgid "Create New"
+msgstr ""
+"Créer\n"
+" de \n"
+"nouvelles"
+
+#: ../core/admin.php:49 ../core/admin.php:520
+msgid "Manage Guides"
+msgstr ""
+"Gérer\n"
+" les \n"
+"Guides"
+
+#: ../core/admin.php:50 ../core/admin.php:50
+msgid "Global Settings"
+msgstr ""
+"Paramètres\n"
+" \n"
+"globaux"
+
+#: ../core/admin.php:51
+msgid "Documentor - License"
+msgstr ""
+"Documentor\n"
+" \n"
+"-\n"
+" \n"
+"licence"
+
+#: ../core/admin.php:51
+msgid "License"
+msgstr "Licence"
+
+#: ../core/admin.php:98
+msgid "Menu Title "
+msgstr ""
+"Titre\n"
+" \n"
+"menu\n"
+
+#: ../core/admin.php:106
+msgid "Section Title "
+msgstr ""
+"Titre\n"
+" de \n"
+"section"
+
+#: ../core/admin.php:123
+msgid "Attach Guide "
+msgstr "Fixer le Guide"
+
+#: ../core/admin.php:126
+msgid "Type Guide Name"
+msgstr "Nom du type de Guide"
+
+#: ../core/admin.php:198
+msgid "Guide Name"
+msgstr ""
+"Nom\n"
+" du \n"
+"Guide\n"
+
+#: ../core/admin.php:203
+msgid "Apply Settings"
+msgstr ""
+"Appliquer\n"
+" les \n"
+"paramètres"
+
+#: ../core/admin.php:559
+msgid "Preview"
+msgstr "Aperçu\n"
+
+#: ../core/admin.php:559
+msgid "Delete"
+msgstr "Delete"
+
+#: ../core/admin.php:559
+msgid "Export"
+msgstr "Exportation\n"
+
+#: ../core/admin.php:559
+msgid "Copy"
+msgstr "Copie"
+
+#: ../core/admin.php:605
+msgid "Documentor Global Settings"
+msgstr ""
+"Paramètres\n"
+" \n"
+"globaux\n"
+" \n"
+"Documentor\n"
+
+#: ../core/admin.php:610
+msgid "Enable Inline Sections"
+msgstr ""
+"Activez\n"
+" \n"
+"Inline\n"
+" \n"
+"Sections"
+
+#: ../core/admin.php:620
+msgid "Supported Post Types for adding sections"
+msgstr ""
+"Types\n"
+" de \n"
+"message\n"
+" \n"
+"pris en charge\n"
+" \n"
+"pour\n"
+" \n"
+"l'ajout\n"
+" de \n"
+"sections\n"
+
+#: ../core/admin.php:643
+msgid "Custom Styles"
+msgstr ""
+"Styles\n"
+" \n"
+"personnalisés"
+
+#: ../core/includes/license.php:7
+msgid "Documentor License Options"
+msgstr ""
+"Options\n"
+" de \n"
+"licence\n"
+" \n"
+"Documentor"
+
+#: ../core/includes/license.php:16
+msgid "License Key"
+msgstr ""
+"Clé\n"
+" de \n"
+"licence"
+
+#: ../core/includes/license.php:20
+msgid "Enter your license key"
+msgstr ""
+"Entrez\n"
+" \n"
+"votre\n"
+" \n"
+"clé\n"
+" de \n"
+"licence"
+
+#: ../core/includes/license.php:26
+msgid "License Status"
+msgstr ""
+"État\n"
+" de la \n"
+"licence"
+
+#: ../core/includes/license.php:30
+msgid "Active"
+msgstr "Active"
+
+#: ../core/includes/license.php:32
+msgid "Deactivate License"
+msgstr "Deactivate License"
+
+#: ../core/includes/license.php:35
+msgid "Activate License"
+msgstr ""
+"Activer\n"
+" la \n"
+"licence"
+
+#: ../core/includes/fonts.php:99
+msgid "&mdash; Google Fonts &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Google\n"
+" \n"
+"Fonts\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:102
+msgid "Google Serif Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"Serif\n"
+" \n"
+"polices"
+
+#: ../core/includes/fonts.php:113
+msgid "Google Sans Serif Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"Sans\n"
+" \n"
+"Serif\n"
+" \n"
+"polices"
+
+#: ../core/includes/fonts.php:124
+msgid "Google Display Fonts"
+msgstr ""
+"Polices\n"
+" \n"
+"d'affichage\n"
+" de \n"
+"Google"
+
+#: ../core/includes/fonts.php:135
+msgid "Google Handwriting Fonts"
+msgstr ""
+"Polices\n"
+" \n"
+"d'écriture\n"
+" de \n"
+"Google"
+
+#: ../core/includes/fonts.php:146
+msgid "Google Monospace Fonts"
+msgstr "Google Monospace Fonts"
+
+#: ../core/includes/fonts.php:165 ../core/includes/fonts.php:170
+msgid "&mdash; Font Weight &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Police\n"
+" de \n"
+"caractères\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:194
+msgid "&mdash; Font Subset &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Sous-ensemble\n"
+" de \n"
+"polices\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:285
+msgid "This value will be fallback font if Google web font value is specified below"
+msgstr ""
+"Cette\n"
+" \n"
+"valeur\n"
+" \n"
+"sera\n"
+" de \n"
+"polices\n"
+" de \n"
+"substitution\n"
+" \n"
+"si\n"
+" \n"
+"Google\n"
+" \n"
+"web\n"
+" \n"
+"polices\n"
+" \n"
+"valeur\n"
+" \n"
+"est\n"
+"spécifiée\n"
+" \n"
+"ci-dessous"
+
+#: ../core/includes/fonts.php:295
+msgid "Google Web Font"
+msgstr ""
+"Google\n"
+" \n"
+"Web\n"
+" \n"
+"polices"
+
+#: ../core/includes/fonts.php:303
+msgid "Google Font Weight"
+msgstr ""
+"Google\n"
+" \n"
+"police\n"
+" de \n"
+"caractères"
+
+#: ../core/includes/fonts.php:311
+msgid "Google Font Subset"
+msgstr "Google Font Subset"
+
+#: ../core/includes/fonts.php:319
+msgid "Custom Font"
+msgstr ""
+"Police\n"
+" \n"
+"personnalisée\n"
+
+#: ../core/includes/upgrade.php:175
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+
+#: ../core/includes/upgrade.php:182
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a "
+"href=\"%4$s\">update now</a>."
+msgstr ""
+"Il\n"
+" \n"
+"y\n"
+" a \n"
+"une\n"
+" \n"
+"nouvelle\n"
+" \n"
+"version\n"
+" \n"
+"de\n"
+" \n"
+"%1$ s\n"
+" \n"
+"disponible\n"
+".\n"
+" <a target=\"_blank\" class=\"thickbox\" href=\"%2$s\"> \n"
+"Voir\n"
+" \n"
+"version\n"
+" \n"
+"%3$ s\n"
+" les \n"
+"détails\n"
+"</a>\n"
+"."
+
+#: ../core/includes/upgrade.php:322
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+"Vous\n"
+" \n"
+"n'êtes\n"
+" \n"
+"pas\n"
+" \n"
+"autorisé\n"
+" \n"
+"à\n"
+" \n"
+"installer\n"
+" des \n"
+"mises à jour\n"
+" du \n"
+"plugin"
+
+#: ../core/includes/upgrade.php:322
+msgid "Error"
+msgstr "Erreur"
+
+#: ../core/includes/tinymce/window.php:6
+msgid "You are not allowed to be here"
+msgstr ""
+"Vous\n"
+" \n"
+"n'êtes\n"
+" \n"
+"pas\n"
+" \n"
+"autorisé\n"
+" \n"
+"à\n"
+" \n"
+"être\n"
+" \n"
+"ici"
+
+#: ../core/includes/tinymce/window.php:113
+msgid "Embed Already Built Documents"
+msgstr ""
+"Incorporez\n"
+" \n"
+"déjà\n"
+" \n"
+"construit\n"
+" des \n"
+"Documents"
+
+#: ../core/includes/tinymce/window.php:125
+msgid "Insert Elements"
+msgstr ""
+"Insérer\n"
+" des \n"
+"éléments"

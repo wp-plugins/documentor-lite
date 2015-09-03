@@ -1,0 +1,1973 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Wed Aug 05 2015 11:48:21 GMT+0530 (IST)\n"
+"PO-Revision-Date: Thu Sep 03 2015 11:39:20 GMT+0530 (IST)\n"
+"Last-Translator: admin <sagar.katarnaware@webfanzine.com>\n"
+"Language-Team: \n"
+"Language: Dutch\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: nl_NL\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../documentor.php:419
+msgctxt "post type general name"
+msgid "Sections"
+msgstr "Secties"
+
+#: ../documentor.php:420
+msgctxt "post type singular name"
+msgid "Section"
+msgstr "Sectie"
+
+#: ../documentor.php:421
+msgctxt "documentor"
+msgid "Add New"
+msgstr "Nieuwe toevoegen\n"
+
+#: ../documentor.php:422
+msgid "Add New Documentor Section"
+msgstr ""
+"Nieuwe\n"
+" \n"
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"toevoegen"
+
+#: ../documentor.php:423
+msgid "Edit Documentor Section"
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"bewerken"
+
+#: ../documentor.php:424
+msgid "New Documentor Section"
+msgstr ""
+"Nieuwe\n"
+" \n"
+"Documentor\n"
+" \n"
+"sectie"
+
+#: ../documentor.php:425
+msgid "All Documentor Sections"
+msgstr ""
+"Alle\n"
+" \n"
+"Documentor\n"
+" \n"
+"secties"
+
+#: ../documentor.php:426
+msgid "View Documentor Section"
+msgstr ""
+"Sectie\n"
+" \n"
+"weergave\n"
+" \n"
+"Documentor"
+
+#: ../documentor.php:427
+msgid "Search Documentor Sections"
+msgstr ""
+"Zoek\n"
+" \n"
+"Documentor\n"
+" \n"
+"secties"
+
+#: ../documentor.php:428
+msgid "No Documentor sections found"
+msgstr ""
+"Geen\n"
+" \n"
+"Documentor\n"
+"-\n"
+"secties\n"
+" \n"
+"gevonden"
+
+#: ../documentor.php:429
+msgid "No Documentor section found in Trash"
+msgstr ""
+"Geen\n"
+" \n"
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"gevonden\n"
+" \n"
+"in\n"
+" \n"
+"Prullenbak"
+
+#: ../documentor.php:455
+#, php-format
+msgid "Documentor Section updated. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"updated\n"
+".\n"
+" <a href=\"%s\"> \n"
+"weergave\n"
+" \n"
+"Documentor\n"
+" \n"
+"sectie\n"
+"</a>"
+
+#: ../documentor.php:456
+msgid "Custom field updated."
+msgstr ""
+"Aangepast\n"
+" \n"
+"veld\n"
+" \n"
+"bijgewerkt\n"
+"."
+
+#: ../documentor.php:457
+msgid "Custom field deleted."
+msgstr ""
+"Aangepaste\n"
+" \n"
+"veld\n"
+" \n"
+"verwijderd\n"
+"."
+
+#: ../documentor.php:458
+msgid "Documentor Section updated."
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"updated\n"
+"."
+
+#. translators: %s: date and time of the revision
+#: ../documentor.php:460
+#, php-format
+msgid "Documentor section restored to revision from %s"
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"herziening\n"
+" \n"
+"hersteld\n"
+" \n"
+"van\n"
+" \n"
+"%s"
+
+#: ../documentor.php:461
+#, php-format
+msgid "Documentor Section published. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"gepubliceerd\n"
+".\n"
+" <a href=\"%s\"> \n"
+"weergave\n"
+" \n"
+"Documentor\n"
+"sectie\n"
+"</a>"
+
+#: ../documentor.php:462
+msgid "Section saved."
+msgstr ""
+"Sectie\n"
+" \n"
+"opgeslagen\n"
+"."
+
+#: ../documentor.php:463
+#, php-format
+msgid ""
+"Documentor Section submitted. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+"Documentor\n"
+" \n"
+"sectie\n"
+" \n"
+"afkomstig\n"
+".\n"
+" <a target=\"_blank\" href=\"%s\"> \n"
+"Documentor\n"
+"voorbeeldsectie\n"
+"</a>"
+
+#: ../documentor.php:464
+#, php-format
+msgid ""
+"Documentor Sections scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Documentor Section</a>"
+msgstr ""
+"Documentor\n"
+" \n"
+"secties\n"
+" \n"
+"gepland\n"
+" \n"
+"voor\n"
+":\n"
+" <strong>\n"
+"%1$ s\n"
+"</strong>\n"
+".\n"
+" <a target=\"_blank\" href=\"%2$s\"> \n"
+"Documentor\n"
+" \n"
+"voorbeeldsectie\n"
+"</a>"
+
+#. translators: Publish box date format, see http://php.net/date
+#: ../documentor.php:466
+msgid "M j, Y @ G:i"
+msgstr "M d, Y @ g"
+
+#: ../documentor.php:467
+#, php-format
+msgid ""
+"Documentor Section draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+"Documentor Section draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+
+#: ../documentor.php:516
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: ../skins/broad/index.php:210 ../skins/broad/index.php:431 ..
+#: /skins/default/index.php:206 ../skins/default/index.php:427 ..
+#: /skins/cherry/index.php:187 ../skins/cherry/index.php:399 ../skins/bar/index.
+#: php:204 ../skins/bar/index.php:425 ../skins/mint/index.php:208 ..
+#: /skins/mint/index.php:431 ../core/guide.php:228 ../core/guide.php:1045 ..
+#: /core/guide.php:2474 ../core/guide.php:2570 ../core/admin.php:559
+msgid "Edit"
+msgstr "Bewerken"
+
+#: ../skins/broad/index.php:260 ../skins/broad/index.php:309 ../skins/broad/index.
+#: php:491 ../skins/default/index.php:256 ../skins/default/index.php:305 ..
+#: /skins/default/index.php:487 ../skins/cherry/index.php:236 ..
+#: /skins/cherry/index.php:283 ../skins/cherry/index.php:459 ../skins/bar/index.
+#: php:253 ../skins/bar/index.php:300 ../skins/bar/index.php:485 ..
+#: /skins/mint/index.php:257 ../skins/mint/index.php:304 ../skins/mint/index.php:
+#: 491
+msgid "Was this helpful?"
+msgstr ""
+"Was\n"
+" \n"
+"dit\n"
+" \n"
+"nuttig\n"
+"?"
+
+#: ../skins/broad/index.php:266 ../skins/broad/index.php:315 ../skins/broad/index.
+#: php:496 ../skins/default/index.php:262 ../skins/default/index.php:311 ..
+#: /skins/default/index.php:492 ../skins/cherry/index.php:241 ..
+#: /skins/cherry/index.php:288 ../skins/cherry/index.php:464 ../skins/bar/index.
+#: php:258 ../skins/bar/index.php:305 ../skins/bar/index.php:490 ..
+#: /skins/mint/index.php:262 ../skins/mint/index.php:309 ../skins/mint/index.php:
+#: 496
+msgid "Suggest edit"
+msgstr ""
+"Stel voor\n"
+" \n"
+"bewerken"
+
+#: ../skins/broad/index.php:269 ../skins/broad/index.php:318 ../skins/broad/index.
+#: php:499 ../skins/default/index.php:265 ../skins/default/index.php:314 ..
+#: /skins/default/index.php:495 ../skins/cherry/index.php:244 ..
+#: /skins/cherry/index.php:291 ../skins/cherry/index.php:467 ../skins/bar/index.
+#: php:261 ../skins/bar/index.php:308 ../skins/bar/index.php:493 ..
+#: /skins/mint/index.php:265 ../skins/mint/index.php:312 ../skins/mint/index.php:
+#: 499
+msgid "Last updated on"
+msgstr ""
+"Laatst\n"
+" \n"
+"bijgewerkt\n"
+" \n"
+"op"
+
+#: ../skins/broad/index.php:274 ../skins/broad/index.php:323 ../skins/broad/index.
+#: php:504 ../skins/default/index.php:270 ../skins/default/index.php:319 ..
+#: /skins/default/index.php:500 ../skins/cherry/index.php:249 ..
+#: /skins/cherry/index.php:296 ../skins/cherry/index.php:472 ../skins/bar/index.
+#: php:266 ../skins/bar/index.php:313 ../skins/bar/index.php:498 ..
+#: /skins/mint/index.php:270 ../skins/mint/index.php:317 ../skins/mint/index.php:
+#: 504
+msgid " users found this section helpful"
+msgstr "gebruikers in deze sectie nuttig gevonden"
+
+#: ../skins/broad/index.php:336 ../skins/broad/index.php:526 ..
+#: /skins/default/index.php:332 ../skins/default/index.php:521 ..
+#: /skins/cherry/index.php:307 ../skins/cherry/index.php:496 ../skins/bar/index.
+#: php:325 ../skins/bar/index.php:520 ../skins/mint/index.php:330 ..
+#: /skins/mint/index.php:528 ../core/guide.php:2502 ../core/guide.php:2598
+msgid "Next"
+msgstr "Volgende"
+
+#: ../skins/broad/index.php:492 ../skins/default/index.php:488 ..
+#: /skins/cherry/index.php:460 ../skins/bar/index.php:486 ../skins/mint/index.php:
+#: 492
+msgid "Yes"
+msgstr "Ja"
+
+#: ../skins/broad/index.php:493 ../skins/default/index.php:489 ..
+#: /skins/cherry/index.php:461 ../skins/bar/index.php:487 ../skins/mint/index.php:
+#: 493
+msgid "No"
+msgstr "Niet"
+
+#: ../skins/broad/index.php:519 ../skins/default/index.php:514 ..
+#: /skins/cherry/index.php:489 ../skins/bar/index.php:513 ../skins/mint/index.php:
+#: 521 ../core/guide.php:2493 ../core/guide.php:2588
+msgid "Previous"
+msgstr "Vorige"
+
+#: ../skins/broad/index.php:583 ../skins/broad/index.php:605 ..
+#: /skins/default/index.php:578 ../skins/default/index.php:600 ..
+#: /skins/cherry/index.php:552 ../skins/cherry/index.php:574 ../skins/bar/index.
+#: php:575 ../skins/bar/index.php:597 ../skins/mint/index.php:583 ..
+#: /skins/mint/index.php:605
+msgid "Search in Document"
+msgstr "In een Document zoeken"
+
+#: ../skins/broad/index.php:690 ../skins/default/index.php:684 ..
+#: /skins/cherry/index.php:657 ../skins/bar/index.php:678 ../skins/mint/index.php:
+#: 689
+msgid "Author: "
+msgstr "Auteur:"
+
+#: ../skins/broad/index.php:694 ../skins/default/index.php:688 ..
+#: /skins/cherry/index.php:661 ../skins/bar/index.php:682 ../skins/mint/index.php:
+#: 693
+msgid "Version: "
+msgstr "Versie:"
+
+#: ../skins/broad/index.php:699 ../skins/default/index.php:693 ..
+#: /skins/cherry/index.php:666 ../skins/bar/index.php:687 ../skins/mint/index.php:
+#: 698
+msgid "Dated: "
+msgstr "Gedateerd:"
+
+#: ../skins/broad/index.php:729 ../skins/default/index.php:718 ..
+#: /skins/cherry/index.php:691 ../skins/bar/index.php:712 ../skins/mint/index.php:
+#: 723
+msgid "Suggest Edit"
+msgstr ""
+"Stel voor\n"
+" \n"
+"bewerken"
+
+#: ../core/section.php:92 ../core/section.php:169 ../core/section.php:250
+msgid "Section added successfully!!!"
+msgstr ""
+"Sectie\n"
+" \n"
+"toegevoegd!!!"
+
+#: ../core/section.php:449 ../core/guide.php:233 ../core/guide.php:1079
+msgid "Menu Title"
+msgstr "Menutitel"
+
+#: ../core/section.php:450 ../core/guide.php:234 ../core/guide.php:237 ..
+#: /core/guide.php:1080
+msgid "Enter Menu Title"
+msgstr ""
+"Menutitel\n"
+" \n"
+"invoeren"
+
+#: ../core/section.php:453
+msgid "Link URL"
+msgstr ""
+"Link\n"
+" \n"
+"URL"
+
+#: ../core/section.php:459 ../core/guide.php:245
+msgid "Open in new window"
+msgstr ""
+"Openen\n"
+" \n"
+"in\n"
+" \n"
+"nieuw\n"
+" \n"
+"venster"
+
+#: ../core/section.php:461 ../core/guide.php:1111 ../core/guide.php:2506 ..
+#: /core/guide.php:2602
+msgid "Insert"
+msgstr "Invoegen"
+
+#: ../core/section.php:486 ../core/section.php:568
+msgid ""
+"You have already given your feedback to this section. You can again give "
+"feedback for the same section after 24hrs"
+msgstr ""
+"U\n"
+" \n"
+"hebt\n"
+" \n"
+"al\n"
+" \n"
+"uw\n"
+" \n"
+"feedback\n"
+" \n"
+"gegeven\n"
+" \n"
+"op\n"
+" \n"
+"deze\n"
+" \n"
+"afdeling\n"
+".\n"
+" \n"
+"U\n"
+" \n"
+"kunt\n"
+" \n"
+"weer\n"
+" \n"
+"feedback\n"
+" \n"
+"geven\n"
+"voor\n"
+" \n"
+"dezelfde\n"
+" \n"
+"sectie\n"
+" \n"
+"na\n"
+" \n"
+"24 uur"
+
+#: ../core/section.php:513 ../core/guide.php:1800 ../core/guide.php:1862 ..
+#: /core/guide.php:2456 ../core/guide.php:2552
+msgid "Name"
+msgstr "Naam"
+
+#: ../core/section.php:518 ../core/guide.php:1650 ../core/guide.php:1808 ..
+#: /core/guide.php:1836 ../core/guide.php:1870 ../core/guide.php:1898
+msgid "Email"
+msgstr "Email"
+
+#: ../core/section.php:523
+msgid "Post your feedback..."
+msgstr ""
+"Uw\n"
+" \n"
+"feedback\n"
+" \n"
+"post\n"
+"..."
+
+#: ../core/section.php:533
+msgid "Captcha : "
+msgstr "Captcha :"
+
+#: ../core/section.php:636 ../core/section.php:780
+msgid "Please select Guide manager at settings panel to whom suggestion will be send"
+msgstr ""
+"Selecteer\n"
+" \n"
+"gids\n"
+" \n"
+"manager\n"
+" \n"
+"bij\n"
+" \n"
+"instellingenpaneel\n"
+" \n"
+"aan\n"
+" \n"
+"wie\n"
+" \n"
+"zal\n"
+" \n"
+"suggestie\n"
+" \n"
+"verzenden"
+
+#: ../core/section.php:667 ../core/section.php:808
+msgid "Please provide email address"
+msgstr ""
+"Geef\n"
+" \n"
+"e\n"
+"-\n"
+"mailadres"
+
+#: ../core/section.php:673 ../core/section.php:814
+msgid "Invaild email address"
+msgstr ""
+"Invaild\n"
+" \n"
+"e\n"
+"-\n"
+"mailadres"
+
+#: ../core/section.php:679
+msgid "Please add your feedback"
+msgstr ""
+"Voeg\n"
+" \n"
+"uw\n"
+" \n"
+"feedback"
+
+#: ../core/section.php:684 ../core/section.php:825
+msgid "Please enter captcha"
+msgstr ""
+"Voer\n"
+" de \n"
+"captcha"
+
+#: ../core/section.php:694 ../core/section.php:834
+msgid "Invalid Captcha Entered"
+msgstr "Invalid Captcha Entered"
+
+#: ../core/section.php:820
+msgid "Please add your suggestion"
+msgstr "Voeg uw suggestie"
+
+#: ../core/section.php:1128 ../core/guide.php:2916
+msgid "PDF generated successfully"
+msgstr ""
+"PDF\n"
+" \n"
+"gegenereerd\n"
+" \n"
+"met succes"
+
+#: ../core/guide.php:229
+msgid "Comments/Suggestion"
+msgstr "Commentaar/suggestie"
+
+#: ../core/guide.php:236 ../core/guide.php:1083 ../core/guide.php:1423 ..
+#: /core/guide.php:2040
+msgid "Section Title"
+msgstr "Sectietitel"
+
+#: ../core/guide.php:241 ../core/guide.php:1642
+msgid "Link"
+msgstr "Koppeling"
+
+#: ../core/guide.php:249
+msgid "Slug"
+msgstr "Witruimte rond pagina 's"
+
+#: ../core/guide.php:250
+msgid "Enter slug"
+msgstr ""
+"Voer\n"
+" \n"
+"slak\n"
+
+#: ../core/guide.php:253
+msgid "Feedback count"
+msgstr "Feedback graaf"
+
+#: ../core/guide.php:255
+msgid "Upvotes"
+msgstr "Upvotes"
+
+#: ../core/guide.php:257
+msgid "Downvotes"
+msgstr "Downvotes"
+
+#: ../core/guide.php:259
+msgid "Reset"
+msgstr "Reset"
+
+#: ../core/guide.php:267
+msgid "Save"
+msgstr "Opslaan"
+
+#: ../core/guide.php:269
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: ../core/guide.php:271
+msgid "Cancel"
+msgstr "Annuleren\n"
+
+#: ../core/guide.php:273 ../core/guide.php:1035
+msgid "Generate PDF"
+msgstr ""
+"Het \n"
+"genereren\n"
+" van \n"
+"PDF"
+
+#: ../core/guide.php:642
+msgid "error: Guide name could not be blank"
+msgstr ""
+"fout\n"
+":\n"
+" \n"
+"gids\n"
+" \n"
+"naam\n"
+" \n"
+"kan\n"
+" \n"
+"niet\n"
+" \n"
+"leeg\n"
+" \n"
+"zijn\n"
+
+#: ../core/guide.php:704
+msgid "error: slug could not be blank."
+msgstr ""
+"fout\n"
+":\n"
+" \n"
+"slak\n"
+" \n"
+"kan\n"
+" \n"
+"niet\n"
+" \n"
+"leeg\n"
+" \n"
+"zijn\n"
+"."
+
+#: ../core/guide.php:708
+msgid "error: menu title could not be blank."
+msgstr "error: menu title could not be blank."
+
+#: ../core/guide.php:710
+msgid "error: section title could not be blank."
+msgstr "error: section title could not be blank."
+
+#: ../core/guide.php:718
+msgid "error: link url could not be blank."
+msgstr ""
+"fout\n"
+":\n"
+" \n"
+"link\n"
+" \n"
+"url\n"
+" \n"
+"kon\n"
+" \n"
+"niet\n"
+" \n"
+"worden\n"
+" \n"
+"leeg\n"
+"."
+
+#: ../core/guide.php:1001 ../core/guide.php:1001
+msgid "Sections"
+msgstr "Secties"
+
+#: ../core/guide.php:1002 ../core/guide.php:1002
+msgid "Settings"
+msgstr "Instellingen"
+
+#: ../core/guide.php:1005
+msgid "Related documnets"
+msgstr ""
+"Gerelateerde\n"
+" \n"
+"documenten"
+
+#: ../core/guide.php:1005 ../core/guide.php:1729
+msgid "Related"
+msgstr "Gerelateerde"
+
+#: ../core/guide.php:1007
+msgid "Embed code"
+msgstr ""
+"Embed\n"
+"-\n"
+"code"
+
+#: ../core/guide.php:1007
+msgid "Embed Code"
+msgstr ""
+"Embed\n"
+"-\n"
+"Code"
+
+#: ../core/guide.php:1013 ../core/guide.php:1013
+msgid "Add Section"
+msgstr ""
+"Sectie\n"
+" \n"
+"toevoegen"
+
+#: ../core/guide.php:1036
+msgid "Reset Feedback Counts"
+msgstr "Reset Feedback telt"
+
+#: ../core/guide.php:1054
+msgid "Inline"
+msgstr "Inline"
+
+#: ../core/guide.php:1069
+msgid "Links"
+msgstr "Koppelingen"
+
+#: ../core/guide.php:1084
+msgid "Enter Section Title"
+msgstr ""
+"Voer\n"
+" \n"
+"Sectietitel"
+
+#: ../core/guide.php:1087
+msgid "Content"
+msgstr "Inhoud"
+
+#: ../core/guide.php:1120
+msgid "Back to Edit"
+msgstr ""
+"Terug\n"
+" \n"
+"naar\n"
+" \n"
+"bewerken"
+
+#: ../core/guide.php:1132
+msgid "Basic Settings"
+msgstr "Basisinstellingen"
+
+#: ../core/guide.php:1139
+msgid "Skin"
+msgstr "Huid"
+
+#: ../core/guide.php:1157
+msgid "Section Animation"
+msgstr ""
+"Sectie\n"
+" \n"
+"animatie\n"
+
+#: ../core/guide.php:1162
+msgid "Attention Seekers"
+msgstr ""
+
+#: ../core/guide.php:1163
+msgid "bounce"
+msgstr ""
+
+#: ../core/guide.php:1164
+msgid "flash"
+msgstr ""
+
+#: ../core/guide.php:1165
+msgid "pulse"
+msgstr ""
+
+#: ../core/guide.php:1166
+msgid "rubberBand"
+msgstr ""
+
+#: ../core/guide.php:1167
+msgid "shake"
+msgstr ""
+
+#: ../core/guide.php:1168
+msgid "swing"
+msgstr ""
+
+#: ../core/guide.php:1169
+msgid "tada"
+msgstr ""
+
+#: ../core/guide.php:1170
+msgid "wobble"
+msgstr ""
+
+#: ../core/guide.php:1172
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: ../core/guide.php:1173
+msgid "bounceIn"
+msgstr ""
+
+#: ../core/guide.php:1174
+msgid "bounceInDown"
+msgstr ""
+
+#: ../core/guide.php:1175
+msgid "bounceInLeft"
+msgstr ""
+
+#: ../core/guide.php:1176
+msgid "bounceInRight"
+msgstr ""
+
+#: ../core/guide.php:1177
+msgid "bounceInUp"
+msgstr ""
+
+#: ../core/guide.php:1180
+msgid "Fading Entrances"
+msgstr ""
+
+#: ../core/guide.php:1181
+msgid "fadeIn"
+msgstr ""
+
+#: ../core/guide.php:1182
+msgid "fadeInDown"
+msgstr ""
+
+#: ../core/guide.php:1183
+msgid "fadeInDownBig"
+msgstr ""
+
+#: ../core/guide.php:1184
+msgid "fadeInLeft"
+msgstr ""
+
+#: ../core/guide.php:1185
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: ../core/guide.php:1186
+msgid "fadeInRight"
+msgstr ""
+
+#: ../core/guide.php:1187
+msgid "fadeInRightBig"
+msgstr ""
+
+#: ../core/guide.php:1188
+msgid "fadeInUp"
+msgstr ""
+
+#: ../core/guide.php:1189
+msgid "fadeInUpBig"
+msgstr ""
+
+#: ../core/guide.php:1192
+msgid "Flippers"
+msgstr ""
+
+#: ../core/guide.php:1193
+msgid "flip"
+msgstr ""
+
+#: ../core/guide.php:1194
+msgid "flipInX"
+msgstr ""
+
+#: ../core/guide.php:1195
+msgid "flipInY"
+msgstr ""
+
+#: ../core/guide.php:1198
+msgid "Lightspeed"
+msgstr ""
+
+#: ../core/guide.php:1199
+msgid "lightSpeedIn"
+msgstr ""
+
+#: ../core/guide.php:1202
+msgid "Rotating Entrances"
+msgstr ""
+
+#: ../core/guide.php:1203
+msgid "rotateIn"
+msgstr ""
+
+#: ../core/guide.php:1204
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: ../core/guide.php:1205
+msgid "rotateInDownRight"
+msgstr ""
+
+#: ../core/guide.php:1206
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: ../core/guide.php:1207
+msgid "rotateInUpRight"
+msgstr ""
+
+#: ../core/guide.php:1210
+msgid "Specials"
+msgstr ""
+
+#: ../core/guide.php:1211
+msgid "hinge"
+msgstr ""
+
+#: ../core/guide.php:1212
+msgid "rollIn"
+msgstr ""
+
+#: ../core/guide.php:1215
+msgid "Zoom Entrances"
+msgstr ""
+
+#: ../core/guide.php:1216
+msgid "zoomIn"
+msgstr ""
+
+#: ../core/guide.php:1217
+msgid "zoomInDown"
+msgstr ""
+
+#: ../core/guide.php:1218
+msgid "zoomInLeft"
+msgstr ""
+
+#: ../core/guide.php:1219
+msgid "zoomInRight"
+msgstr ""
+
+#: ../core/guide.php:1220
+msgid "zoomInUp"
+msgstr ""
+
+#: ../core/guide.php:1223
+msgid "Slide Entrances"
+msgstr ""
+
+#: ../core/guide.php:1224
+msgid "slideInDown"
+msgstr ""
+
+#: ../core/guide.php:1225
+msgid "slideInLef"
+msgstr ""
+
+#: ../core/guide.php:1226
+msgid "slideInRight"
+msgstr ""
+
+#: ../core/guide.php:1227
+msgid "slideInUp"
+msgstr ""
+
+#: ../core/guide.php:1240
+msgid "Indexing Format"
+msgstr ""
+"Indeling\n"
+" \n"
+"indexeren\n"
+
+#: ../core/guide.php:1251
+msgid "Guide Title"
+msgstr "De titel van gids"
+
+#: ../core/guide.php:1258 ../core/guide.php:1659 ../core/guide.php:1668 ..
+#: /core/guide.php:1786
+msgid "Options"
+msgstr "Opties"
+
+#: ../core/guide.php:1263
+msgid "Scrolling"
+msgstr "Scrollen"
+
+#: ../core/guide.php:1275
+msgid "Fixed Menu"
+msgstr ""
+"Vaste\n"
+" \n"
+"Menu"
+
+#: ../core/guide.php:1287
+msgid "Top Margin for Menu"
+msgstr "Bovenmarge voor Menu"
+
+#: ../core/guide.php:1289 ../core/guide.php:1377 ../core/guide.php:1475 ..
+#: /core/guide.php:1534 ../core/guide.php:2246
+msgid "px"
+msgstr "PX"
+
+#: ../core/guide.php:1298
+msgid "Menu Position"
+msgstr ""
+"Menu\n"
+"-\n"
+"positie"
+
+#: ../core/guide.php:1308
+msgid "Toggle child menu"
+msgstr "Kind wisselmenu"
+
+#: ../core/guide.php:1319
+msgid "Extras on Section hover"
+msgstr "Extra's op sectie met aanwijseffect"
+
+#: ../core/guide.php:1331 ../core/guide.php:1394 ../core/guide.php:1420 ..
+#: /core/guide.php:1492 ../core/guide.php:1566 ../core/guide.php:1599 ..
+#: /core/guide.php:2310
+msgid "Save Changes"
+msgstr ""
+"Wijzigingen\n"
+" \n"
+"opslaan"
+
+#: ../core/guide.php:1338
+msgid "Formatting"
+msgstr "Opmaak"
+
+#: ../core/guide.php:1340
+msgid "Nav Menu Title"
+msgstr ""
+"Nav\n"
+" \n"
+"Menu\n"
+" \n"
+"titel"
+
+#: ../core/guide.php:1343 ../core/guide.php:1402 ../core/guide.php:1442 ..
+#: /core/guide.php:1501 ../core/guide.php:2211
+msgid "Use theme default"
+msgstr ""
+"Thema\n"
+"-\n"
+"standaard\n"
+" \n"
+"gebruiken"
+
+#: ../core/guide.php:1354 ../core/guide.php:1413 ../core/guide.php:1453 ..
+#: /core/guide.php:1512 ../core/guide.php:1585 ../core/guide.php:2221
+msgid "Color"
+msgstr "Kleur"
+
+#: ../core/guide.php:1359 ../core/guide.php:1458 ../core/guide.php:1517 ..
+#: /core/guide.php:1994 ../core/guide.php:2010 ../core/guide.php:2026 ..
+#: /core/guide.php:2043 ../core/guide.php:2060 ../core/guide.php:2228 ..
+#: /core/includes/fonts.php:279
+msgid "Font"
+msgstr "Lettertype"
+
+#: ../core/guide.php:1376 ../core/guide.php:1474 ../core/guide.php:1533 ..
+#: /core/guide.php:2001 ../core/guide.php:2017 ../core/guide.php:2034 ..
+#: /core/guide.php:2051 ../core/guide.php:2068 ../core/guide.php:2245
+msgid "Font Size"
+msgstr "Tekengrootte"
+
+#: ../core/guide.php:1381 ../core/guide.php:1479 ../core/guide.php:1538 ..
+#: /core/guide.php:2250
+msgid "Font Style"
+msgstr "Tekenstijl"
+
+#: ../core/guide.php:1383 ../core/guide.php:1481 ../core/guide.php:1540 ..
+#: /core/guide.php:2253
+msgid "Bold"
+msgstr "Vet"
+
+#: ../core/guide.php:1384 ../core/guide.php:1482 ../core/guide.php:1541 ..
+#: /core/guide.php:2254
+msgid "Bold Italic"
+msgstr ""
+"Vet\n"
+" \n"
+"cursief"
+
+#: ../core/guide.php:1385 ../core/guide.php:1483 ../core/guide.php:1542 ..
+#: /core/guide.php:2255
+msgid "Italic"
+msgstr "Cursief"
+
+#: ../core/guide.php:1386 ../core/guide.php:1484 ../core/guide.php:1543 ..
+#: /core/guide.php:2256
+msgid "Normal"
+msgstr "Normaal"
+
+#: ../core/guide.php:1397
+msgid "Active Nav Menu Background"
+msgstr ""
+"Actieve\n"
+" \n"
+"Nav\n"
+" \n"
+"Menu\n"
+" \n"
+"achtergrond\n"
+
+#: ../core/guide.php:1428 ../core/guide.php:2197
+msgid "Element"
+msgstr "Element"
+
+#: ../core/guide.php:1495 ../core/guide.php:2057
+msgid "Section Content"
+msgstr ""
+"Sectie\n"
+"-\n"
+"inhoud"
+
+#: ../core/guide.php:1549
+msgid "Last Updated Date"
+msgstr "Laatste bijgewerkte datum"
+
+#: ../core/guide.php:1569
+msgid "Scrollbar"
+msgstr "ScrollBar"
+
+#: ../core/guide.php:1579
+msgid "size"
+msgstr "grootte"
+
+#: ../core/guide.php:1591
+msgid "Opacity"
+msgstr "Dekking"
+
+#: ../core/guide.php:1606
+msgid "Advanced Settings"
+msgstr ""
+"Geavanceerde\n"
+" \n"
+"instellingen"
+
+#: ../core/guide.php:1611
+msgid "Load sections using AJAX"
+msgstr ""
+"Secties\n"
+" \n"
+"met behulp\n"
+" van \n"
+"AJAX\n"
+" \n"
+"laden"
+
+#: ../core/guide.php:1622
+msgid "Search Box"
+msgstr "Zoekvak"
+
+#: ../core/guide.php:1633
+msgid "Buttons"
+msgstr "Knoppen"
+
+#: ../core/guide.php:1658
+msgid "Save PDF"
+msgstr ""
+"Sla\n"
+" \n"
+"PDF"
+
+#: ../core/guide.php:1667
+msgid "Print"
+msgstr "Afdrukken"
+
+#: ../core/guide.php:1675
+msgid "Users can suggest Edits"
+msgstr ""
+"Gebruikers\n"
+" \n"
+"kunnen\n"
+" \n"
+"stellen voor\n"
+" \n"
+"bewerkingen"
+
+#: ../core/guide.php:1682 ../core/guide.php:1712 ../core/guide.php:1772
+msgid "Format"
+msgstr "Formaat"
+
+#: ../core/guide.php:1686
+msgid "Guide Manager"
+msgstr ""
+"Gids\n"
+" \n"
+"Manager"
+
+#: ../core/guide.php:1704
+msgid "Visitor's Feedback"
+msgstr ""
+"Van bezoeker\n"
+" \n"
+"Feedback"
+
+#: ../core/guide.php:1718
+msgid "Feedback Count"
+msgstr "Feedback Count"
+
+#: ../core/guide.php:1740
+msgid "RTL Support"
+msgstr ""
+"RTL\n"
+" \n"
+"ondersteuning"
+
+#: ../core/guide.php:1752
+msgid "Back to Top button"
+msgstr "Terug naar de bovenste knop"
+
+#: ../core/guide.php:1764
+msgid "Social Sharing"
+msgstr "Sociale delen"
+
+#: ../core/guide.php:1778
+msgid "Attach Product"
+msgstr "Product toevoegen"
+
+#: ../core/guide.php:1794
+msgid "Suggest Edit Format"
+msgstr ""
+"Stel voor\n"
+" \n"
+"bewerken\n"
+" \n"
+"formaat"
+
+#: ../core/guide.php:1796 ../core/guide.php:1858
+msgid "Form"
+msgstr "Formulier"
+
+#: ../core/guide.php:1816 ../core/guide.php:1878
+msgid "Extra Input Fields"
+msgstr ""
+"Extra\n"
+" \n"
+"invoervelden"
+
+#: ../core/guide.php:1820
+msgid "Message Box"
+msgstr "Berichtvenster"
+
+#: ../core/guide.php:1828 ../core/guide.php:1890
+msgid "Captcha"
+msgstr "Captcha"
+
+#: ../core/guide.php:1839 ../core/guide.php:1901
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: ../core/guide.php:1843 ../core/guide.php:1905
+msgid "Thank You Message"
+msgstr ""
+"Dank\n"
+" \n"
+"u\n"
+" \n"
+"bericht"
+
+#: ../core/guide.php:1856
+msgid "User Feedback Format"
+msgstr ""
+"Feedback\n"
+" \n"
+"gebruikersformaat"
+
+#: ../core/guide.php:1882
+msgid "Feedback Text"
+msgstr ""
+"Feedback\n"
+" \n"
+"tekst"
+
+#: ../core/guide.php:1917
+msgid "PDF Options"
+msgstr ""
+"PDF-\n"
+"opties"
+
+#: ../core/guide.php:1919
+msgid "Author"
+msgstr "Auteur"
+
+#: ../core/guide.php:1923
+msgid "Guide Subtitle"
+msgstr ""
+"Gids\n"
+" \n"
+"ondertitel"
+
+#: ../core/guide.php:1927
+msgid "PDF Header"
+msgstr "PDF-Header"
+
+#: ../core/guide.php:1934
+msgid "Header on First Page"
+msgstr "Koptekst op eerste pagina"
+
+#: ../core/guide.php:1943
+msgid "Logo"
+msgstr "Logo"
+
+#: ../core/guide.php:1944 ../core/guide.php:2295
+msgid "Enter URL or upload image"
+msgstr "Voer de URL of afbeelding uploaden"
+
+#: ../core/guide.php:1945 ../core/guide.php:2296
+msgid "Upload"
+msgstr "Upload"
+
+#: ../core/guide.php:1948
+msgid "Logo Width"
+msgstr "Logo breedte"
+
+#: ../core/guide.php:1949
+msgid "pixels"
+msgstr "pixels"
+
+#: ../core/guide.php:1952
+msgid "Header text"
+msgstr "Koptekst"
+
+#: ../core/guide.php:1956
+msgid "Text Color"
+msgstr "Tekstkleur"
+
+#: ../core/guide.php:1960
+msgid "Header border"
+msgstr "Koptekst"
+
+#: ../core/guide.php:1968
+msgid "Border Color"
+msgstr "Randkleur"
+
+#: ../core/guide.php:1972
+msgid "PDF Footer"
+msgstr "PDF-voettekst"
+
+#: ../core/guide.php:1978
+msgid "Footer on First Page"
+msgstr "Voettekst op eerste pagina"
+
+#: ../core/guide.php:1987
+msgid "Footer text"
+msgstr "Voettekst"
+
+#: ../core/guide.php:1991
+msgid "PDF Title"
+msgstr ""
+"PDF-\n"
+"titel"
+
+#: ../core/guide.php:2007
+msgid "PDF Subtitle"
+msgstr ""
+"PDF\n"
+" \n"
+"ondertitel"
+
+#: ../core/guide.php:2023
+msgid "TOC Menu Title"
+msgstr ""
+"TOC\n"
+" \n"
+"menutitel"
+
+#: ../core/guide.php:2081
+msgid "Print Options"
+msgstr "Afdrukopties"
+
+#: ../core/guide.php:2083
+msgid "Use window print"
+msgstr ""
+"Gebruik\n"
+" \n"
+"venster\n"
+" \n"
+"afdrukken"
+
+#: ../core/guide.php:2102
+msgid "Social Share Options"
+msgstr "Sociale aandelenopties"
+
+#: ../core/guide.php:2104
+msgid "Select Social buttons"
+msgstr "Sociale knoppen selecteren"
+
+#: ../core/guide.php:2108
+msgid "Facebook"
+msgstr ""
+
+#: ../core/guide.php:2116
+msgid "Twitter"
+msgstr ""
+
+#: ../core/guide.php:2124
+msgid "Google Plus"
+msgstr ""
+
+#: ../core/guide.php:2131
+msgid ""
+"To get the count of Google Plus shares, please enable the curl extension of "
+"PHP"
+msgstr "Als u het aantal Google Plus aandelen, activeer de curl uitbreiding van PHP"
+
+#: ../core/guide.php:2135
+msgid "Pinterest"
+msgstr ""
+
+#: ../core/guide.php:2143
+msgid "Select Format"
+msgstr "Selecteer indeling"
+
+#: ../core/guide.php:2164
+msgid "Display Share Count"
+msgstr "Weergave delen graaf"
+
+#: ../core/guide.php:2167
+msgid "Share Count"
+msgstr "Aandeel Count"
+
+#: ../core/guide.php:2175
+msgid "Position"
+msgstr "Positie"
+
+#: ../core/guide.php:2179
+msgid "Top"
+msgstr "Boven"
+
+#: ../core/guide.php:2182
+msgid "Bottom"
+msgstr "Onder"
+
+#: ../core/guide.php:2194 ../core/guide.php:2269
+msgid "Guide Title Formatting"
+msgstr "Opmaak van de titel van de gids"
+
+#: ../core/guide.php:2272
+msgid "Product Name"
+msgstr "Productnaam"
+
+#: ../core/guide.php:2279
+msgid "Product Version"
+msgstr "Versie van het product"
+
+#: ../core/guide.php:2286
+msgid "Product Link"
+msgstr "Product Link"
+
+#: ../core/guide.php:2293
+msgid "Product Image"
+msgstr "Productafbeelding"
+
+#: ../core/guide.php:2336 ../core/admin.php:531 ../core/admin.php:539
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../core/guide.php:2343 ../core/admin.php:532 ../core/admin.php:540
+msgid "Template Tag"
+msgstr "Sjabloontag"
+
+#: ../core/guide.php:2368 ../core/admin.php:530 ../core/admin.php:538
+msgid "Title"
+msgstr "Titel"
+
+#: ../core/guide.php:2455 ../core/guide.php:2551
+msgid "ID"
+msgstr "ID"
+
+#: ../core/guide.php:2457 ../core/guide.php:2553
+msgid "Edit Link"
+msgstr ""
+"Koppeling\n"
+" \n"
+"bewerken"
+
+#: ../core/guide.php:2491 ../core/guide.php:2586
+msgid "Page"
+msgstr "Pagina"
+
+#: ../core/guide.php:2491 ../core/guide.php:2586
+msgid "of"
+msgstr "van"
+
+#: ../core/guide.php:2492 ../core/guide.php:2587
+msgid "First"
+msgstr "Eerste"
+
+#: ../core/guide.php:2503 ../core/guide.php:2599
+msgid "Last"
+msgstr "Laatste"
+
+#: ../core/guide.php:2511
+msgid "Enter search text"
+msgstr ""
+"Voer\n"
+" \n"
+"zoektekst"
+
+#: ../core/guide.php:2517 ../core/guide.php:2605
+msgid "No entries found"
+msgstr "Geen items gevonden"
+
+#: ../core/guide.php:2631
+msgid ""
+"This is a preview of your document. Features like print, scroll to "
+"particular section, animations, search are not available in Preview. Once "
+"you embed the document on front-end, those effects will be functional!"
+msgstr ""
+"Dit is een voorbeeld van uw document. Functies, zoals afdrukken, ga naar "
+"bepaalde sectie, animaties, zoek zijn niet beschikbaar in Preview. Zodra u "
+"het document op front-end insluiten, die gevolgen zullen functionele!"
+
+#: ../core/admin.php:37 ../core/admin.php:49
+msgid "Manage"
+msgstr "Beheren\n"
+
+#: ../core/admin.php:46 ../core/admin.php:46 ../core/admin.php:55
+msgid "Documentor"
+msgstr "Documentor"
+
+#: ../core/admin.php:48 ../core/admin.php:48
+msgid "Create New"
+msgstr ""
+"Nieuwe\n"
+" \n"
+"maken"
+
+#: ../core/admin.php:49 ../core/admin.php:520
+msgid "Manage Guides"
+msgstr ""
+"Beheren\n"
+" van \n"
+"gidsen"
+
+#: ../core/admin.php:50 ../core/admin.php:50
+msgid "Global Settings"
+msgstr "Globale instellingen\n"
+
+#: ../core/admin.php:51
+msgid "Documentor - License"
+msgstr ""
+"Documentor\n"
+" \n"
+"-\n"
+" \n"
+"licentie"
+
+#: ../core/admin.php:51
+msgid "License"
+msgstr "Licentie"
+
+#: ../core/admin.php:98
+msgid "Menu Title "
+msgstr "Menutitel"
+
+#: ../core/admin.php:106
+msgid "Section Title "
+msgstr "Sectietitel"
+
+#: ../core/admin.php:123
+msgid "Attach Guide "
+msgstr "Hechten gids"
+
+#: ../core/admin.php:126
+msgid "Type Guide Name"
+msgstr "Typenaam gids"
+
+#: ../core/admin.php:198
+msgid "Guide Name"
+msgstr ""
+"Gids\n"
+" \n"
+"naam"
+
+#: ../core/admin.php:203
+msgid "Apply Settings"
+msgstr ""
+"Instellingen\n"
+" \n"
+"toepassen\n"
+
+#: ../core/admin.php:559
+msgid "Preview"
+msgstr "Voorbeeld\n"
+
+#: ../core/admin.php:559
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: ../core/admin.php:559
+msgid "Export"
+msgstr "Exporteren"
+
+#: ../core/admin.php:559
+msgid "Copy"
+msgstr "Kopie"
+
+#: ../core/admin.php:605
+msgid "Documentor Global Settings"
+msgstr ""
+"Documentor\n"
+" \n"
+"globale\n"
+" \n"
+"instellingen"
+
+#: ../core/admin.php:610
+msgid "Enable Inline Sections"
+msgstr ""
+"Inline\n"
+" \n"
+"secties\n"
+" \n"
+"inschakelen"
+
+#: ../core/admin.php:620
+msgid "Supported Post Types for adding sections"
+msgstr ""
+"Ondersteunde\n"
+" \n"
+"Post\n"
+" \n"
+"typen\n"
+" \n"
+"voor\n"
+" het \n"
+"toevoegen\n"
+" van \n"
+"secties"
+
+#: ../core/admin.php:643
+msgid "Custom Styles"
+msgstr ""
+"Aangepaste\n"
+" \n"
+"opmaakprofielen"
+
+#: ../core/includes/license.php:7
+msgid "Documentor License Options"
+msgstr ""
+"Documentor\n"
+" \n"
+"licentie\n"
+" \n"
+"opties"
+
+#: ../core/includes/license.php:16
+msgid "License Key"
+msgstr ""
+"Vergunning\n"
+" \n"
+"toonsoort"
+
+#: ../core/includes/license.php:20
+msgid "Enter your license key"
+msgstr ""
+"Voer\n"
+" \n"
+"uw\n"
+" \n"
+"licentiesleutel"
+
+#: ../core/includes/license.php:26
+msgid "License Status"
+msgstr "Licentiestatus"
+
+#: ../core/includes/license.php:30
+msgid "Active"
+msgstr "Actieve"
+
+#: ../core/includes/license.php:32
+msgid "Deactivate License"
+msgstr ""
+"Licentie\n"
+" \n"
+"deactiveren"
+
+#: ../core/includes/license.php:35
+msgid "Activate License"
+msgstr ""
+"Licentie\n"
+" \n"
+"activeren"
+
+#: ../core/includes/fonts.php:99
+msgid "&mdash; Google Fonts &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Google\n"
+" \n"
+"lettertypen\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:102
+msgid "Google Serif Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"Serif\n"
+" \n"
+"lettertypen"
+
+#: ../core/includes/fonts.php:113
+msgid "Google Sans Serif Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"Sans\n"
+" \n"
+"Serif\n"
+" \n"
+"lettertypen"
+
+#: ../core/includes/fonts.php:124
+msgid "Google Display Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"schermlettertypen"
+
+#: ../core/includes/fonts.php:135
+msgid "Google Handwriting Fonts"
+msgstr ""
+"Google\n"
+" \n"
+"handschrift\n"
+" \n"
+"lettertypen"
+
+#: ../core/includes/fonts.php:146
+msgid "Google Monospace Fonts"
+msgstr "Google Monospace Fonts"
+
+#: ../core/includes/fonts.php:165 ../core/includes/fonts.php:170
+msgid "&mdash; Font Weight &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Lettertype\n"
+" \n"
+"gewicht\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:194
+msgid "&mdash; Font Subset &mdash;"
+msgstr ""
+"&mdash;\n"
+" \n"
+"Lettertype\n"
+" \n"
+"Subset\n"
+" \n"
+"&mdash;"
+
+#: ../core/includes/fonts.php:285
+msgid "This value will be fallback font if Google web font value is specified below"
+msgstr ""
+"Deze\n"
+" \n"
+"waarde\n"
+" \n"
+"zal\n"
+" \n"
+"worden\n"
+" \n"
+"terugval\n"
+" \n"
+"lettertype\n"
+" \n"
+"als\n"
+" \n"
+"Google\n"
+" \n"
+"web\n"
+" \n"
+"lettertype\n"
+" \n"
+"waarde\n"
+" \n"
+"is\n"
+"opgegeven\n"
+" \n"
+"onder"
+
+#: ../core/includes/fonts.php:295
+msgid "Google Web Font"
+msgstr ""
+"Google\n"
+" \n"
+"Web\n"
+" \n"
+"lettertype"
+
+#: ../core/includes/fonts.php:303
+msgid "Google Font Weight"
+msgstr ""
+"Google\n"
+" \n"
+"tekengewicht"
+
+#: ../core/includes/fonts.php:311
+msgid "Google Font Subset"
+msgstr ""
+"Google\n"
+" \n"
+"lettertype\n"
+" \n"
+"Subset"
+
+#: ../core/includes/fonts.php:319
+msgid "Custom Font"
+msgstr ""
+"Aangepaste\n"
+" \n"
+"lettertype"
+
+#: ../core/includes/upgrade.php:175
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Er\n"
+" \n"
+"is\n"
+" \n"
+"een\n"
+" \n"
+"nieuwe\n"
+" \n"
+"versie\n"
+" \n"
+"van\n"
+" \n"
+"%1$ s\n"
+" \n"
+"beschikbaar\n"
+".\n"
+" <a target=\"_blank\" class=\"thickbox\" href=\"%2$s\"> \n"
+"weergave\n"
+" \n"
+"versiedetails\n"
+" \n"
+"%3$ s\n"
+"</a>\n"
+"."
+
+#: ../core/includes/upgrade.php:182
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a "
+"href=\"%4$s\">update now</a>."
+msgstr ""
+"Er\n"
+" \n"
+"is\n"
+" \n"
+"een\n"
+" \n"
+"nieuwe\n"
+" \n"
+"versie\n"
+" \n"
+"van\n"
+" \n"
+"%1$ s\n"
+" \n"
+"beschikbaar\n"
+".\n"
+" <a target=\"_blank\" class=\"thickbox\" href=\"%2$s\"> \n"
+"weergave\n"
+" \n"
+"versiedetails\n"
+" \n"
+"%3$ s\n"
+"</a> \n"
+"of\n"
+" <a href=\"%4$s\"> \n"
+"update\n"
+"nu\n"
+"</a>\n"
+"."
+
+#: ../core/includes/upgrade.php:322
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+"U\n"
+" \n"
+"hebt\n"
+" \n"
+"geen\n"
+" \n"
+"toestemming\n"
+" om \n"
+"updates\n"
+" van de \n"
+"plugin\n"
+" \n"
+"te\n"
+" \n"
+"installeren"
+
+#: ../core/includes/upgrade.php:322
+msgid "Error"
+msgstr "Fout"
+
+#: ../core/includes/tinymce/window.php:6
+msgid "You are not allowed to be here"
+msgstr ""
+"U\n"
+" \n"
+"bent\n"
+" \n"
+"niet\n"
+" \n"
+"toegestaan\n"
+" om \n"
+"hier\n"
+" \n"
+"te\n"
+" \n"
+"zijn"
+
+#: ../core/includes/tinymce/window.php:113
+msgid "Embed Already Built Documents"
+msgstr ""
+"Reeds\n"
+" \n"
+"gebouwd\n"
+" \n"
+"documenten\n"
+" \n"
+"insluiten"
+
+#: ../core/includes/tinymce/window.php:125
+msgid "Insert Elements"
+msgstr ""
+"Elementen\n"
+" \n"
+"invoegen\n"
