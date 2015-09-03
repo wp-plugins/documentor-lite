@@ -1043,6 +1043,105 @@ p.error span {
 #docinline-iframe html {
 	background: #f1f1f1;
 }
+/* popup option */
+.doc-format {
+	margin-left: 10px;
+}
+.format-form {
+	top: 50px !important;
+	box-sizing: border-box;
+	width: 45%;
+	min-width: 450px;
+	padding-bottom: 2px;
+	display:none;
+	background: #FFF;
+	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+	max-height: 90%;
+	overflow: auto;
+}
+.frm-heading {
+	border-bottom: 1px solid #CCC;
+	padding: 8px 12px;
+	font-weight: 600;
+	font-size: 14px;
+}
+#format-header { 
+	float: left;
+	width: 100%;
+	padding: 8px 12px;
+	border-top-left-radius: 5px; 
+	-moz-border-radius-topleft: 5px; 
+	-webkit-border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	-moz-border-radius-topright: 5px; 
+	-webkit-border-top-right-radius: 5px;
+	box-sizing: border-box; 
+}
+#format-header .format-heading { 
+	color: #6AA84F; 
+	margin: 0; 
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5); 
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.format-form .txt-fld { 
+	position: relative; 
+	width: 100%; 
+	padding: 8px 12px; 
+	text-align: left;
+	float: left; 
+	box-sizing: border-box;
+}
+.format-form .txt-fld input[type="number"] {
+	width: 70px;
+}
+.format-form .btn-fld { 
+	width: 100%; 
+	overflow: hidden; 
+	padding: 8px 12px; 
+	box-sizing: border-box;
+}
+.format-form .txt-fld label.lbl { 
+	display: block; 
+	float: left; 
+	width: 30%; 
+	color: #222; 
+	font-size: 14px;
+	text-align: left;  
+}
+.format-form .txt-fld input.sfrminput { 
+	float: left; 
+	width: 244px; 
+	padding: 8px; 
+	border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	font-size: 14px;
+	color: #222; 
+	background: #F7F7F7; 
+	font-family: "Helvetica Neue"; 
+	outline: none; 
+	border-top: 1px solid #CCC; 
+	border-left: 1px solid #CCC; 
+	border-right: 1px solid #E7E6E6; 
+	border-bottom: 1px solid #E7E6E6; 
+}
+.format-form .txt-fld input.error_input { 
+	background: #FDE0E0; 
+}
+.format-form table.form-table {
+	margin: 0;
+}
+.format-form table.form-table th {
+	padding-left: 12px;
+}
+.format-form p {
+	padding: 8px 12px;
+}
+#format-social img {
+	vertical-align: middle;
+}
 /*responsive*/
 @media only screen and (min-width: 1280px) {
 	.ui-tabs-vertical-left .ui-tabs-nav li {

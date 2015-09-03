@@ -15,6 +15,9 @@ if( !class_exists( 'DocumentorLiteAjax' ) ) {
 				add_action('wp_ajax_doc_show_posts', array('DocumentorLiteGuide','doc_show_posts'));
 				add_action('wp_ajax_doc_show_search_results', array('DocumentorLiteGuide','show_search_results'));
 				add_action('wp_ajax_doc_save_sections', array('DocumentorLiteGuide','save_sections'));
+				//search results functions
+				add_action('wp_ajax_doc_search_results', array('DocumentorLiteGuide','get_search_results'));
+				add_action('wp_ajax_nopriv_doc_search_results', array('DocumentorLiteGuide','get_search_results'));
 			}
 			if( class_exists( 'DocumentorLiteFonts' ) and is_admin() ) {
 				add_action('wp_ajax_documentor_disp_gfweight',array('DocumentorLiteFonts','google_font_weight'));

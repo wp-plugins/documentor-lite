@@ -20,15 +20,10 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 		function documentor_action_links( $links, $file ) {
 			if ( $file != DOCUMENTORLITE_PLUGIN_BASENAME )
 				return $links;
-			$doc = new DocumentorLite();
-
-			$url = $doc->documentor_admin_url(array('page'=>'documentor-admin'));
-
+			$url = DocumentorLite::documentor_admin_url(array('page'=>'documentor-admin'));
 			$manage_link = '<a href="' . esc_attr( $url ) . '">'
 				. esc_html( __( 'Manage','documentorlite') ) . '</a>';
-
 			array_unshift( $links, $manage_link );
-
 			return $links;
 		}
 		// function for adding guides page to wp-admin
@@ -99,7 +94,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 				wp_enqueue_script( 'wp-color-picker' );
 				wp_enqueue_style( 'documentor-admin-css', DocumentorLite::documentor_plugin_url( 'core/css/admin.css' ), false, DOCUMENTORLITE_VER, 'all');
 					
-				wp_enqueue_script( 'documentor-admin-js', DocumentorLite::documentor_plugin_url( 'core/js/admin.js' ),array('jquery'), DOCUMENTORLITE_VER, false);
+				wp_enqueue_script( 'documentor-admin-js', DocumentorLite::documentor_plugin_url( 'core/js/admin.js' ),array('jquery','wp-color-picker'), DOCUMENTORLITE_VER, false);
 				wp_enqueue_script( 'documentor-modal-js', DocumentorLite::documentor_plugin_url( 'core/js/jquery.leanModal.min.js' ),array('jquery'), DOCUMENTORLITE_VER, false);
 				wp_enqueue_style( 'documentor_fontawesome_css', DocumentorLite::documentor_plugin_url( 'core/includes/font-awesome/css/font-awesome.min.css' ),
 				false, DOCUMENTORLITE_VER, 'all');
@@ -110,6 +105,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 			// Edit Document
 			$id = 1;
 			$guide=new DocumentorLiteGuide($id);
+			$documentor_curr = $guide->get_settings();
 			if(isset($_POST['save-settings'])) {
 				$numarr = array('indexformat', 'navmenu_default', 'navmenu_fsize', 'actnavbg_default', 'sectitle_default', 'sectitle_fsize', 'seccont_default', 'seccont_fsize');
 				foreach($_POST['documentor_options'] as $key=>$value) {
@@ -122,6 +118,19 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 						}
 					}
 					$new_settings_value[$key]=$value;
+				}
+				if(isset($_POST['documentor_options']['skin']) && $documentor_curr['skin'] != $_POST['documentor_options']['skin'] ) { 
+					/* Poulate skin specific settings */	
+					$skin = $_POST['documentor_options']['skin'];
+					$skin_defaults_str='default_settings_'.$skin;
+					require_once ( dirname( dirname(__FILE__) ). '/skins/'.$skin.'/settings.php');
+					global ${$skin_defaults_str};
+					if(count(${$skin_defaults_str})>0){
+						foreach(${$skin_defaults_str} as $key=>$value){
+							$new_settings_value[$key]=$value;	
+						} 
+					}
+					/* END - Poulate skin specific settings */ 
 				}
 				$newsettings = json_encode($new_settings_value);
 				$newtitle = ( isset( $_POST['guidename'] ) ) ? sanitize_text_field($_POST['guidename']) : ''; 

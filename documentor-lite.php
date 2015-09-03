@@ -2,7 +2,7 @@
 Plugin Name: Documentor Lite
 Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
-Version: 1.1.1
+Version: 1.2
 Author: WebFanzine Media
 Author URI: http://www.webfanzine.com/
 Wordpress version supported: 3.6 and above
@@ -24,6 +24,7 @@ class DocumentorLite{
 			'indexformat'=> 1,
 			'scrolling' => 1,
 			'fixmenu' => 1, 
+			'menuTop' => '0',
 			'navmenu_default' => 1,
 			'navt_font' =>'regular',
 			'navmenu_tfont' => 'Arial,Helvetica,sans-serif',
@@ -64,7 +65,26 @@ class DocumentorLite{
 			'rtl_support' => '0',
 			'menu_position' => 'left',
 			'updated_date' => '0',
-			'scrolltop' => '1'
+			'scrolltop' => '1',
+			'search_box' => '0',
+			'socialshare' => '0',
+			'sharecount' => '1', 
+			'socialbuttons' => array('1','1','1','1'),
+			'sbutton_style' => 'square',
+			'sbutton_position' => 'bottom',
+			'togglemenu' => '0',
+			'guidetitle' => '0',
+			'guidet_element' => '2',
+			'guidet_default' => 1,
+			'guidet_font' => 'regular',
+			'guidet_color' => '#000000',
+			'guidetitle_font' => 'Arial,Helvetica,sans-serif',
+			'guidet_fontg' => '',
+			'guidet_fontgw' => '',
+			'guidet_fontgsubset' => '',
+			'guidet_custom' => '',
+			'guidet_fsize' => '38',
+			'guidet_fstyle' => 'normal',
 		);
 		$this->documentor_global_options = array( 'custom_post' => 1,
 							'custom_styles' => ''
@@ -79,11 +99,15 @@ class DocumentorLite{
 	{
 		if ( ! defined( 'DOCUMENTORLITE_TABLE' ) ) define('DOCUMENTORLITE_TABLE','documentor'); //Documentor TABLE NAME
 		if ( ! defined( 'DOCUMENTORLITE_SECTIONS' ) ) define('DOCUMENTORLITE_SECTIONS','documentor_sections'); //sections TABLE NAME
-		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.1.1",false);//Current Version of Documentor
+		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.2",false);//Current Version of Documentor
 		if ( ! defined( 'DOCUMENTORLITE_PLUGIN_BASENAME' ) )
 			define( 'DOCUMENTORLITE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		if ( ! defined( 'DOCUMENTORLITE_CSS_DIR' ) )
 			define( 'DOCUMENTORLITE_CSS_DIR', WP_PLUGIN_DIR.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)).'/skins/' );
+		if ( ! defined( 'DOCLITE_PATH' ) )
+			define( 'DOCLITE_PATH', WP_PLUGIN_DIR.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)) );
+		if ( ! defined( 'DOCLITE_URLPATH' ) )
+			define('DOCLITE_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) ) );
 	}
 	function _register_hooks()
 	{
@@ -199,11 +223,11 @@ class DocumentorLite{
 		require_once (dirname (__FILE__) . '/core/ajax.php');
 	}
 	
-	function documentor_plugin_url( $path = '' ) {
+	public static function documentor_plugin_url( $path = '' ) {
 		return plugins_url( $path, __FILE__ );
 	}
 
-	function documentor_admin_url( $query = array() ) {
+	public static function documentor_admin_url( $query = array() ) {
 		global $plugin_page;
 
 		if ( ! isset( $query['page'] ) )

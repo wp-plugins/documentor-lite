@@ -3,8 +3,8 @@ Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc
 Requires at least: 3.6
-Tested up to: 4.2.2
-Stable tag: 1.1.1
+Tested up to: 4.3
+Stable tag: 1.2
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
@@ -81,6 +81,15 @@ There's 3 ways to install this plugin:
 Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
+
+= 1.2 =
+
+* New - Introduced new skin named 'Broad'
+* New - Search in Document
+* New - Toggle child menus in navigation of Document
+* New - Added social sharing for document and different settings of social share
+* New - Added an option to display title of document and format it as per the requirement.
+* New - Added Text Box to Handle Fixed Menu Pages
 
 = 1.1.1 =
 

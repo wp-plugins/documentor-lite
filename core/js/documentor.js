@@ -23,6 +23,43 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 	}, options.animation);
     });
 };
+//social share functions to get share count
+// Facebook Shares Count
+function docfacebookShares($URL) {
+	if ( jQuery('#doc_fb_share').hasClass('doc-fb-share') ) {
+		jQuery.getJSON('https://graph.facebook.com/?id=' + $URL, function (fbdata) {
+			jQuery('#doc-fb-count').text( ReplaceNumberWithCommas(fbdata.shares || 0) );
+		});
+	} 
+}
+// Twitter Shares Count
+function doctwitterShares($URL) {
+	if ( jQuery('#doc_twitter_share').hasClass('doc-twitter-share') ) {
+		jQuery.getJSON('https://cdn.api.twitter.com/1/urls/count.json?url=' + $URL + '&callback=?', function (twitdata) {
+			jQuery('#doc-twitter-count').text( ReplaceNumberWithCommas(twitdata.count) );
+		});
+	} 
+}
+// Pinterest Shares Count
+function docpinterestShares($URL) {
+	if ( jQuery('#doc_pin_share').hasClass('doc-pin-share') ) {
+		jQuery.getJSON('https://api.pinterest.com/v1/urls/count.json?url=' + $URL + '&callback=?', function (pindata) {
+			jQuery('#doc-pin-count').text( ReplaceNumberWithCommas(pindata.count) );
+		});
+	} 
+}
+function ReplaceNumberWithCommas(shareNumber) {
+	 if (shareNumber >= 1000000000) {
+		return (shareNumber / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+	 }
+	 if (shareNumber >= 1000000) {
+		return (shareNumber / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+	 }
+	 if (shareNumber >= 1000) {
+		return (shareNumber / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+	 }
+	 return shareNumber;
+}
 ;(function($){
 	jQuery.fn.documentor=function(args){
 		var defaults= {
@@ -37,7 +74,8 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 			skin		: "default",
 			scrollBarSize	: "3",
 			scrollBarColor	: "#F45349",
-			scrollBarOpacity: "0.4"
+			scrollBarOpacity: "0.4",
+			menuTop: '0'
 		}
 		
 		var options=jQuery.extend({},defaults,args);
@@ -57,15 +95,34 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 		} else {
 			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" ol {list-style: none;}#"+documentHandle+" li {list-style: none;}</style>");
 		}
-		if(options.actnavbg_default != '1' && options.actnavbg_color.length > 0 ) {
+		if(options.actnavbg_default != '1' && options.actnavbg_color.length > 0 && options.skin != 'broad') {
 			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" .doc-menu ol > li.doc-acta{background-color: "+options.actnavbg_color+"}</style>");
+		}
+		if(options.actnavbg_default != '1' && options.actnavbg_color.length > 0 && options.skin == 'broad') {
+			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" .doc-menu li.activeli > a, #"+documentHandle+" .doc-menu .documentor-relatedtitle{background-color: "+options.actnavbg_color+"; color: #fff !important;}</style>");
 		}
 		if( options.fixmenu == 1 ) {
 			var docEnd = jQuery("#"+documentHandle+"-end").position(); //cache the position
-			jQuery.lockfixed("#"+documentHandle+" .doc-menu",{offset: {top: 0, bottom: (document.body.clientHeight - docEnd.top)}});
+			jQuery.lockfixed("#"+documentHandle+" .doc-menu",{offset: {top: options.menuTop, bottom: (document.body.clientHeight - docEnd.top)}});
+		}
+		if( options.skin == 'broad' ) {
+			jQuery("#"+documentHandle+" ol.doc-list-front li:first").addClass('activeli');
 		}
 		//js
 		jQuery(this).find(".doc-menu a.documentor-menu:first, .doc-menu li.doc-actli:first").addClass('doc-acta');
+		/* Search in document */
+		jQuery("#"+documentHandle+" .search-document").autocomplete({
+			source: function(req, response){
+				req['docid'] = options.documentid;
+				jQuery.getJSON(DocAjax.docajaxurl+'?callback=?&action=doc_search_results', req, response);
+			},
+			select: function(event, ui) {
+				var thref = ui.item.slug;
+				jQuery("#"+documentHandle+" a[href=#"+thref+"]")[0].click();
+			},
+			delay: 200,
+			minLength: 3
+		}).autocomplete( "widget" ).addClass( "doc-sautocomplete" );
 			
 		/**
 		 * This part causes smooth scrolling using scrollto function
@@ -77,35 +134,35 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 			jQuery(this).parents('.doc-menu:first').find('a.documentor-menu, li.doc-actli').removeClass('doc-acta');
 			jQuery(this).addClass('doc-acta');
 			jQuery(this).parents('li.doc-actli:first').addClass('doc-acta');
+			//for broad skin
+			if( options.skin == 'broad' ) {
+				if( options.togglechild == 1 ) {
+					jQuery('.doc-menu li ol:not(:has(.doc-acta))').hide();
+					jQuery(this).parents('.doc-actli:last').find('ol').show();
+				}
+				jQuery("#"+documentHandle+" .doc-menu li").removeClass('activeli');
+				jQuery( "#"+documentHandle+" a.doc-acta" ).parents("li:last").addClass('activeli');
+				var mwrapcnt = jQuery( this ).data('mwrapcnt');
+				if( typeof mwrapcnt === 'undefined' ) {
+					mwrapcnt = jQuery(this).parents("li.doc-actli:last").find("a").data('mwrapcnt');
+				}
+				if( typeof mwrapcnt !== 'undefined' ) {
+					jQuery("#"+documentHandle+" .doc-sectionwrap").hide();
+					jQuery("#"+documentHandle+" .doc-sectionwrap[data-wrapcnt="+mwrapcnt+"]").fadeIn( 400 );
+				}
+			}
 			/* Do not apply animation effect if click on menu item */
 			jQuery("#"+documentHandle).find(".documentor-section").css({"visibility":"visible","-webkit-animation":"none"});
-			/**/
-			if( options.enable_ajax == '1' ) {
-				var secid = jQuery( this ).attr("data-section-id");
-				var docid = jQuery( this ).parents(".documentor-wrap:first").find(".hidden_docid").val();
-				var data = {
-					'action': 'doc_get_ajaxcontent',
-					'secid': secid,
-					'docid': docid
-				};
-				//display loader
-				jQuery("#"+documentHandle).find(".doc-sec-container").empty();
-				jQuery("#"+documentHandle).find(".doc-sec-container").append('<div class="doc-loader"></div>');
-				jQuery.post(DocAjax.docajaxurl, data, function(response) {
-					if( response != "0" ) {
-						jQuery("#"+documentHandle).find('.doc-sec-container').html(response);
-					}
-				}).always( function() { 
-					var cnxt=jQuery("#"+documentHandle).find('#section-'+data['secid']);
-				   	bindsectionBehaviour(cnxt);
-				 });
-			 }
-			 if( jQuery(this.hash).length > 0 && options.scrolling == 1 ) {
+			if( jQuery(this.hash).length > 0 && options.scrolling == 1 ) {
 			 	jQuery('html,body').docuScrollTo( this.hash, this.hash ); 
 			}
 		
 		});
-		           
+		/* For broad skin - if link with hash value of section is opened in window */
+		if( location.hash != "" && options.skin == 'broad' ) {
+			var hashval = location.hash;
+			jQuery("a.documentor-menu[data-href='"+hashval+"']").trigger("click");
+		}      
 		/**
 		 * This part handles the highlighting functionality.
 		 */
@@ -136,8 +193,8 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 				for (var i=0; i < aArray.length; i++) {
 					if( jQuery(aArray[i]).length > 0 ) {
 						var theID = aArray[i];
-						var divPos = jQuery(theID).offset().top; // get the offset of the div from the top of page
-						var divHeight = jQuery(theID).height(); // get the height of the div in question
+						var divPos = jQuery(theID).offset().top - (windowHeight*0.40); // get the offset of the div from the top of page
+						var divHeight = jQuery(theID).outerHeight(true); // get the height of the div in question
 						if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
 							jQuery("#"+documentHandle+" a[href='" + theID + "']").addClass("doc-acta");
 						} else {
@@ -183,7 +240,34 @@ jQuery.docuScrollTo = jQuery.fn.docuScrollTo = function(x, y, options){
 			  height: '100%', 
 			  color: options.scrollBarColor, 
 			  opacity: options.scrollBarOpacity,
+		});
+		/* Expand / collapse menus */
+		jQuery("#"+documentHandle+" .doc-menu.toggle .doc-mtoggle").on('click', function() {
+			jQuery(this).toggleClass('expand');
+			jQuery(this).parent('.doc-actli').find('ol:first').slideToggle('slow');
 		});	
+		/* Call social sharing count functtions on load */
+		if( options.socialshare == 1 && options.sharecount == 1 ) {
+			var sharelink = jQuery("#"+documentHandle+" .doc-sharelink").data('sharelink');
+			if( sharelink != '' ) {
+				if( options.fbshare == 1 ) {
+					docfacebookShares( sharelink );
+				}
+				if( options.twittershare == 1 ) {
+					doctwitterShares( sharelink );
+				}
+				if( options.gplusshare == 1 ) {
+					if ( jQuery('#doc_gplus_share').hasClass('doc-gplus-share') ) {
+						// Google Plus Shares Count
+						var googleplusShares = jQuery('#doc-gplus-count').data('gpluscnt');
+						jQuery('#doc-gplus-count').text( ReplaceNumberWithCommas(googleplusShares) )
+					}
+				}
+				if( options.pinshare == 1 ) {
+					docpinterestShares( sharelink );
+				}
+			}
+		}
 	}
 })(jQuery);
 

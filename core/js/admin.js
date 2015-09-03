@@ -46,6 +46,14 @@ jQuery(document).ready(function() {
 		} else {
 	               jQuery(this).prev('.hidden_check').val(0);
 		}
+		if( jQuery(this).attr('id') == 'enable-fixmenu' ) {
+			if( jQuery("#doc-enable-fixmenu").val() == '1' ) {
+				jQuery(".menuTop").show();
+			}
+			else{
+				jQuery(".menuTop").hide();
+			}
+		}
 	}); 
 	jQuery(".documentor_editguide .docname").on('input keyup', function() {
 		jQuery("input.guidename").val(jQuery(this).val());

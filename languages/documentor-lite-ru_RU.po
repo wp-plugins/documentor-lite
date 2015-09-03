@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Documentor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sat May 09 2015 16:19:37 GMT+0530 (IST)\n"
-"PO-Revision-Date: Sat May 16 2015 18:04:05 GMT+0530 (IST)\n"
+"POT-Creation-Date: Wed Aug 05 2015 11:48:21 GMT+0530 (IST)\n"
+"PO-Revision-Date: Thu Sep 03 2015 11:36:33 GMT+0530 (IST)\n"
 "Last-Translator: admin <sagar.katarnaware@webfanzine.com>\n"
 "Language-Team: \n"
 "Language: Russian\n"
@@ -23,221 +23,17 @@ msgstr ""
 "X-Loco-Target-Locale: ru_RU\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: ../core/guide.php:1083
-msgid "Attention Seekers"
-msgstr ""
-
-#: ../core/guide.php:1084
-msgid "bounce"
-msgstr ""
-
-#: ../core/guide.php:1085
-msgid "flash"
-msgstr ""
-
-#: ../core/guide.php:1086
-msgid "pulse"
-msgstr ""
-
-#: ../core/guide.php:1087
-msgid "rubberBand"
-msgstr ""
-
-#: ../core/guide.php:1088
-msgid "shake"
-msgstr ""
-
-#: ../core/guide.php:1089
-msgid "swing"
-msgstr ""
-
-#: ../core/guide.php:1090
-msgid "tada"
-msgstr ""
-
-#: ../core/guide.php:1091
-msgid "wobble"
-msgstr ""
-
-#: ../core/guide.php:1093
-msgid "Bouncing Entrances"
-msgstr ""
-
-#: ../core/guide.php:1094
-msgid "bounceIn"
-msgstr ""
-
-#: ../core/guide.php:1095
-msgid "bounceInDown"
-msgstr ""
-
-#: ../core/guide.php:1096
-msgid "bounceInLeft"
-msgstr ""
-
-#: ../core/guide.php:1097
-msgid "bounceInRight"
-msgstr ""
-
-#: ../core/guide.php:1098
-msgid "bounceInUp"
-msgstr ""
-
-#: ../core/guide.php:1101
-msgid "Fading Entrances"
-msgstr ""
-
-#: ../core/guide.php:1102
-msgid "fadeIn"
-msgstr ""
-
-#: ../core/guide.php:1103
-msgid "fadeInDown"
-msgstr ""
-
-#: ../core/guide.php:1104
-msgid "fadeInDownBig"
-msgstr ""
-
-#: ../core/guide.php:1105
-msgid "fadeInLeft"
-msgstr ""
-
-#: ../core/guide.php:1106
-msgid "fadeInLeftBig"
-msgstr ""
-
-#: ../core/guide.php:1107
-msgid "fadeInRight"
-msgstr ""
-
-#: ../core/guide.php:1108
-msgid "fadeInRightBig"
-msgstr ""
-
-#: ../core/guide.php:1109
-msgid "fadeInUp"
-msgstr ""
-
-#: ../core/guide.php:1110
-msgid "fadeInUpBig"
-msgstr ""
-
-#: ../core/guide.php:1113
-msgid "Flippers"
-msgstr ""
-
-#: ../core/guide.php:1114
-msgid "flip"
-msgstr ""
-
-#: ../core/guide.php:1115
-msgid "flipInX"
-msgstr ""
-
-#: ../core/guide.php:1116
-msgid "flipInY"
-msgstr ""
-
-#: ../core/guide.php:1119
-msgid "Lightspeed"
-msgstr ""
-
-#: ../core/guide.php:1120
-msgid "lightSpeedIn"
-msgstr ""
-
-#: ../core/guide.php:1123
-msgid "Rotating Entrances"
-msgstr ""
-
-#: ../core/guide.php:1124
-msgid "rotateIn"
-msgstr ""
-
-#: ../core/guide.php:1125
-msgid "rotateInDownLeft"
-msgstr ""
-
-#: ../core/guide.php:1126
-msgid "rotateInDownRight"
-msgstr ""
-
-#: ../core/guide.php:1127
-msgid "rotateInUpLeft"
-msgstr ""
-
-#: ../core/guide.php:1128
-msgid "rotateInUpRight"
-msgstr ""
-
-#: ../core/guide.php:1131
-msgid "Specials"
-msgstr ""
-
-#: ../core/guide.php:1132
-msgid "hinge"
-msgstr ""
-
-#: ../core/guide.php:1133
-msgid "rollIn"
-msgstr ""
-
-#: ../core/guide.php:1136
-msgid "Zoom Entrances"
-msgstr ""
-
-#: ../core/guide.php:1137
-msgid "zoomIn"
-msgstr ""
-
-#: ../core/guide.php:1138
-msgid "zoomInDown"
-msgstr ""
-
-#: ../core/guide.php:1139
-msgid "zoomInLeft"
-msgstr ""
-
-#: ../core/guide.php:1140
-msgid "zoomInRight"
-msgstr ""
-
-#: ../core/guide.php:1141
-msgid "zoomInUp"
-msgstr ""
-
-#: ../core/guide.php:1144
-msgid "Slide Entrances"
-msgstr ""
-
-#: ../core/guide.php:1145
-msgid "slideInDown"
-msgstr ""
-
-#: ../core/guide.php:1146
-msgid "slideInLef"
-msgstr ""
-
-#: ../core/guide.php:1147
-msgid "slideInRight"
-msgstr ""
-
-#: ../core/guide.php:1148
-msgid "slideInUp"
-msgstr ""
-
-#: ../documentor.php:378
+#: ../documentor.php:419
 msgctxt "post type general name"
 msgid "Sections"
 msgstr "Разделы"
 
-#: ../documentor.php:379
+#: ../documentor.php:420
 msgctxt "post type singular name"
 msgid "Section"
 msgstr "Раздел"
 
-#: ../documentor.php:380
+#: ../documentor.php:421
 msgctxt "documentor"
 msgid "Add New"
 msgstr ""
@@ -245,18 +41,16 @@ msgstr ""
 " \n"
 "новый"
 
-#: ../documentor.php:381
+#: ../documentor.php:422
 msgid "Add New Documentor Section"
 msgstr ""
-"Добавить\n"
-" \n"
-"новый\n"
-" \n"
+"Добавить новый\n"
+" \n"
 "раздел\n"
-" \n"
+" \n"
 "Documentor\n"
 
-#: ../documentor.php:382
+#: ../documentor.php:423
 msgid "Edit Documentor Section"
 msgstr ""
 "Изменить\n"
@@ -265,7 +59,7 @@ msgstr ""
 " \n"
 "Documentor"
 
-#: ../documentor.php:383
+#: ../documentor.php:424
 msgid "New Documentor Section"
 msgstr ""
 "Новый\n"
@@ -274,7 +68,7 @@ msgstr ""
 " \n"
 "Documentor"
 
-#: ../documentor.php:384
+#: ../documentor.php:425
 msgid "All Documentor Sections"
 msgstr ""
 "Все\n"
@@ -283,7 +77,7 @@ msgstr ""
 " \n"
 "Documentor"
 
-#: ../documentor.php:385
+#: ../documentor.php:426
 msgid "View Documentor Section"
 msgstr ""
 "Просмотр\n"
@@ -292,7 +86,7 @@ msgstr ""
 " \n"
 "Секция"
 
-#: ../documentor.php:386
+#: ../documentor.php:427
 msgid "Search Documentor Sections"
 msgstr ""
 "Поиск\n"
@@ -301,7 +95,7 @@ msgstr ""
 " \n"
 "разделы"
 
-#: ../documentor.php:387
+#: ../documentor.php:428
 msgid "No Documentor sections found"
 msgstr ""
 "Не\n"
@@ -310,7 +104,7 @@ msgstr ""
 " \n"
 "разделы"
 
-#: ../documentor.php:388
+#: ../documentor.php:429
 msgid "No Documentor section found in Trash"
 msgstr ""
 "Не\n"
@@ -323,7 +117,7 @@ msgstr ""
 " \n"
 "корзину"
 
-#: ../documentor.php:414
+#: ../documentor.php:455
 #, php-format
 msgid "Documentor Section updated. <a href=\"%s\">View Documentor section</a>"
 msgstr ""
@@ -340,7 +134,7 @@ msgstr ""
 "Секция\n"
 "</a>"
 
-#: ../documentor.php:415
+#: ../documentor.php:456
 msgid "Custom field updated."
 msgstr ""
 "Обновление\n"
@@ -350,7 +144,7 @@ msgstr ""
 "поля\n"
 "."
 
-#: ../documentor.php:416
+#: ../documentor.php:457
 msgid "Custom field deleted."
 msgstr ""
 "Настраиваемое\n"
@@ -360,7 +154,7 @@ msgstr ""
 "удалено\n"
 "."
 
-#: ../documentor.php:417
+#: ../documentor.php:458
 msgid "Documentor Section updated."
 msgstr ""
 "Обновлен\n"
@@ -371,7 +165,7 @@ msgstr ""
 "."
 
 #. translators: %s: date and time of the revision
-#: ../documentor.php:419
+#: ../documentor.php:460
 #, php-format
 msgid "Documentor section restored to revision from %s"
 msgstr ""
@@ -389,7 +183,7 @@ msgstr ""
 " \n"
 "%s\n"
 
-#: ../documentor.php:420
+#: ../documentor.php:461
 #, php-format
 msgid "Documentor Section published. <a href=\"%s\">View Documentor section</a>"
 msgstr ""
@@ -406,7 +200,7 @@ msgstr ""
 "Секция\n"
 "</a>"
 
-#: ../documentor.php:421
+#: ../documentor.php:462
 msgid "Section saved."
 msgstr ""
 "Раздел\n"
@@ -414,7 +208,7 @@ msgstr ""
 "сохранены\n"
 "."
 
-#: ../documentor.php:422
+#: ../documentor.php:463
 #, php-format
 msgid ""
 "Documentor Section submitted. <a target=\"_blank\" href=\"%s\">Preview "
@@ -434,7 +228,7 @@ msgstr ""
 "Секция\n"
 "</a>"
 
-#: ../documentor.php:423
+#: ../documentor.php:464
 #, php-format
 msgid ""
 "Documentor Sections scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
@@ -459,11 +253,11 @@ msgstr ""
 "</a>"
 
 #. translators: Publish box date format, see http://php.net/date
-#: ../documentor.php:425
+#: ../documentor.php:466
 msgid "M j, Y @ G:i"
 msgstr "M d, Y @ g"
 
-#: ../documentor.php:426
+#: ../documentor.php:467
 #, php-format
 msgid ""
 "Documentor Section draft updated. <a target=\"_blank\" href=\"%s\">Preview "
@@ -485,6 +279,127 @@ msgstr ""
 "Секция\n"
 "</a>"
 
+#: ../documentor.php:516
+msgid "Documentation"
+msgstr "Документация"
+
+#: ../skins/broad/index.php:210 ../skins/broad/index.php:431 ..
+#: /skins/default/index.php:206 ../skins/default/index.php:427 ..
+#: /skins/cherry/index.php:187 ../skins/cherry/index.php:399 ../skins/bar/index.
+#: php:204 ../skins/bar/index.php:425 ../skins/mint/index.php:208 ..
+#: /skins/mint/index.php:431 ../core/guide.php:228 ../core/guide.php:1045 ..
+#: /core/guide.php:2474 ../core/guide.php:2570 ../core/admin.php:559
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../skins/broad/index.php:260 ../skins/broad/index.php:309 ../skins/broad/index.
+#: php:491 ../skins/default/index.php:256 ../skins/default/index.php:305 ..
+#: /skins/default/index.php:487 ../skins/cherry/index.php:236 ..
+#: /skins/cherry/index.php:283 ../skins/cherry/index.php:459 ../skins/bar/index.
+#: php:253 ../skins/bar/index.php:300 ../skins/bar/index.php:485 ..
+#: /skins/mint/index.php:257 ../skins/mint/index.php:304 ../skins/mint/index.php:
+#: 491
+msgid "Was this helpful?"
+msgstr ""
+"Было\n"
+" \n"
+"полезно\n"
+"?"
+
+#: ../skins/broad/index.php:266 ../skins/broad/index.php:315 ../skins/broad/index.
+#: php:496 ../skins/default/index.php:262 ../skins/default/index.php:311 ..
+#: /skins/default/index.php:492 ../skins/cherry/index.php:241 ..
+#: /skins/cherry/index.php:288 ../skins/cherry/index.php:464 ../skins/bar/index.
+#: php:258 ../skins/bar/index.php:305 ../skins/bar/index.php:490 ..
+#: /skins/mint/index.php:262 ../skins/mint/index.php:309 ../skins/mint/index.php:
+#: 496
+msgid "Suggest edit"
+msgstr "Suggest edit"
+
+#: ../skins/broad/index.php:269 ../skins/broad/index.php:318 ../skins/broad/index.
+#: php:499 ../skins/default/index.php:265 ../skins/default/index.php:314 ..
+#: /skins/default/index.php:495 ../skins/cherry/index.php:244 ..
+#: /skins/cherry/index.php:291 ../skins/cherry/index.php:467 ../skins/bar/index.
+#: php:261 ../skins/bar/index.php:308 ../skins/bar/index.php:493 ..
+#: /skins/mint/index.php:265 ../skins/mint/index.php:312 ../skins/mint/index.php:
+#: 499
+msgid "Last updated on"
+msgstr ""
+"Последняя\n"
+" \n"
+"модификация"
+
+#: ../skins/broad/index.php:274 ../skins/broad/index.php:323 ../skins/broad/index.
+#: php:504 ../skins/default/index.php:270 ../skins/default/index.php:319 ..
+#: /skins/default/index.php:500 ../skins/cherry/index.php:249 ..
+#: /skins/cherry/index.php:296 ../skins/cherry/index.php:472 ../skins/bar/index.
+#: php:266 ../skins/bar/index.php:313 ../skins/bar/index.php:498 ..
+#: /skins/mint/index.php:270 ../skins/mint/index.php:317 ../skins/mint/index.php:
+#: 504
+msgid " users found this section helpful"
+msgstr "Пользователи, пригодился этот раздел"
+
+#: ../skins/broad/index.php:336 ../skins/broad/index.php:526 ..
+#: /skins/default/index.php:332 ../skins/default/index.php:521 ..
+#: /skins/cherry/index.php:307 ../skins/cherry/index.php:496 ../skins/bar/index.
+#: php:325 ../skins/bar/index.php:520 ../skins/mint/index.php:330 ..
+#: /skins/mint/index.php:528 ../core/guide.php:2502 ../core/guide.php:2598
+msgid "Next"
+msgstr "Следующая"
+
+#: ../skins/broad/index.php:492 ../skins/default/index.php:488 ..
+#: /skins/cherry/index.php:460 ../skins/bar/index.php:486 ../skins/mint/index.php:
+#: 492
+msgid "Yes"
+msgstr "Да"
+
+#: ../skins/broad/index.php:493 ../skins/default/index.php:489 ..
+#: /skins/cherry/index.php:461 ../skins/bar/index.php:487 ../skins/mint/index.php:
+#: 493
+msgid "No"
+msgstr "Не"
+
+#: ../skins/broad/index.php:519 ../skins/default/index.php:514 ..
+#: /skins/cherry/index.php:489 ../skins/bar/index.php:513 ../skins/mint/index.php:
+#: 521 ../core/guide.php:2493 ../core/guide.php:2588
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: ../skins/broad/index.php:583 ../skins/broad/index.php:605 ..
+#: /skins/default/index.php:578 ../skins/default/index.php:600 ..
+#: /skins/cherry/index.php:552 ../skins/cherry/index.php:574 ../skins/bar/index.
+#: php:575 ../skins/bar/index.php:597 ../skins/mint/index.php:583 ..
+#: /skins/mint/index.php:605
+msgid "Search in Document"
+msgstr "Поиск в документе"
+
+#: ../skins/broad/index.php:690 ../skins/default/index.php:684 ..
+#: /skins/cherry/index.php:657 ../skins/bar/index.php:678 ../skins/mint/index.php:
+#: 689
+msgid "Author: "
+msgstr "Автор:"
+
+#: ../skins/broad/index.php:694 ../skins/default/index.php:688 ..
+#: /skins/cherry/index.php:661 ../skins/bar/index.php:682 ../skins/mint/index.php:
+#: 693
+msgid "Version: "
+msgstr "Версия:"
+
+#: ../skins/broad/index.php:699 ../skins/default/index.php:693 ..
+#: /skins/cherry/index.php:666 ../skins/bar/index.php:687 ../skins/mint/index.php:
+#: 698
+msgid "Dated: "
+msgstr "От:"
+
+#: ../skins/broad/index.php:729 ../skins/default/index.php:718 ..
+#: /skins/cherry/index.php:691 ../skins/bar/index.php:712 ../skins/mint/index.php:
+#: 723
+msgid "Suggest Edit"
+msgstr ""
+"Предлагаю\n"
+" \n"
+"изменить"
+
 #: ../core/section.php:92 ../core/section.php:169 ../core/section.php:250
 msgid "Section added successfully!!!"
 msgstr ""
@@ -494,15 +409,15 @@ msgstr ""
 " \n"
 "успешно!!!"
 
-#: ../core/section.php:448 ../core/guide.php:230 ../core/guide.php:999
+#: ../core/section.php:449 ../core/guide.php:233 ../core/guide.php:1079
 msgid "Menu Title"
 msgstr ""
 "Название\n"
 " \n"
 "меню"
 
-#: ../core/section.php:449 ../core/guide.php:231 ../core/guide.php:234 ..
-#: core/guide.php:1000
+#: ../core/section.php:450 ../core/guide.php:234 ../core/guide.php:237 ..
+#: /core/guide.php:1080
 msgid "Enter Menu Title"
 msgstr ""
 "Введите\n"
@@ -511,14 +426,14 @@ msgstr ""
 " \n"
 "меню"
 
-#: ../core/section.php:452
+#: ../core/section.php:453
 msgid "Link URL"
 msgstr ""
 "URL-адрес\n"
 " \n"
 "ссылки"
 
-#: ../core/section.php:458 ../core/guide.php:242
+#: ../core/section.php:459 ../core/guide.php:245
 msgid "Open in new window"
 msgstr ""
 "Открыть\n"
@@ -529,12 +444,12 @@ msgstr ""
 " \n"
 "окне"
 
-#: ../core/section.php:460 ../core/guide.php:1031 ../core/guide.php:2071 ..
-#: core/guide.php:2165
+#: ../core/section.php:461 ../core/guide.php:1111 ../core/guide.php:2506 ..
+#: /core/guide.php:2602
 msgid "Insert"
 msgstr "Вставка"
 
-#: ../core/section.php:481 ../core/section.php:556
+#: ../core/section.php:486 ../core/section.php:568
 msgid ""
 "You have already given your feedback to this section. You can again give "
 "feedback for the same section after 24hrs"
@@ -576,17 +491,17 @@ msgstr ""
 " \n"
 "24 часов"
 
-#: ../core/section.php:506 ../core/guide.php:1635 ../core/guide.php:1697 ..
-#: core/guide.php:2023 ../core/guide.php:2117
+#: ../core/section.php:513 ../core/guide.php:1800 ../core/guide.php:1862 ..
+#: /core/guide.php:2456 ../core/guide.php:2552
 msgid "Name"
 msgstr "Имя"
 
-#: ../core/section.php:511 ../core/guide.php:1523 ../core/guide.php:1643 ..
-#: core/guide.php:1671 ../core/guide.php:1705 ../core/guide.php:1733
+#: ../core/section.php:518 ../core/guide.php:1650 ../core/guide.php:1808 ..
+#: /core/guide.php:1836 ../core/guide.php:1870 ../core/guide.php:1898
 msgid "Email"
 msgstr "Отправить по электронной почте"
 
-#: ../core/section.php:516
+#: ../core/section.php:523
 msgid "Post your feedback..."
 msgstr ""
 "Опубликовать\n"
@@ -595,11 +510,11 @@ msgstr ""
 " \n"
 "отзыв..."
 
-#: ../core/section.php:526
+#: ../core/section.php:533
 msgid "Captcha : "
 msgstr "Captcha :"
 
-#: ../core/section.php:617 ../core/section.php:730
+#: ../core/section.php:636 ../core/section.php:780
 msgid "Please select Guide manager at settings panel to whom suggestion will be send"
 msgstr ""
 "Выберите\n"
@@ -625,7 +540,7 @@ msgstr ""
 " \n"
 "отправлено"
 
-#: ../core/section.php:647 ../core/section.php:757
+#: ../core/section.php:667 ../core/section.php:808
 msgid "Please provide email address"
 msgstr ""
 "Укажите\n"
@@ -634,7 +549,7 @@ msgstr ""
 " \n"
 "электронной почты"
 
-#: ../core/section.php:652 ../core/section.php:762
+#: ../core/section.php:673 ../core/section.php:814
 msgid "Invaild email address"
 msgstr ""
 "Недопустимые\n"
@@ -643,7 +558,7 @@ msgstr ""
 " \n"
 "электронной почты"
 
-#: ../core/section.php:657
+#: ../core/section.php:679
 msgid "Please add your feedback"
 msgstr ""
 "Пожалуйста\n"
@@ -654,11 +569,11 @@ msgstr ""
 " \n"
 "отзывы"
 
-#: ../core/section.php:661 ../core/section.php:771
+#: ../core/section.php:684 ../core/section.php:825
 msgid "Please enter captcha"
 msgstr "Please enter captcha"
 
-#: ../core/section.php:670 ../core/section.php:779
+#: ../core/section.php:694 ../core/section.php:834
 msgid "Invalid Captcha Entered"
 msgstr ""
 "Недопустимый\n"
@@ -667,7 +582,11 @@ msgstr ""
 " \n"
 "вступил"
 
-#: ../core/section.php:995 ../core/guide.php:2435
+#: ../core/section.php:820
+msgid "Please add your suggestion"
+msgstr "Пожалуйста, добавьте ваше предложение"
+
+#: ../core/section.php:1128 ../core/guide.php:2916
 msgid "PDF generated successfully"
 msgstr ""
 "PDF\n"
@@ -676,194 +595,69 @@ msgstr ""
 " \n"
 "создан"
 
-#: ../core/admin.php:38 ../core/admin.php:50
-msgid "Manage"
-msgstr "Управление"
+#: ../core/guide.php:229
+msgid "Comments/Suggestion"
+msgstr "Комментарии/предложения"
 
-#: ../core/admin.php:47 ../core/admin.php:47 ../core/admin.php:56
-msgid "Documentor"
-msgstr "Documentor"
-
-#: ../core/admin.php:49 ../core/admin.php:49
-msgid "Create New"
-msgstr ""
-"Создать\n"
-" \n"
-"новый"
-
-#: ../core/admin.php:50 ../core/admin.php:377
-msgid "Manage Guides"
-msgstr ""
-"Управлять\n"
-" \n"
-"гиды"
-
-#: ../core/admin.php:51 ../core/admin.php:51
-msgid "Global Settings"
-msgstr ""
-"Глобальные\n"
-" \n"
-"параметры"
-
-#: ../core/admin.php:52
-msgid "Documentor - License"
-msgstr ""
-"Documentor\n"
-" \n"
-"-\n"
-" \n"
-"лицензия"
-
-#: ../core/admin.php:52
-msgid "License"
-msgstr "Лицензия"
-
-#: ../core/admin.php:89
-msgid "Menu Title "
-msgstr ""
-"Название\n"
-" \n"
-"меню"
-
-#: ../core/admin.php:97
-msgid "Section Title "
-msgstr ""
-"Название\n"
-" \n"
-"раздела"
-
-#: ../core/admin.php:150
-msgid "Guide Name"
-msgstr ""
-"Имя\n"
-" \n"
-"руководства"
-
-#: ../core/admin.php:155
-msgid "Apply Settings"
-msgstr ""
-"Применить\n"
-" \n"
-"настройки"
-
-#: ../core/admin.php:387 ../core/admin.php:395 ../core/guide.php:1935
-msgid "Title"
-msgstr "Название"
-
-#: ../core/admin.php:388 ../core/admin.php:396 ../core/guide.php:1903
-msgid "Shortcode"
-msgstr "Короткий номер"
-
-#: ../core/admin.php:389 ../core/admin.php:397 ../core/guide.php:1910
-msgid "Template Tag"
-msgstr ""
-"Шаблон\n"
-" \n"
-"тег"
-
-#: ../core/admin.php:416 ../core/guide.php:226 ../core/guide.php:965 ..
-#: core/guide.php:2041 ../core/guide.php:2135 ../skins/default/index.php:204 ..
-#: skins/default/index.php:409 ../skins/mint/index.php:206 ../skins/mint/index.
-#: php:412 ../skins/cherry/index.php:188 ../skins/cherry/index.php:385 ..
-#: skins/bar/index.php:206 ../skins/bar/index.php:410
-msgid "Edit"
-msgstr "Редактировать"
-
-#: ../core/admin.php:416
-msgid "Preview"
-msgstr "Предварительный просмотр"
-
-#: ../core/admin.php:416
-msgid "Delete"
-msgstr "Удалить"
-
-#: ../core/admin.php:416
-msgid "Export"
-msgstr "Экспорт"
-
-#: ../core/admin.php:462
-msgid "Documentor Global Settings"
-msgstr ""
-"Documentor\n"
-" \n"
-"глобальные\n"
-" \n"
-"параметры"
-
-#: ../core/admin.php:467
-msgid "Enable Inline Sections"
-msgstr ""
-"Включить\n"
-" \n"
-"встроенные\n"
-" \n"
-"разделы"
-
-#: ../core/admin.php:477
-msgid "Supported Post Types for adding sections"
-msgstr ""
-"Поддерживаемые\n"
-" \n"
-"типы\n"
-" \n"
-"пост\n"
-" \n"
-"для\n"
-" \n"
-"добавления\n"
-" \n"
-"разделов"
-
-#: ../core/admin.php:500
-msgid "Custom Styles"
-msgstr ""
-"Пользовательские\n"
-" \n"
-"стили"
-
-#: ../core/guide.php:233 ../core/guide.php:1003 ../core/guide.php:1307 ..
-#: core/guide.php:1811
+#: ../core/guide.php:236 ../core/guide.php:1083 ../core/guide.php:1423 ..
+#: /core/guide.php:2040
 msgid "Section Title"
 msgstr ""
 "Название\n"
 " \n"
 "раздела"
 
-#: ../core/guide.php:238 ../core/guide.php:1515
+#: ../core/guide.php:241 ../core/guide.php:1642
 msgid "Link"
 msgstr "Ссылка"
 
-#: ../core/guide.php:246
+#: ../core/guide.php:249
 msgid "Slug"
 msgstr "Слизень"
 
-#: ../core/guide.php:247
+#: ../core/guide.php:250
 msgid "Enter slug"
 msgstr ""
 "Введите\n"
 " \n"
 "слизень"
 
-#: ../core/guide.php:254
+#: ../core/guide.php:253
+msgid "Feedback count"
+msgstr "Количество отзывов"
+
+#: ../core/guide.php:255
+msgid "Upvotes"
+msgstr "Upvotes"
+
+#: ../core/guide.php:257
+msgid "Downvotes"
+msgstr "Downvotes"
+
+#: ../core/guide.php:259
+msgid "Reset"
+msgstr "Сброс"
+
+#: ../core/guide.php:267
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../core/guide.php:256
+#: ../core/guide.php:269
 msgid "Remove"
 msgstr "Удалить"
 
-#: ../core/guide.php:258
+#: ../core/guide.php:271
 msgid "Cancel"
 msgstr "Отмена"
 
-#: ../core/guide.php:260 ../core/guide.php:956
+#: ../core/guide.php:273 ../core/guide.php:1035
 msgid "Generate PDF"
 msgstr ""
 "Создать\n"
 " \n"
 "PDF"
 
-#: ../core/guide.php:563
+#: ../core/guide.php:642
 msgid "error: Guide name could not be blank"
 msgstr ""
 "Ошибка\n"
@@ -881,7 +675,7 @@ msgstr ""
 " \n"
 "пустым"
 
-#: ../core/guide.php:625
+#: ../core/guide.php:704
 msgid "error: slug could not be blank."
 msgstr ""
 "Ошибка\n"
@@ -898,7 +692,7 @@ msgstr ""
 "пустым\n"
 "."
 
-#: ../core/guide.php:629
+#: ../core/guide.php:708
 msgid "error: menu title could not be blank."
 msgstr ""
 "Ошибка\n"
@@ -917,7 +711,7 @@ msgstr ""
 "пустым\n"
 "."
 
-#: ../core/guide.php:631
+#: ../core/guide.php:710
 msgid "error: section title could not be blank."
 msgstr ""
 "Ошибка\n"
@@ -936,7 +730,7 @@ msgstr ""
 "пустым\n"
 "."
 
-#: ../core/guide.php:639
+#: ../core/guide.php:718
 msgid "error: link url could not be blank."
 msgstr ""
 "Ошибка\n"
@@ -955,55 +749,59 @@ msgstr ""
 "пустым\n"
 "."
 
-#: ../core/guide.php:922 ../core/guide.php:922
+#: ../core/guide.php:1001 ../core/guide.php:1001
 msgid "Sections"
 msgstr "Разделы"
 
-#: ../core/guide.php:923 ../core/guide.php:923
+#: ../core/guide.php:1002 ../core/guide.php:1002
 msgid "Settings"
 msgstr "Параметры"
 
-#: ../core/guide.php:926
+#: ../core/guide.php:1005
 msgid "Related documnets"
 msgstr ""
 "Связанные\n"
 " \n"
 "документы"
 
-#: ../core/guide.php:926
+#: ../core/guide.php:1005 ../core/guide.php:1729
 msgid "Related"
 msgstr "Связанные с"
 
-#: ../core/guide.php:928
+#: ../core/guide.php:1007
 msgid "Embed code"
 msgstr ""
 "Код\n"
 " для \n"
 "вставки"
 
-#: ../core/guide.php:928
+#: ../core/guide.php:1007
 msgid "Embed Code"
 msgstr ""
 "Код\n"
 " для \n"
 "вставки"
 
-#: ../core/guide.php:934 ../core/guide.php:934
+#: ../core/guide.php:1013 ../core/guide.php:1013
 msgid "Add Section"
 msgstr ""
 "Добавить\n"
 " \n"
 "раздел"
 
-#: ../core/guide.php:974
+#: ../core/guide.php:1036
+msgid "Reset Feedback Counts"
+msgstr "Сброс счетчиков обратной связи"
+
+#: ../core/guide.php:1054
 msgid "Inline"
 msgstr "Встроенный"
 
-#: ../core/guide.php:989
+#: ../core/guide.php:1069
 msgid "Links"
 msgstr "Ссылки\n"
 
-#: ../core/guide.php:1004
+#: ../core/guide.php:1084
 msgid "Enter Section Title"
 msgstr ""
 "Введите\n"
@@ -1012,11 +810,11 @@ msgstr ""
 " \n"
 "раздела"
 
-#: ../core/guide.php:1007
+#: ../core/guide.php:1087
 msgid "Content"
 msgstr "Содержание"
 
-#: ../core/guide.php:1040
+#: ../core/guide.php:1120
 msgid "Back to Edit"
 msgstr ""
 "Вернуться\n"
@@ -1025,63 +823,293 @@ msgstr ""
 " \n"
 "редактировать"
 
-#: ../core/guide.php:1053
+#: ../core/guide.php:1132
 msgid "Basic Settings"
 msgstr ""
 "Основные\n"
 " \n"
 "параметры"
 
-#: ../core/guide.php:1060
+#: ../core/guide.php:1139
 msgid "Skin"
 msgstr "Кожа"
 
-#: ../core/guide.php:1078
+#: ../core/guide.php:1157
 msgid "Section Animation"
 msgstr ""
 "Раздел\n"
 " \n"
 "анимация"
 
-#: ../core/guide.php:1160
+#: ../core/guide.php:1162
+msgid "Attention Seekers"
+msgstr ""
+
+#: ../core/guide.php:1163
+msgid "bounce"
+msgstr ""
+
+#: ../core/guide.php:1164
+msgid "flash"
+msgstr ""
+
+#: ../core/guide.php:1165
+msgid "pulse"
+msgstr ""
+
+#: ../core/guide.php:1166
+msgid "rubberBand"
+msgstr ""
+
+#: ../core/guide.php:1167
+msgid "shake"
+msgstr ""
+
+#: ../core/guide.php:1168
+msgid "swing"
+msgstr ""
+
+#: ../core/guide.php:1169
+msgid "tada"
+msgstr ""
+
+#: ../core/guide.php:1170
+msgid "wobble"
+msgstr ""
+
+#: ../core/guide.php:1172
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: ../core/guide.php:1173
+msgid "bounceIn"
+msgstr ""
+
+#: ../core/guide.php:1174
+msgid "bounceInDown"
+msgstr ""
+
+#: ../core/guide.php:1175
+msgid "bounceInLeft"
+msgstr ""
+
+#: ../core/guide.php:1176
+msgid "bounceInRight"
+msgstr ""
+
+#: ../core/guide.php:1177
+msgid "bounceInUp"
+msgstr ""
+
+#: ../core/guide.php:1180
+msgid "Fading Entrances"
+msgstr ""
+
+#: ../core/guide.php:1181
+msgid "fadeIn"
+msgstr ""
+
+#: ../core/guide.php:1182
+msgid "fadeInDown"
+msgstr ""
+
+#: ../core/guide.php:1183
+msgid "fadeInDownBig"
+msgstr ""
+
+#: ../core/guide.php:1184
+msgid "fadeInLeft"
+msgstr ""
+
+#: ../core/guide.php:1185
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: ../core/guide.php:1186
+msgid "fadeInRight"
+msgstr ""
+
+#: ../core/guide.php:1187
+msgid "fadeInRightBig"
+msgstr ""
+
+#: ../core/guide.php:1188
+msgid "fadeInUp"
+msgstr ""
+
+#: ../core/guide.php:1189
+msgid "fadeInUpBig"
+msgstr ""
+
+#: ../core/guide.php:1192
+msgid "Flippers"
+msgstr ""
+
+#: ../core/guide.php:1193
+msgid "flip"
+msgstr ""
+
+#: ../core/guide.php:1194
+msgid "flipInX"
+msgstr ""
+
+#: ../core/guide.php:1195
+msgid "flipInY"
+msgstr ""
+
+#: ../core/guide.php:1198
+msgid "Lightspeed"
+msgstr ""
+
+#: ../core/guide.php:1199
+msgid "lightSpeedIn"
+msgstr ""
+
+#: ../core/guide.php:1202
+msgid "Rotating Entrances"
+msgstr ""
+
+#: ../core/guide.php:1203
+msgid "rotateIn"
+msgstr ""
+
+#: ../core/guide.php:1204
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: ../core/guide.php:1205
+msgid "rotateInDownRight"
+msgstr ""
+
+#: ../core/guide.php:1206
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: ../core/guide.php:1207
+msgid "rotateInUpRight"
+msgstr ""
+
+#: ../core/guide.php:1210
+msgid "Specials"
+msgstr ""
+
+#: ../core/guide.php:1211
+msgid "hinge"
+msgstr ""
+
+#: ../core/guide.php:1212
+msgid "rollIn"
+msgstr ""
+
+#: ../core/guide.php:1215
+msgid "Zoom Entrances"
+msgstr ""
+
+#: ../core/guide.php:1216
+msgid "zoomIn"
+msgstr ""
+
+#: ../core/guide.php:1217
+msgid "zoomInDown"
+msgstr ""
+
+#: ../core/guide.php:1218
+msgid "zoomInLeft"
+msgstr ""
+
+#: ../core/guide.php:1219
+msgid "zoomInRight"
+msgstr ""
+
+#: ../core/guide.php:1220
+msgid "zoomInUp"
+msgstr ""
+
+#: ../core/guide.php:1223
+msgid "Slide Entrances"
+msgstr ""
+
+#: ../core/guide.php:1224
+msgid "slideInDown"
+msgstr ""
+
+#: ../core/guide.php:1225
+msgid "slideInLef"
+msgstr ""
+
+#: ../core/guide.php:1226
+msgid "slideInRight"
+msgstr ""
+
+#: ../core/guide.php:1227
+msgid "slideInUp"
+msgstr ""
+
+#: ../core/guide.php:1240
 msgid "Indexing Format"
 msgstr ""
 "Индексирование\n"
 " \n"
 "формат"
 
-#: ../core/guide.php:1171
+#: ../core/guide.php:1251
+msgid "Guide Title"
+msgstr "Название гид"
+
+#: ../core/guide.php:1258 ../core/guide.php:1659 ../core/guide.php:1668 ..
+#: /core/guide.php:1786
+msgid "Options"
+msgstr "Options"
+
+#: ../core/guide.php:1263
 msgid "Scrolling"
 msgstr "Прокрутка"
 
-#: ../core/guide.php:1183
+#: ../core/guide.php:1275
 msgid "Fixed Menu"
 msgstr ""
 "Фиксированное\n"
 " \n"
 "меню"
 
-#: ../core/guide.php:1199
+#: ../core/guide.php:1287
+msgid "Top Margin for Menu"
+msgstr "Верхнее поле для меню"
+
+#: ../core/guide.php:1289 ../core/guide.php:1377 ../core/guide.php:1475 ..
+#: /core/guide.php:1534 ../core/guide.php:2246
+msgid "px"
+msgstr "px"
+
+#: ../core/guide.php:1298
 msgid "Menu Position"
 msgstr ""
 "Положение\n"
 " \n"
 "меню"
 
-#: ../core/guide.php:1211 ../core/guide.php:1278 ../core/guide.php:1304 ..
-#: core/guide.php:1376 ../core/guide.php:1450 ../core/guide.php:1483 ..
-#: core/guide.php:1877
+#: ../core/guide.php:1308
+msgid "Toggle child menu"
+msgstr "Меню ребенка переключения"
+
+#: ../core/guide.php:1319
+msgid "Extras on Section hover"
+msgstr "Наведите статистов на секции"
+
+#: ../core/guide.php:1331 ../core/guide.php:1394 ../core/guide.php:1420 ..
+#: /core/guide.php:1492 ../core/guide.php:1566 ../core/guide.php:1599 ..
+#: /core/guide.php:2310
 msgid "Save Changes"
 msgstr ""
 "Сохранить\n"
 " \n"
 "изменения"
 
-#: ../core/guide.php:1218
+#: ../core/guide.php:1338
 msgid "Formatting"
 msgstr "Форматирование"
 
-#: ../core/guide.php:1221
+#: ../core/guide.php:1340
 msgid "Nav Menu Title"
 msgstr ""
 "Название\n"
@@ -1090,62 +1118,64 @@ msgstr ""
 " \n"
 "меню"
 
-#: ../core/guide.php:1227 ../core/guide.php:1286 ../core/guide.php:1326 ..
-#: core/guide.php:1385
+#: ../core/guide.php:1343 ../core/guide.php:1402 ../core/guide.php:1442 ..
+#: /core/guide.php:1501 ../core/guide.php:2211
 msgid "Use theme default"
 msgstr "Use theme default"
 
-#: ../core/guide.php:1238 ../core/guide.php:1297 ../core/guide.php:1337 ..
-#: core/guide.php:1396 ../core/guide.php:1469
+#: ../core/guide.php:1354 ../core/guide.php:1413 ../core/guide.php:1453 ..
+#: /core/guide.php:1512 ../core/guide.php:1585 ../core/guide.php:2221
 msgid "Color"
 msgstr "Цвет"
 
-#: ../core/guide.php:1243 ../core/guide.php:1342 ../core/guide.php:1401 ..
-#: core/guide.php:1765 ../core/guide.php:1781 ../core/guide.php:1797 ..
-#: core/guide.php:1814 ../core/guide.php:1831 ../core/includes/fonts.php:280
+#: ../core/guide.php:1359 ../core/guide.php:1458 ../core/guide.php:1517 ..
+#: /core/guide.php:1994 ../core/guide.php:2010 ../core/guide.php:2026 ..
+#: /core/guide.php:2043 ../core/guide.php:2060 ../core/guide.php:2228 ..
+#: /core/includes/fonts.php:279
 msgid "Font"
 msgstr "Шрифт"
 
-#: ../core/guide.php:1260 ../core/guide.php:1358 ../core/guide.php:1417 ..
-#: core/guide.php:1772 ../core/guide.php:1788 ../core/guide.php:1805 ..
-#: core/guide.php:1822 ../core/guide.php:1839
+#: ../core/guide.php:1376 ../core/guide.php:1474 ../core/guide.php:1533 ..
+#: /core/guide.php:2001 ../core/guide.php:2017 ../core/guide.php:2034 ..
+#: /core/guide.php:2051 ../core/guide.php:2068 ../core/guide.php:2245
 msgid "Font Size"
 msgstr ""
 "Размер\n"
 " \n"
 "шрифта"
 
-#: ../core/guide.php:1261 ../core/guide.php:1359 ../core/guide.php:1418
-msgid "px"
-msgstr "px"
-
-#: ../core/guide.php:1265 ../core/guide.php:1363 ../core/guide.php:1422
+#: ../core/guide.php:1381 ../core/guide.php:1479 ../core/guide.php:1538 ..
+#: /core/guide.php:2250
 msgid "Font Style"
 msgstr ""
 "Стиль\n"
 " \n"
 "шрифта"
 
-#: ../core/guide.php:1267 ../core/guide.php:1365 ../core/guide.php:1424
+#: ../core/guide.php:1383 ../core/guide.php:1481 ../core/guide.php:1540 ..
+#: /core/guide.php:2253
 msgid "Bold"
 msgstr "Bold"
 
-#: ../core/guide.php:1268 ../core/guide.php:1366 ../core/guide.php:1425
+#: ../core/guide.php:1384 ../core/guide.php:1482 ../core/guide.php:1541 ..
+#: /core/guide.php:2254
 msgid "Bold Italic"
 msgstr ""
 "Полужирный\n"
 " \n"
 "курсив"
 
-#: ../core/guide.php:1269 ../core/guide.php:1367 ../core/guide.php:1426
+#: ../core/guide.php:1385 ../core/guide.php:1483 ../core/guide.php:1542 ..
+#: /core/guide.php:2255
 msgid "Italic"
 msgstr "Курсив"
 
-#: ../core/guide.php:1270 ../core/guide.php:1368 ../core/guide.php:1427
+#: ../core/guide.php:1386 ../core/guide.php:1484 ../core/guide.php:1543 ..
+#: /core/guide.php:2256
 msgid "Normal"
 msgstr "Нормальный"
 
-#: ../core/guide.php:1281
+#: ../core/guide.php:1397
 msgid "Active Nav Menu Background"
 msgstr ""
 "Активные\n"
@@ -1156,48 +1186,41 @@ msgstr ""
 " \n"
 "фон"
 
-#: ../core/guide.php:1312
+#: ../core/guide.php:1428 ../core/guide.php:2197
 msgid "Element"
 msgstr "Элемент"
 
-#: ../core/guide.php:1379 ../core/guide.php:1828
+#: ../core/guide.php:1495 ../core/guide.php:2057
 msgid "Section Content"
 msgstr ""
 "Содержание\n"
 " \n"
 "раздела"
 
-#: ../core/guide.php:1433
-msgid "Show Last Updated Date"
-msgstr ""
-"Показать\n"
-" \n"
-"дату\n"
-" \n"
-"последнего\n"
-" \n"
-"обновления"
+#: ../core/guide.php:1549
+msgid "Last Updated Date"
+msgstr "Дата последнего обновления"
 
-#: ../core/guide.php:1453
+#: ../core/guide.php:1569
 msgid "Scrollbar"
 msgstr "Полосы прокрутки"
 
-#: ../core/guide.php:1463
+#: ../core/guide.php:1579
 msgid "size"
 msgstr "Размер"
 
-#: ../core/guide.php:1475
+#: ../core/guide.php:1591
 msgid "Opacity"
 msgstr "Непрозрачность"
 
-#: ../core/guide.php:1490
+#: ../core/guide.php:1606
 msgid "Advanced Settings"
 msgstr ""
 "Дополнительные\n"
 " \n"
 "параметры"
 
-#: ../core/guide.php:1495
+#: ../core/guide.php:1611
 msgid "Load sections using AJAX"
 msgstr ""
 "Разделы\n"
@@ -1208,26 +1231,26 @@ msgstr ""
 " \n"
 "AJAX"
 
-#: ../core/guide.php:1506
+#: ../core/guide.php:1622
+msgid "Search Box"
+msgstr "Окно поиска"
+
+#: ../core/guide.php:1633
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: ../core/guide.php:1531
+#: ../core/guide.php:1658
 msgid "Save PDF"
 msgstr ""
 "Сохранить\n"
 " \n"
 "PDF\n"
 
-#: ../core/guide.php:1532 ../core/guide.php:1541
-msgid "Options"
-msgstr "Options"
-
-#: ../core/guide.php:1540
+#: ../core/guide.php:1667
 msgid "Print"
 msgstr "Печать"
 
-#: ../core/guide.php:1549
+#: ../core/guide.php:1675
 msgid "Users can suggest Edits"
 msgstr ""
 "Пользователи\n"
@@ -1238,43 +1261,48 @@ msgstr ""
 " \n"
 "изменения"
 
-#: ../core/guide.php:1556 ../core/guide.php:1586
+#: ../core/guide.php:1682 ../core/guide.php:1712 ../core/guide.php:1772
 msgid "Format"
 msgstr "Формат"
 
-#: ../core/guide.php:1560
+#: ../core/guide.php:1686
 msgid "Guide Manager"
 msgstr ""
 "Руководство\n"
 " \n"
 "менеджер"
 
-#: ../core/guide.php:1578
+#: ../core/guide.php:1704
 msgid "Visitor's Feedback"
 msgstr ""
 "Отзывы\n"
 " \n"
 "посетителей"
 
-#: ../core/guide.php:1592
-msgid "Show Related"
-msgstr ""
-"Показать\n"
-" \n"
-"похожие"
+#: ../core/guide.php:1718
+msgid "Feedback Count"
+msgstr "Количество отзывов"
 
-#: ../core/guide.php:1603
+#: ../core/guide.php:1740
 msgid "RTL Support"
 msgstr ""
 "Поддержка\n"
 " \n"
 "RTL"
 
-#: ../core/guide.php:1615
+#: ../core/guide.php:1752
 msgid "Back to Top button"
 msgstr "Вернуться к началу кнопку"
 
-#: ../core/guide.php:1629
+#: ../core/guide.php:1764
+msgid "Social Sharing"
+msgstr "Социальный обмен"
+
+#: ../core/guide.php:1778
+msgid "Attach Product"
+msgstr "Прикрепить продукта"
+
+#: ../core/guide.php:1794
 msgid "Suggest Edit Format"
 msgstr ""
 "Предлагаю\n"
@@ -1283,40 +1311,40 @@ msgstr ""
 " \n"
 "формат"
 
-#: ../core/guide.php:1631 ../core/guide.php:1693
+#: ../core/guide.php:1796 ../core/guide.php:1858
 msgid "Form"
 msgstr "Форма"
 
-#: ../core/guide.php:1651 ../core/guide.php:1713
+#: ../core/guide.php:1816 ../core/guide.php:1878
 msgid "Extra Input Fields"
 msgstr ""
 "Дополнительные\n"
 " \n"
 "поля"
 
-#: ../core/guide.php:1655
+#: ../core/guide.php:1820
 msgid "Message Box"
 msgstr ""
 "Окно\n"
 " \n"
 "сообщения"
 
-#: ../core/guide.php:1663 ../core/guide.php:1725
+#: ../core/guide.php:1828 ../core/guide.php:1890
 msgid "Captcha"
 msgstr "Captcha"
 
-#: ../core/guide.php:1674 ../core/guide.php:1736
+#: ../core/guide.php:1839 ../core/guide.php:1901
 msgid "Subject"
 msgstr "Тема"
 
-#: ../core/guide.php:1678 ../core/guide.php:1740
+#: ../core/guide.php:1843 ../core/guide.php:1905
 msgid "Thank You Message"
 msgstr ""
 "Спасибо\n"
 " \n"
 "сообщение"
 
-#: ../core/guide.php:1691
+#: ../core/guide.php:1856
 msgid "User Feedback Format"
 msgstr ""
 "Формат\n"
@@ -1325,46 +1353,102 @@ msgstr ""
 " \n"
 "пользователей"
 
-#: ../core/guide.php:1717
+#: ../core/guide.php:1882
 msgid "Feedback Text"
 msgstr ""
 "Текст\n"
 " \n"
 "отзыва"
 
-#: ../core/guide.php:1752
+#: ../core/guide.php:1917
 msgid "PDF Options"
 msgstr ""
 "Параметры\n"
 " \n"
 "PDF"
 
-#: ../core/guide.php:1754
+#: ../core/guide.php:1919
 msgid "Author"
 msgstr "Автор"
 
-#: ../core/guide.php:1758
+#: ../core/guide.php:1923
 msgid "Guide Subtitle"
 msgstr ""
 "Руководство\n"
 " \n"
 "субтитров"
 
-#: ../core/guide.php:1762
+#: ../core/guide.php:1927
+msgid "PDF Header"
+msgstr "Заголовок PDF"
+
+#: ../core/guide.php:1934
+msgid "Header on First Page"
+msgstr "Верхний колонтитул на первой странице"
+
+#: ../core/guide.php:1943
+msgid "Logo"
+msgstr "Логотип"
+
+#: ../core/guide.php:1944 ../core/guide.php:2295
+msgid "Enter URL or upload image"
+msgstr "Введите URL-адрес или загрузить изображение"
+
+#: ../core/guide.php:1945 ../core/guide.php:2296
+msgid "Upload"
+msgstr "Загрузить"
+
+#: ../core/guide.php:1948
+msgid "Logo Width"
+msgstr "Ширина логотипа"
+
+#: ../core/guide.php:1949
+msgid "pixels"
+msgstr "пикселей"
+
+#: ../core/guide.php:1952
+msgid "Header text"
+msgstr "Текст заголовка"
+
+#: ../core/guide.php:1956
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: ../core/guide.php:1960
+msgid "Header border"
+msgstr "Заголовок пограничной"
+
+#: ../core/guide.php:1968
+msgid "Border Color"
+msgstr "Цвет границы"
+
+#: ../core/guide.php:1972
+msgid "PDF Footer"
+msgstr "Нижний колонтитул PDF"
+
+#: ../core/guide.php:1978
+msgid "Footer on First Page"
+msgstr "Нижний колонтитул на первой странице"
+
+#: ../core/guide.php:1987
+msgid "Footer text"
+msgstr "Текст нижнего колонтитула"
+
+#: ../core/guide.php:1991
 msgid "PDF Title"
 msgstr ""
 "Название\n"
 " \n"
 "PDF"
 
-#: ../core/guide.php:1778
+#: ../core/guide.php:2007
 msgid "PDF Subtitle"
 msgstr ""
 "Субтитры\n"
 " \n"
 "PDF"
 
-#: ../core/guide.php:1794
+#: ../core/guide.php:2023
 msgid "TOC Menu Title"
 msgstr ""
 "Заголовок\n"
@@ -1373,14 +1457,14 @@ msgstr ""
 " \n"
 "Оглавления"
 
-#: ../core/guide.php:1852
+#: ../core/guide.php:2081
 msgid "Print Options"
 msgstr ""
 "Параметры\n"
 " \n"
 "печати"
 
-#: ../core/guide.php:1854
+#: ../core/guide.php:2083
 msgid "Use window print"
 msgstr ""
 "Использовать\n"
@@ -1389,47 +1473,125 @@ msgstr ""
 " \n"
 "печати"
 
-#: ../core/guide.php:2022 ../core/guide.php:2116
+#: ../core/guide.php:2102
+msgid "Social Share Options"
+msgstr "Социальных акций"
+
+#: ../core/guide.php:2104
+msgid "Select Social buttons"
+msgstr "Выберите социальных кнопок"
+
+#: ../core/guide.php:2108
+msgid "Facebook"
+msgstr ""
+
+#: ../core/guide.php:2116
+msgid "Twitter"
+msgstr ""
+
+#: ../core/guide.php:2124
+msgid "Google Plus"
+msgstr ""
+
+#: ../core/guide.php:2131
+msgid ""
+"To get the count of Google Plus shares, please enable the curl extension of "
+"PHP"
+msgstr ""
+"Чтобы получить количество Google Plus акции, пожалуйста, включите расширение "
+"curl PHP"
+
+#: ../core/guide.php:2135
+msgid "Pinterest"
+msgstr ""
+
+#: ../core/guide.php:2143
+msgid "Select Format"
+msgstr "Выберите формат"
+
+#: ../core/guide.php:2164
+msgid "Display Share Count"
+msgstr "Количество акций дисплей"
+
+#: ../core/guide.php:2167
+msgid "Share Count"
+msgstr "Количество акций"
+
+#: ../core/guide.php:2175
+msgid "Position"
+msgstr "Позиция"
+
+#: ../core/guide.php:2179
+msgid "Top"
+msgstr "Вверх"
+
+#: ../core/guide.php:2182
+msgid "Bottom"
+msgstr "Внизу"
+
+#: ../core/guide.php:2194 ../core/guide.php:2269
+msgid "Guide Title Formatting"
+msgstr "Руководство название форматирования"
+
+#: ../core/guide.php:2272
+msgid "Product Name"
+msgstr "Название продукта"
+
+#: ../core/guide.php:2279
+msgid "Product Version"
+msgstr "Версия продукта"
+
+#: ../core/guide.php:2286
+msgid "Product Link"
+msgstr "Ссылка продукта"
+
+#: ../core/guide.php:2293
+msgid "Product Image"
+msgstr "Изображение продукта"
+
+#: ../core/guide.php:2336 ../core/admin.php:531 ../core/admin.php:539
+msgid "Shortcode"
+msgstr "Короткий номер"
+
+#: ../core/guide.php:2343 ../core/admin.php:532 ../core/admin.php:540
+msgid "Template Tag"
+msgstr ""
+"Шаблон\n"
+" \n"
+"тег"
+
+#: ../core/guide.php:2368 ../core/admin.php:530 ../core/admin.php:538
+msgid "Title"
+msgstr "Название"
+
+#: ../core/guide.php:2455 ../core/guide.php:2551
 msgid "ID"
 msgstr "ID"
 
-#: ../core/guide.php:2024 ../core/guide.php:2118
+#: ../core/guide.php:2457 ../core/guide.php:2553
 msgid "Edit Link"
 msgstr ""
 "Изменить\n"
 " \n"
 "ссылку"
 
-#: ../core/guide.php:2058 ../core/guide.php:2151
+#: ../core/guide.php:2491 ../core/guide.php:2586
 msgid "Page"
 msgstr "Страница"
 
-#: ../core/guide.php:2058 ../core/guide.php:2151
+#: ../core/guide.php:2491 ../core/guide.php:2586
 msgid "of"
 msgstr "из"
 
-#: ../core/guide.php:2059 ../core/guide.php:2152
+#: ../core/guide.php:2492 ../core/guide.php:2587
 msgid "First"
 msgstr "Первый"
 
-#: ../core/guide.php:2060 ../core/guide.php:2153 ../skins/default/index.php:487 ..
-#: skins/mint/index.php:490 ../skins/cherry/index.php:463 ../skins/bar/index.php:
-#: 488
-msgid "Previous"
-msgstr "Предыдущий"
-
-#: ../core/guide.php:2067 ../core/guide.php:2161 ../skins/default/index.php:313 ..
-#: skins/default/index.php:494 ../skins/mint/index.php:311 ../skins/mint/index.
-#: php:497 ../skins/cherry/index.php:293 ../skins/cherry/index.php:470 ..
-#: skins/bar/index.php:310 ../skins/bar/index.php:495
-msgid "Next"
-msgstr "Следующая"
-
-#: ../core/guide.php:2068 ../core/guide.php:2162
+#: ../core/guide.php:2503 ../core/guide.php:2599
 msgid "Last"
 msgstr "Последний"
 
-#: ../core/guide.php:2076
+#: ../core/guide.php:2511
 msgid "Enter search text"
 msgstr ""
 "Введите\n"
@@ -1438,74 +1600,208 @@ msgstr ""
 " для \n"
 "поиска"
 
-#: ../core/guide.php:2082 ../core/guide.php:2168
-msgid "no posts found"
-msgstr ""
-"должностей\n"
-" \n"
-"не\n"
-" \n"
-"найдены"
+#: ../core/guide.php:2517 ../core/guide.php:2605
+msgid "No entries found"
+msgstr "Не найдено записей"
 
-#: ../core/guide.php:2195
+#: ../core/guide.php:2631
 msgid ""
 "This is a preview of your document. Features like print, scroll to "
-"particular section, animations are not available in Preview. Once you embed "
-"the document on front-end, those effects will be functional!"
+"particular section, animations, search are not available in Preview. Once "
+"you embed the document on front-end, those effects will be functional!"
 msgstr ""
-"Это\n"
-" \n"
-"предварительный\n"
-" \n"
-"документ\n"
-".\n"
-" \n"
-"Функции\n"
-", \n"
-"такие как\n"
-" \n"
-"печать\n"
-",\n"
-" \n"
-"перейдите\n"
-" \n"
-"к\n"
-"определенной\n"
-" \n"
-"секции\n"
-",\n"
-" \n"
-"анимация\n"
-" \n"
-"недоступны\n"
-" \n"
-"в\n"
-" \n"
-"режиме предварительного просмотра\n"
-".\n"
-" \n"
-"Как только\n"
-" \n"
-"вы\n"
-" \n"
-"внедрить\n"
-" \n"
-"документ\n"
-" \n"
-"на\n"
-" \n"
-"front-end\n"
-",\n"
-" \n"
-"эти\n"
-" \n"
-"эффекты\n"
-" \n"
-"будут\n"
-"функционировать\n"
-"!"
+"Это предварительный документ. Такие функции, как печать, прокрутите до "
+"конкретного раздела, анимация, Поиск недоступны в режиме предварительного "
+"просмотра. Однажды вам внедрить документ на front-end, эти эффекты будут "
+"функционировать!"
 
-#: ../core/includes/fonts.php:100
+#: ../core/admin.php:37 ../core/admin.php:49
+msgid "Manage"
+msgstr "Управление"
+
+#: ../core/admin.php:46 ../core/admin.php:46 ../core/admin.php:55
+msgid "Documentor"
+msgstr "Documentor"
+
+#: ../core/admin.php:48 ../core/admin.php:48
+msgid "Create New"
+msgstr ""
+"Создать\n"
+" \n"
+"новый"
+
+#: ../core/admin.php:49 ../core/admin.php:520
+msgid "Manage Guides"
+msgstr ""
+"Управлять\n"
+" \n"
+"гиды"
+
+#: ../core/admin.php:50 ../core/admin.php:50
+msgid "Global Settings"
+msgstr ""
+"Глобальные\n"
+" \n"
+"параметры"
+
+#: ../core/admin.php:51
+msgid "Documentor - License"
+msgstr ""
+"Documentor\n"
+" \n"
+"-\n"
+" \n"
+"лицензия"
+
+#: ../core/admin.php:51
+msgid "License"
+msgstr "Лицензия"
+
+#: ../core/admin.php:98
+msgid "Menu Title "
+msgstr ""
+"Название\n"
+" \n"
+"меню"
+
+#: ../core/admin.php:106
+msgid "Section Title "
+msgstr ""
+"Название\n"
+" \n"
+"раздела"
+
+#: ../core/admin.php:123
+msgid "Attach Guide "
+msgstr "Прикрепить руководство"
+
+#: ../core/admin.php:126
+msgid "Type Guide Name"
+msgstr "Имя типа руководство"
+
+#: ../core/admin.php:198
+msgid "Guide Name"
+msgstr ""
+"Имя\n"
+" \n"
+"руководства"
+
+#: ../core/admin.php:203
+msgid "Apply Settings"
+msgstr ""
+"Применить\n"
+" \n"
+"настройки"
+
+#: ../core/admin.php:559
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+#: ../core/admin.php:559
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../core/admin.php:559
+msgid "Export"
+msgstr "Экспорт"
+
+#: ../core/admin.php:559
+msgid "Copy"
+msgstr "Копия"
+
+#: ../core/admin.php:605
+msgid "Documentor Global Settings"
+msgstr ""
+"Documentor\n"
+" \n"
+"глобальные\n"
+" \n"
+"параметры"
+
+#: ../core/admin.php:610
+msgid "Enable Inline Sections"
+msgstr ""
+"Включить\n"
+" \n"
+"встроенные\n"
+" \n"
+"разделы"
+
+#: ../core/admin.php:620
+msgid "Supported Post Types for adding sections"
+msgstr ""
+"Поддерживаемые\n"
+" \n"
+"типы\n"
+" \n"
+"пост\n"
+" \n"
+"для\n"
+" \n"
+"добавления\n"
+" \n"
+"разделов"
+
+#: ../core/admin.php:643
+msgid "Custom Styles"
+msgstr ""
+"Пользовательские\n"
+" \n"
+"стили"
+
+#: ../core/includes/license.php:7
+msgid "Documentor License Options"
+msgstr ""
+"Параметры\n"
+" \n"
+"лицензии\n"
+" \n"
+"Documentor"
+
+#: ../core/includes/license.php:16
+msgid "License Key"
+msgstr ""
+"Лицензионный\n"
+" \n"
+"ключ"
+
+#: ../core/includes/license.php:20
+msgid "Enter your license key"
+msgstr ""
+"Введите\n"
+" \n"
+"ваш\n"
+" \n"
+"лицензионный\n"
+" \n"
+"ключ"
+
+#: ../core/includes/license.php:26
+msgid "License Status"
+msgstr ""
+"Статус\n"
+" \n"
+"лицензии"
+
+#: ../core/includes/license.php:30
+msgid "Active"
+msgstr "Активные"
+
+#: ../core/includes/license.php:32
+msgid "Deactivate License"
+msgstr ""
+"Деактивировать\n"
+" \n"
+"лицензию"
+
+#: ../core/includes/license.php:35
+msgid "Activate License"
+msgstr ""
+"Активировать\n"
+" \n"
+"лицензию"
+
+#: ../core/includes/fonts.php:99
 msgid "&mdash; Google Fonts &mdash;"
 msgstr ""
 "&mdash;\n"
@@ -1516,7 +1812,7 @@ msgstr ""
 " \n"
 "&mdash;"
 
-#: ../core/includes/fonts.php:103
+#: ../core/includes/fonts.php:102
 msgid "Google Serif Fonts"
 msgstr ""
 "Шрифты\n"
@@ -1525,7 +1821,7 @@ msgstr ""
 " \n"
 "Google"
 
-#: ../core/includes/fonts.php:114
+#: ../core/includes/fonts.php:113
 msgid "Google Sans Serif Fonts"
 msgstr ""
 "Google\n"
@@ -1536,7 +1832,7 @@ msgstr ""
 " \n"
 "шрифты"
 
-#: ../core/includes/fonts.php:125
+#: ../core/includes/fonts.php:124
 msgid "Google Display Fonts"
 msgstr ""
 "Google\n"
@@ -1545,7 +1841,7 @@ msgstr ""
 " \n"
 "шрифтов"
 
-#: ../core/includes/fonts.php:136
+#: ../core/includes/fonts.php:135
 msgid "Google Handwriting Fonts"
 msgstr ""
 "Google\n"
@@ -1554,11 +1850,11 @@ msgstr ""
 " \n"
 "шрифтов"
 
-#: ../core/includes/fonts.php:147
+#: ../core/includes/fonts.php:146
 msgid "Google Monospace Fonts"
 msgstr "Google Monospace шрифты"
 
-#: ../core/includes/fonts.php:166 ../core/includes/fonts.php:171
+#: ../core/includes/fonts.php:165 ../core/includes/fonts.php:170
 msgid "&mdash; Font Weight &mdash;"
 msgstr ""
 "&mdash;\n"
@@ -1569,7 +1865,7 @@ msgstr ""
 " \n"
 "&mdash;"
 
-#: ../core/includes/fonts.php:195
+#: ../core/includes/fonts.php:194
 msgid "&mdash; Font Subset &mdash;"
 msgstr ""
 "&mdash;\n"
@@ -1580,7 +1876,7 @@ msgstr ""
 " \n"
 "&mdash;"
 
-#: ../core/includes/fonts.php:286
+#: ../core/includes/fonts.php:285
 msgid "This value will be fallback font if Google web font value is specified below"
 msgstr ""
 "Это\n"
@@ -1606,7 +1902,7 @@ msgstr ""
 " \n"
 "ниже"
 
-#: ../core/includes/fonts.php:296
+#: ../core/includes/fonts.php:295
 msgid "Google Web Font"
 msgstr ""
 "Google\n"
@@ -1614,7 +1910,7 @@ msgstr ""
 "веб-\n"
 "шрифтов"
 
-#: ../core/includes/fonts.php:304
+#: ../core/includes/fonts.php:303
 msgid "Google Font Weight"
 msgstr ""
 "Плотность\n"
@@ -1623,11 +1919,11 @@ msgstr ""
 " \n"
 "Google"
 
-#: ../core/includes/fonts.php:312
+#: ../core/includes/fonts.php:311
 msgid "Google Font Subset"
 msgstr "Google Font Subset"
 
-#: ../core/includes/fonts.php:320
+#: ../core/includes/fonts.php:319
 msgid "Custom Font"
 msgstr "Custom Font"
 
@@ -1696,58 +1992,6 @@ msgstr "You do not have permission to install plugin updates"
 msgid "Error"
 msgstr "Ошибка"
 
-#: ../core/includes/license.php:7
-msgid "Documentor License Options"
-msgstr ""
-"Параметры\n"
-" \n"
-"лицензии\n"
-" \n"
-"Documentor"
-
-#: ../core/includes/license.php:16
-msgid "License Key"
-msgstr ""
-"Лицензионный\n"
-" \n"
-"ключ"
-
-#: ../core/includes/license.php:20
-msgid "Enter your license key"
-msgstr ""
-"Введите\n"
-" \n"
-"ваш\n"
-" \n"
-"лицензионный\n"
-" \n"
-"ключ"
-
-#: ../core/includes/license.php:26
-msgid "License Status"
-msgstr ""
-"Статус\n"
-" \n"
-"лицензии"
-
-#: ../core/includes/license.php:30
-msgid "Active"
-msgstr "Активные"
-
-#: ../core/includes/license.php:32
-msgid "Deactivate License"
-msgstr ""
-"Деактивировать\n"
-" \n"
-"лицензию"
-
-#: ../core/includes/license.php:35
-msgid "Activate License"
-msgstr ""
-"Активировать\n"
-" \n"
-"лицензию"
-
 #: ../core/includes/tinymce/window.php:6
 msgid "You are not allowed to be here"
 msgstr ""
@@ -1778,52 +2022,3 @@ msgstr ""
 "Вставка\n"
 " \n"
 "элементов"
-
-#: ../skins/default/index.php:255 ../skins/default/index.php:295 ..
-#: skins/default/index.php:466 ../skins/mint/index.php:256 ../skins/mint/index.
-#: php:294 ../skins/mint/index.php:469 ../skins/cherry/index.php:238 ..
-#: skins/cherry/index.php:276 ../skins/cherry/index.php:442 ../skins/bar/index.
-#: php:256 ../skins/bar/index.php:294 ../skins/bar/index.php:467
-msgid "Was this helpful?"
-msgstr ""
-"Было\n"
-" \n"
-"полезно\n"
-"?"
-
-#: ../skins/default/index.php:261 ../skins/default/index.php:301 ..
-#: skins/default/index.php:471 ../skins/mint/index.php:261 ../skins/mint/index.
-#: php:299 ../skins/mint/index.php:474 ../skins/cherry/index.php:243 ..
-#: skins/cherry/index.php:281 ../skins/cherry/index.php:447 ../skins/bar/index.
-#: php:261 ../skins/bar/index.php:299 ../skins/bar/index.php:472
-msgid "Suggest edit"
-msgstr "Suggest edit"
-
-#: ../skins/default/index.php:264 ../skins/default/index.php:304 ..
-#: skins/default/index.php:474 ../skins/mint/index.php:264 ../skins/mint/index.
-#: php:302 ../skins/mint/index.php:477 ../skins/cherry/index.php:246 ..
-#: skins/cherry/index.php:284 ../skins/cherry/index.php:450 ../skins/bar/index.
-#: php:264 ../skins/bar/index.php:302 ../skins/bar/index.php:475
-msgid "Last updated on"
-msgstr ""
-"Последняя\n"
-" \n"
-"модификация"
-
-#: ../skins/default/index.php:467 ../skins/mint/index.php:470 ..
-#: skins/cherry/index.php:443 ../skins/bar/index.php:468
-msgid "Yes"
-msgstr "Да"
-
-#: ../skins/default/index.php:468 ../skins/mint/index.php:471 ..
-#: skins/cherry/index.php:444 ../skins/bar/index.php:469
-msgid "No"
-msgstr "Не"
-
-#: ../skins/default/index.php:611 ../skins/mint/index.php:612 ..
-#: skins/cherry/index.php:585 ../skins/bar/index.php:610
-msgid "Suggest Edit"
-msgstr ""
-"Предлагаю\n"
-" \n"
-"изменить"

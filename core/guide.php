@@ -47,6 +47,7 @@ class DocumentorLiteGuide{
 			$result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$table_prefix.DOCUMENTORLITE_TABLE." WHERE doc_id=%d",$this->docid ) ); 
 			if( $result != NULL ) {
 				$documentor_curr = json_decode($result->settings, true);
+				$documentor_curr = $this->populate_documentor_current( $documentor_curr );
 				return $documentor_curr;
 			}
 		}
@@ -151,7 +152,7 @@ class DocumentorLiteGuide{
 						}
 						$html.='<div class="clrleft"></div>
 						<div class="sections-div">
-							<label class="titles">'. __('Slug','documentor').'</label>
+							<label class="titles">'. __('Slug','documentorlite').'</label>
 							<input type="text" name="slug" class="txts sec-slug" placeholder="'. __('Enter slug','documentorlite').'" value="'.apply_filters( 'editable_slug', $slug ).'" />
 						</div>
 						<div class="description-wide submitbox">
@@ -193,7 +194,8 @@ class DocumentorLiteGuide{
 			$cssarr = array(
 					'navmenu' => '',
 					'sectitle' => '',
-					'sectioncontent'=>''
+					'sectioncontent'=>'',
+					'guidetitle' => '',
 				);
 			$style_start= 'style="';
 			$style_end= '"';
@@ -394,6 +396,71 @@ class DocumentorLiteGuide{
 					$pt_fontst = $seccont_fstyle;
 				}
 				$cssarr['sectioncontent']=$style_start.'clear:none;line-height:'. ($settings['seccont_fsize'] + 5) .'px;font-family:'. $secc_font.';font-size:'.$settings['seccont_fsize'].'px;font-weight:'.$pt_fontw.';font-style:'.$pt_fontst.';color:'.$settings['seccont_color'].';'.$style_end;
+			}
+			//guide title css
+			if( $settings['guidet_default'] == 0 ) {
+				if ($settings['guidet_fstyle'] == "bold" or $settings['guidet_fstyle'] == "bold italic" ){
+					$guidet_fweight = "bold";
+				} else {
+					$guidet_fweight = "normal";
+				}
+				if ($settings['guidet_fstyle'] == "italic" or $settings['guidet_fstyle'] == "bold italic"){
+					$guidet_fstyle = "italic";
+				} else {
+					$guidet_fstyle = "normal";
+				}
+			
+				if( $settings['guidet_font'] == 'regular' ) {
+					$guidetfont = $settings['guidetitle_font'].', helvetica, Helvetica, sans-serif';
+					$gt_fontw = $guidet_fweight;
+					$gt_fontst = $guidet_fstyle;
+				} else if( $settings['guidet_font'] == 'google' ) {
+					$guidet_fontg = isset($settings['guidet_fontg']) ? trim($settings['guidet_fontg']) : '';
+					$pgfont = $objfonts->get_google_font($settings['guidet_fontg']);
+					( isset( $pgfont['category'] ) ) ? $ptfamily = $pgfont['category'] : '';
+					( isset( $settings['guidet_fontgw'] ) ) ? $ptfontw = $settings['guidet_fontgw'] : ''; 
+					if (strpos($ptfontw,'italic') !== false) {
+						$gt_fontst = 'italic';
+					} else {
+						$gt_fontst = 'normal';
+					}
+					if( strpos($ptfontw,'italic') > 0 ) { 
+						$len = strpos($ptfontw,'italic');
+						$ptfontw = substr( $ptfontw, 0, $len );
+					}
+					if( strpos($ptfontw,'regular') !== false ) { 
+						$ptfontw = 'normal';
+					}
+					if( isset($settings['guidet_fontgw']) && !empty($settings['guidet_fontgw']) ) {
+						$currfontw=$settings['guidet_fontgw'];
+						$gfonturl = $pgfont['urls'][$currfontw];
+			
+					}  else {
+						$gfonturl = 'http://fonts.googleapis.com/css?family='.$settings['guidet_fontg'];
+					}
+					if( isset($settings['guidet_fontgsubset']) && !empty($settings['guidet_fontgsubset']) ) {
+						$strsubset = implode(",",$settings['guidet_fontgsubset']);
+						$gfonturl = $gfonturl.'&subset='.$strsubset;
+					} 
+					if(!empty($guidet_fontg)) {
+						wp_enqueue_style( 'documentor_guidetitle', $gfonturl,array(),DOCUMENTORLITE_VER);
+						$guidet_fontg=$pgfont['name'];
+						$guidetfont = $guidet_fontg.','.$ptfamily;
+						$gt_fontw = $ptfontw;	
+					}
+					else { //if not set google font fall back to default font
+				
+						$guidetfont = 'helvetica, Helvetica, sans-serif';
+						$gt_fontw = 'normal';
+						$gt_fontst = 'normal';
+					}
+				} else if( $settings['guidet_font'] == 'custom' ) {
+					$guidetfont = $settings['ptfont_custom'];
+					$gt_fontw = $guidet_fweight;
+					$gt_fontst = $guidet_fstyle;
+				}
+				$lineheight = $settings['guidet_fsize'] + 5;
+				$cssarr['guidetitle']=$style_start.'clear:none;line-height:'. $lineheight .'px;font-family:'. $guidetfont.';font-size:'.$settings['guidet_fsize'].'px;font-weight:'.$gt_fontw.';font-style:'.$gt_fontst.';color:'.$settings['guidet_color'].';'.$style_end;
 			}
 			return $cssarr;
 		}
@@ -735,6 +802,18 @@ class DocumentorLiteGuide{
 				</tr>
 				
 				<tr valign="top">
+					<th scope="row"><?php _e('Guide Title','documentorlite'); ?></th>
+					<td>
+					<div class="eb-switch eb-switchnone">
+						<input type="hidden" name="<?php echo $documentor_options;?>[guidetitle]" id="documentor_guidetitle" class="hidden_check" value="<?php echo esc_attr($documentor_curr['guidetitle']);?>">
+						<input id="guidetitle" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['guidetitle']); ?>>
+						<label for="guidetitle"></label>
+					</div>
+					<a href="#options-guidetitle" rel="leanModal" title="Guide Title Formatting" ><?php _e('Options','documentorlite');?></a>
+					</td>
+				</tr>
+				
+				<tr valign="top">
 				<th scope="row"><?php _e('Scrolling','documentorlite'); ?></th>
 				<td>
 				<?php $documentor_curr['scrolling'] = ( !isset( $documentor_curr['scrolling'] )  ) ? 1 : $documentor_curr['scrolling']; ?>
@@ -758,6 +837,13 @@ class DocumentorLiteGuide{
 				</td>
 				</tr>
 				
+				<tr valign="top" class="menuTop" style="<?php echo ( !isset( $documentor_curr['fixmenu'] )  or $documentor_curr['fixmenu']=='0' ) ? 'display:none;' : ''; ?>">
+				<th scope="row"><?php _e('Top Margin for Menu','documentor'); ?></th>
+				<td>
+					<input type="number" name="<?php echo $documentor_options;?>[menuTop]" id="menuTop" class="small-text" value="<?php echo esc_attr($documentor_curr['menuTop']); ?>" min="0" />&nbsp;<?php _e('px','documentor'); ?>
+				</td>
+				</tr>
+				
 				<tr valign="top">
 					<?php
 						//new field added in v1.1
@@ -772,6 +858,17 @@ class DocumentorLiteGuide{
 					</td>
 				</tr>
 				
+				<tr valign="top">
+					<th scope="row"><?php _e('Toggle child menu','documentorlite'); ?></th>
+					<td>
+					<div class="eb-switch eb-switchnone havemoreinfo">
+						<input type="hidden" name="<?php echo $documentor_options;?>[togglemenu]" id="doc-enable-togglemenu" class="hidden_check" value="<?php echo esc_attr($documentor_curr['togglemenu']);?>">
+						<input id="enable-togglemenu" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['togglemenu']); ?>>
+						<label for="enable-togglemenu"></label>
+					</div>
+					</td>
+				</tr>
+			
 				</table>
 				<p class="submit">
 				<input type="submit" name="save-settings" class="button-primary" value="<?php _e('Save Changes','documentorlite'); ?>" />
@@ -994,7 +1091,7 @@ class DocumentorLiteGuide{
 				</tr>
 				
 				<tr valign="top">
-					<th scope="row"><?php _e('Show Last Updated Date','documentorlite'); ?></th>
+					<th scope="row"><?php _e('Last Updated Date','documentorlite'); ?></th>
 					<td>
 						<?php 
 						//new field added in v1.1
@@ -1072,6 +1169,17 @@ class DocumentorLiteGuide{
 				</tr>
 				
 				<tr valign="top">
+				<th scope="row"><?php _e('Search Box','documentorlite'); ?></th>
+				<td>
+				<div class="eb-switch eb-switchnone">
+					<input type="hidden" name="<?php echo $documentor_options;?>[search_box]" id="search-box" class="hidden_check" value="<?php echo esc_attr($documentor_curr['search_box']);?>">
+					<input id="search_box" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['search_box']); ?>>
+					<label for="search_box"></label>
+				</div>
+				</td>
+				</tr>
+				
+				<tr valign="top">
 					<th scope="row"><?php _e('RTL Support','documentorlite'); ?></th>
 					<td>
 						<?php $documentor_curr['rtl_support'] = isset($documentor_curr['rtl_support']) ? $documentor_curr['rtl_support'] : '0'; ?>
@@ -1095,7 +1203,190 @@ class DocumentorLiteGuide{
 					</td>
 				</tr>
 				
+				<tr valign="top">
+					<th scope="row"><?php _e('Social Sharing','documentorlite'); ?></th>
+					<td>
+						<div class="eb-switch eb-switchnone">
+							<input type="hidden" name="<?php echo $documentor_options;?>[socialshare]" id="related-document" class="hidden_check" value="<?php echo esc_attr($documentor_curr['socialshare']);?>">
+							<input id="socialshare" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['socialshare']); ?>>
+							<label for="socialshare"></label>
+						</div>
+						<span class="doc-format">
+							<a href="#format-social" rel="leanModal" title="Social Share Format" ><?php _e('Format','documentorlite');?></a>
+						</span>
+					</td>
+				</tr>
+				
 				</table>
+				
+				<!-- options of social share buttons -->
+				<div id="format-social" class="format-form"> 
+					<div id="format-ct">
+						<div class="frm-heading"><?php _e('Social Share Options','documentorlite');?></div>
+						<div id="format-header">
+							<p class="format-heading"><?php _e('Select Social buttons','documentorlite');?></p>
+							<a class="modal_close" href="#"></a>
+						</div>
+						<div class="txt-fld">
+							<label for="name" class="lbl"><?php _e('Facebook','documentorlite'); ?></label>
+							<div class="eb-switch eb-switchnone">
+								<input type="hidden" name="<?php echo $documentor_options;?>[socialbuttons][0]" class="hidden_check" value="<?php echo esc_attr($documentor_curr['socialbuttons'][0]);?>">
+								<input id="socialbuttons-select1" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['socialbuttons'][0]); ?>>
+								<label for="socialbuttons-select1"></label>
+							</div>
+						</div>
+						<div class="txt-fld">
+							<label for="name" class="lbl"><?php _e('Twitter','documentorlite'); ?></label>
+							<div class="eb-switch eb-switchnone">
+								<input type="hidden" name="<?php echo $documentor_options;?>[socialbuttons][1]" class="hidden_check" value="<?php echo esc_attr($documentor_curr['socialbuttons'][1]);?>">
+								<input id="socialbuttons-select2" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['socialbuttons'][1]); ?>>
+								<label for="socialbuttons-select2"></label>
+							</div>
+						</div>
+						<div class="txt-fld">
+							<label for="name" class="lbl"><?php _e('Google Plus','documentorlite'); ?></label>
+							<div class="eb-switch eb-switchnone">
+								<input type="hidden" name="<?php echo $documentor_options;?>[socialbuttons][2]" class="hidden_check" value="<?php echo esc_attr($documentor_curr['socialbuttons'][2]);?>">
+								<input id="socialbuttons-select3" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['socialbuttons'][2]); ?>>
+								<label for="socialbuttons-select3"></label>
+							</div>
+							<?php if( !function_exists('curl_version') ) { ?>
+								<label><?php _e("To get the count of Google Plus shares, please enable the curl extension of PHP","");?></label>
+							<?php }?>
+						</div>
+						<div class="txt-fld">
+							<label for="name" class="lbl"><?php _e('Pinterest','documentorlite'); ?></label>
+							<div class="eb-switch eb-switchnone">
+								<input type="hidden" name="<?php echo $documentor_options;?>[socialbuttons][3]" class="hidden_check" value="<?php echo esc_attr($documentor_curr['socialbuttons'][3]);?>">
+								<input id="socialbuttons-select4" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['socialbuttons'][3]); ?>>
+								<label for="socialbuttons-select4"></label>
+							</div>
+						</div>
+						<div id="format-header">
+							<p class="format-heading"><?php _e('Select Format','documentorlite');?></p>
+						</div>
+						<div class="txt-fld">
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_style]" <?php checked("square",$documentor_curr['sbutton_style'] );?> value="square" >
+								<img src="<?php echo DOCLITE_URLPATH.'core/images/square.png'; ?>">
+							</label>
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_style]" <?php checked("round",$documentor_curr['sbutton_style'] );?> value="round" >
+								<img src="<?php echo DOCLITE_URLPATH.'core/images/round.png'; ?>">
+							</label>
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_style]" <?php checked("squarecount",$documentor_curr['sbutton_style'] );?> value="squarecount" >
+								<img src="<?php echo DOCLITE_URLPATH.'core/images/squarecount.png'; ?>">
+							</label>
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_style]" <?php checked("squareround",$documentor_curr['sbutton_style'] );?> value="squareround" >
+								<img src="<?php echo DOCLITE_URLPATH.'core/images/squareround.png'; ?>">
+							</label>
+						</div>
+						<div id="format-header">
+							<p class="format-heading"><?php _e('Display Share Count','documentorlite');?></p>
+						</div>
+						<div class="txt-fld">
+							<label for="name" class="lbl"><?php _e('Share Count','documentorlite'); ?></label>
+							<div class="eb-switch eb-switchnone">
+								<input type="hidden" name="<?php echo $documentor_options;?>[sharecount]" class="hidden_check" value="<?php echo esc_attr($documentor_curr['sharecount']);?>">
+								<input id="sharecount" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['sharecount']); ?>>
+								<label for="sharecount"></label>
+							</div>
+						</div>
+						<div id="format-header">
+							<p class="format-heading"><?php _e('Position','documentorlite');?></p>
+						</div>
+						<div class="txt-fld">
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_position]" <?php checked("top",$documentor_curr['sbutton_position'] );?> value="top" ><?php _e('Top','documentorlite');?>
+							</label>
+							<label>
+								<input type="radio" name="<?php echo $documentor_options;?>[sbutton_position]" <?php checked("bottom",$documentor_curr['sbutton_position'] );?> value="bottom" style="margin-left: 20px;"><?php _e('Bottom','documentorlite');?>
+							</label>
+						</div>
+						<div class="btn-fld">
+							<input type="submit" name="save-settings" class="button-primary" value="Save">
+						</div>
+					</div>
+				</div>
+				
+				<!-- Guide title options -->
+				<div id="options-guidetitle" class="format-form">
+					<div id="format-ct">
+						<div class="frm-heading"><?php _e('Guide Title Formatting','documentorlite');?></div>
+						<table class="form-table settings-tbl">	
+							<tr valign="top">
+								<th scope="row"><?php _e('Element','documentorlite'); ?></th>
+								<td>
+									<select name="<?php echo $documentor_options;?>[guidet_element]" >
+										<option value="1" <?php if ($documentor_curr['guidet_element'] == "1"){ echo "selected";}?> >h1</option>
+										<option value="2" <?php if ($documentor_curr['guidet_element'] == "2"){ echo "selected";}?> >h2</option>
+										<option value="3" <?php if ($documentor_curr['guidet_element'] == "3"){ echo "selected";}?> >h3</option>
+										<option value="4" <?php if ($documentor_curr['guidet_element'] == "4"){ echo "selected";}?> >h4</option>
+										<option value="5" <?php if ($documentor_curr['guidet_element'] == "5"){ echo "selected";}?> >h5</option>
+										<option value="6" <?php if ($documentor_curr['guidet_element'] == "6"){ echo "selected";}?> >h6</option>
+									</select>
+								</td>
+							</tr>
+
+							<tr valign="top">
+								<th scope="row"><?php _e('Use theme default','documentorlite'); ?></th>
+								<td>
+									<div class="eb-switch eb-switchnone havemoreinfo">
+										<input type="hidden" name="<?php echo $documentor_options;?>[guidet_default]" id="guidet-default" class="hidden_check" value="<?php echo esc_attr($documentor_curr['guidet_default']);?>">
+										<input id="guidet-def" class="cmn-toggle eb-toggle-round" type="checkbox" <?php checked('1', $documentor_curr['guidet_default']); ?>>
+										<label for="guidet-def"></label>
+									</div>
+								</td>
+							</tr>				
+							<tr valign="top">
+								<th scope="row"><?php _e('Color','documentorlite'); ?></th>
+								<td>
+									<input type="color" name="<?php echo $documentor_options;?>[guidet_color]" id="guidet_color" value="<?php echo esc_attr($documentor_curr['guidet_color']); ?>" class="wp-color-picker-field" data-default-color="#D8E7EE" />
+								</td>
+						   	</tr>
+						    
+							<tr valign="top">
+								<th scope="row"><?php _e('Font','documentorlite'); ?></th>
+								<td>
+									<input type="hidden" value="guidetitle_font" class="ftype_rname">
+									<input type="hidden" value="guidet_fontg" class="ftype_gname">
+									<input type="hidden" value="guidet_custom" class="ftype_cname">
+									<select name="<?php echo $documentor_options;?>[guidet_font]" id="guidet_font" class="main-font">
+	
+										<option value="regular" <?php selected( $documentor_curr['guidet_font'], "regular" ); ?> > Regular Fonts </option>
+										<option value="google" <?php selected( $documentor_curr['guidet_font'], "google" ); ?> > Google Fonts </option>
+										<option value="custom" <?php selected( $documentor_curr['guidet_font'], "custom" ); ?> > Custom Fonts </option>
+									</select>
+								</td>
+							</tr>
+
+							<tr><td class="load-fontdiv" colspan="2"></td></tr>
+
+							<tr valign="top">
+							<th scope="row"><?php _e('Font Size','documentorlite'); ?></th>
+							<td><input type="number" name="<?php echo $documentor_options;?>[guidet_fsize]" id="guidet_fsize" class="small-text" value="<?php echo esc_attr($documentor_curr['guidet_fsize']); ?>" min="1" />&nbsp;<?php _e('px','documentorlite'); ?></td>
+							</tr>
+
+							<tr valign="top" class="font-style">
+								<th scope="row"><?php _e('Font Style','documentorlite'); ?></th>
+								<td>
+									<select name="<?php echo $documentor_options;?>[guidet_fstyle]" id="guidet_fstyle" class="font-style" >
+									<option value="bold" <?php if ($documentor_curr['guidet_fstyle'] == "bold"){ echo "selected";}?> ><?php _e('Bold','documentorlite'); ?></option>
+									<option value="bold italic" <?php if ($documentor_curr['guidet_fstyle'] == "bold italic"){ echo "selected";}?> ><?php _e('Bold Italic','documentorlite'); ?></option>
+									<option value="italic" <?php if ($documentor_curr['guidet_fstyle'] == "italic"){ echo "selected";}?> ><?php _e('Italic','documentorlite'); ?></option>
+									<option value="normal" <?php if ($documentor_curr['guidet_fstyle'] == "normal"){ echo "selected";}?> ><?php _e('Normal','documentorlite'); ?></option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						<p>
+							<input type="submit" name="save-settings" class="button-primary" value="Save">
+						</p>
+					</div>
+				</div>
+				
 				<input type="hidden" name="guidename" class="guidename" value="<?php echo esc_attr($this->title);?>">
 				<input type="hidden" name="hidden_urlpage" class="documentor_urlpage" value="<?php echo esc_attr($_GET['page']);?>" />
 				<input type="hidden" name="documentor-settings-nonce" value="<?php echo wp_create_nonce( 'documentor-settings-nonce' ); ?>" />
@@ -1415,9 +1706,118 @@ class DocumentorLiteGuide{
 			$doc = new DocumentorLite();
 			$default_documentor_settings = $doc->default_documentor_settings;
 			foreach( $default_documentor_settings as $key => $value ){
-				if( !isset( $documentor_curr[$key] ) ) $documentor_curr[$key]='';
+				if( !isset( $documentor_curr[$key] ) ) $documentor_curr[$key] = $value;
 			}
 			return $documentor_curr;
+		}
+		/* Search in document */
+		public static function get_search_results() {
+			$term = strtolower( $_REQUEST['term'] );
+			$docid = isset( $_REQUEST['docid'] ) ? $_REQUEST['docid'] : '';
+			$suggestions = array();
+			if( !empty( $docid ) ) {
+				global $wpdb,$table_prefix;
+				$postids = $wpdb->get_col('SELECT post_id FROM '.$table_prefix.DOCUMENTORLITE_SECTIONS.' WHERE doc_id = '.$docid);
+				$includearr =  array();
+				if( $postids ) $includearr = $postids;
+				$args = array(
+					'post_type' => array( 'post', 'page', 'documentor-sections'),
+					'posts_per_page' => 10,	
+					'post_status'   => 'publish',
+					's'=> $term,
+			 	);
+			 	$the_query = new WP_Query( $args );
+			 	while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+					$suggestion = array();
+					if( in_array( get_the_ID(), $includearr ) ) {
+						$lbl = get_post_meta(get_the_ID(),'_documentor_sectiontitle', true);
+						$suggestion['label'] = $lbl;
+						$slug = $wpdb->get_var('SELECT slug FROM '.$table_prefix.DOCUMENTORLITE_SECTIONS.' WHERE post_id = '.get_the_ID());
+						$suggestion['slug'] = $slug;
+						$suggestions[] = $suggestion;
+					}
+				}
+				wp_reset_postdata();
+			}
+			// JSON encode and echo
+			$response = $_GET["callback"] . "(" . json_encode($suggestions) . ")";
+			echo $response;
+			die();
+		}
+		/* function to get social share buttons */
+		public function get_social_buttons( $settings, $sharetitle, $sharelink ) {
+			$html = '';
+			$btnposition = $settings['sbutton_position'];
+			$html .='<div class="doc-socialshare doc-noprint '.$btnposition.'">
+				<div class="doc-sharelink" data-sharelink="'.urlencode($sharelink).'"></div>';
+			$btnclass = $settings['sbutton_style'];
+			$i = 1;
+			//facebook button
+			if( $settings['socialbuttons'][0] == 1 ) {
+				$fbtnclass = '';
+				if( $i == 1 ) $fbtnclass = ' doc-fsbtn';
+				$i++;
+				$html .='<div class="sbutton doc-fb-share '.$btnclass.$fbtnclass.'" id="doc_fb_share"><a rel="nofollow" href="http://www.facebook.com/sharer.php?u='. urlencode($sharelink) .'&amp;t='. htmlspecialchars(urlencode(html_entity_decode($sharetitle.' - '.$sharelink, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8') .'" title="Share to Facebook" onclick="window.open(this.href,\'targetWindow\',\'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=450\');return false;"><i class="cs c-icon-doc-facebook"></i></a>';
+				if( $settings['sharecount'] == 1 ) {
+					$html .='<span class="doc-socialcount" id="doc-fb-count"><i class="cs c-icon-doc-spinner animate-spin"></i></span>';
+				}
+				$html .='</div>';
+			}
+			//twitter button
+			if( $settings['socialbuttons'][1] == 1 ) {
+				$fbtnclass = '';
+				if( $i == 1 ) $fbtnclass = ' doc-fsbtn';
+				$i++;
+				$html .='<div class="sbutton doc-twitter-share '.$btnclass.$fbtnclass.'" id="doc_twitter_share"><a rel="nofollow" href="http://twitter.com/share?text='. htmlspecialchars(urlencode(html_entity_decode($sharetitle.' - ', ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8') .'&amp;url='. urlencode($sharelink) .'" title="Share to Twitter" onclick="window.open(this.href,\'targetWindow\',\'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=450\');return false;"><i class="cs c-icon-doc-twitter"></i></a>';
+				if( $settings['sharecount'] == 1 ) {
+					$html .= '<span class="doc-socialcount" id="doc-twitter-count"><i class="cs c-icon-doc-spinner animate-spin"></i></span>';
+				}
+				$html .= '</div>';
+			}
+			//google plus button
+			if( $settings['socialbuttons'][2] == 1 ) {
+				$fbtnclass = '';
+				if( $i == 1 ) $fbtnclass = ' doc-fsbtn';
+				$i++;
+				$html .='<div class="sbutton doc-gplus-share '.$btnclass.$fbtnclass.'" id="doc_gplus_share"><a rel="nofollow" href="https://plus.google.com/share?url='.urlencode($sharelink).'" title="Share to Google Plus" onclick="window.open(this.href,\'targetWindow\',\'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=450\');return false;"><i class="cs c-icon-doc-gplus"></i></a>';
+				if( $settings['sharecount'] == 1 ) {
+					$gpluscount = $this->get_plusones( $sharelink );
+					$html .= '<span class="doc-socialcount" id="doc-gplus-count" data-gpluscnt="'.$gpluscount.'"><i class="cs c-icon-doc-spinner animate-spin"></i></span>';
+				}
+				$html .= '</div>';
+			}
+			//pinterest button
+			if( $settings['socialbuttons'][3] == 1 ) {
+				$fbtnclass = '';
+				if( $i == 1 ) $fbtnclass = ' doc-fsbtn';
+				$i++;
+				$html .='<div class="sbutton doc-pin-share '.$btnclass.$fbtnclass.'" id="doc_pin_share"><a rel="nofollow" href="http://pinterest.com/pin/create/bookmarklet/?url='.urlencode($sharelink) .'&amp;description='. htmlspecialchars(urlencode(html_entity_decode($sharetitle.' - '.$sharelink, ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8') .'" title="Share to Pinterest" onclick="window.open(this.href,\'targetWindow\',\'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=450\');return false;"><i class="cs c-icon-doc-pinterest"></i></a>';
+				if( $settings['sharecount'] == 1 ) {
+					$html .= '<span class="doc-socialcount" id="doc-pin-count"><i class="cs c-icon-doc-spinner animate-spin"></i></span>';
+				}
+				$html .= '</div>';
+			}
+			$html .='</div>';
+			return $html;
+		}
+		/* Get google plus share count */
+		public function get_plusones( $url )  {
+			if( function_exists('curl_version') ) {
+				$curl = curl_init();
+				curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+				curl_setopt($curl, CURLOPT_POST, true);
+				curl_setopt($curl, CURLOPT_POSTFIELDS, '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"'.rawurldecode($url).'","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]');
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($curl, CURLOPT_URL, "https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ");
+				$curl_results = curl_exec ($curl);
+				curl_close ($curl);
+				$json = json_decode($curl_results, true);
+				return isset($json[0]['result']['metadata']['globalCounts']['count'])?intval( $json[0]['result']['metadata']['globalCounts']['count'] ):0;
+			} else {
+				return 0;
+			}
 		}
 }// class DocumentorLiteGuide ends
 ?>
