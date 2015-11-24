@@ -41,7 +41,7 @@
 	padding: 13px 60px;
 	position: relative;
 }
-.documentor-broad .doc-menu ol, li {
+.documentor-broad .doc-menu ol, .documentor-broad .doc-menu li {
 	list-style-position: inside;
 }
 .documentor-broad .doc-menu ol li:before {
@@ -363,7 +363,7 @@
 }
 .documentor-broad .doc-menuright li.activeli a.doc-acta:after {
 	right: auto;
-	left: 20px;
+	left: 0;
 	background: url('images/left.png') no-repeat;
 }
 .documentor-broad .doc-seccontainer-left {

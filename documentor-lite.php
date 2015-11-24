@@ -2,13 +2,14 @@
 Plugin Name: Documentor Lite
 Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
-Version: 1.2
+Text Domain: documentor-lite
+Version: 1.3
 Author: WebFanzine Media
 Author URI: http://www.webfanzine.com/
 Wordpress version supported: 3.6 and above
 *----------------------------------------------------------------*
 * Copyright 2015  WebFanzine Media  (email : support@documentor.in)
-* Developers: (Sampada, Tejaswini) WebFanzine Media
+* Active Developers: (Tejaswini, Vrushali) WebFanzine Media
 * Tested by: (Sagar, Sanjeev) WebFanzine Media
 *****************************************************************/
 class DocumentorLite{
@@ -22,6 +23,8 @@ class DocumentorLite{
 			'skin' => 'default',
 			'animation' => '',
 			'indexformat'=> 1,
+			'pif' =>'decimal',
+			'cif' =>'decimal',
 			'scrolling' => 1,
 			'fixmenu' => 1, 
 			'menuTop' => '0',
@@ -84,22 +87,23 @@ class DocumentorLite{
 			'guidet_fontgsubset' => '',
 			'guidet_custom' => '',
 			'guidet_fsize' => '38',
-			'guidet_fstyle' => 'normal',
+			'guidet_fstyle' => 'normal',			
 		);
 		$this->documentor_global_options = array( 'custom_post' => 1,
-							'custom_styles' => ''
+							'custom_styles' => '',
+							'user_level' => 'publish_posts',
+							'reviewme' => strtotime("+1 week")
 						   );
 		$this->_register_hooks();
 		$this->include_files();
 		$this->create_custom_post();
 	}
-	// Create Text Domain For Translations
-	
+	// Create Text Domain For Translations	
 	function _define_constants()
 	{
 		if ( ! defined( 'DOCUMENTORLITE_TABLE' ) ) define('DOCUMENTORLITE_TABLE','documentor'); //Documentor TABLE NAME
 		if ( ! defined( 'DOCUMENTORLITE_SECTIONS' ) ) define('DOCUMENTORLITE_SECTIONS','documentor_sections'); //sections TABLE NAME
-		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.2",false);//Current Version of Documentor
+		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.3",false);//Current Version of Documentor
 		if ( ! defined( 'DOCUMENTORLITE_PLUGIN_BASENAME' ) )
 			define( 'DOCUMENTORLITE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		if ( ! defined( 'DOCUMENTORLITE_CSS_DIR' ) )
@@ -113,41 +117,41 @@ class DocumentorLite{
 	{
 		add_action('plugins_loaded', array(&$this, 'documentor_update_db_check'));
 		add_action('wp_footer', array(&$this, 'documentor_custom_styles') );
-		load_plugin_textdomain('documentorlite', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
+		load_plugin_textdomain('documentor-lite', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 		if (!shortcode_exists( 'documentor' ) ) add_shortcode('documentor', array(&$this,'shortcode'));
 	}
-	function install_documentor() {
+	function install_documentor(){
 		global $wpdb, $table_prefix;
 		$documentorlite_db_version = DOCUMENTORLITE_VER;
 		$installed_ver = get_site_option( "documentorlite_db_version" );
 		if( $installed_ver != $documentorlite_db_version ) {
 			$table_name = $table_prefix.DOCUMENTORLITE_TABLE;
-			if($wpdb->get_var("show tables like '$table_name'") != $table_name) {
+			if($wpdb->get_var("show tables like '$table_name'") != $table_name) {				
 				$sql = "CREATE TABLE $table_name (
-							doc_id int(5) NOT NULL AUTO_INCREMENT,
-							doc_title varchar(50) NOT NULL,
-							settings varchar(4000) NOT NULL DEFAULT '',
-							sections_order varchar(2000) NOT NULL DEFAULT '',
-							rel_id bigint(20),
-							rel_title varchar(50) NOT NULL DEFAULT 'Relevant Links',
-							UNIQUE KEY doc_id(doc_id)
-						);";
-				$rs = $wpdb->query($sql);
-				$settings = json_encode( $this->default_documentor_settings );
+					doc_id int(5) NOT NULL AUTO_INCREMENT,
+					post_id int(5) NOT NULL,
+					UNIQUE KEY doc_id(doc_id)
+				);";
+				$rs = $wpdb->query($sql);		 
 				$wpdb->insert( 
 						$table_name, 
 						array(
 							'doc_id' => 1,
-							'doc_title' => 'Documentor Guide',
-							'settings'	=> $settings
+							'post_id' => 0							
 						), 
 						array( 
 							'%d',
-							'%s', 
-							'%s'
-						) 
+							'%d'
+						)
 					);
-			}
+			} else { // (If documentor table is already present)			
+				if($wpdb->get_var("SHOW COLUMNS FROM $table_name LIKE 'post_id'") != 'post_id'){
+					  $sql = "ALTER TABLE $table_name
+						ADD COLUMN post_id INT(5) NOT NULL";
+					  $rs5 = $wpdb->query($sql);
+					}
+				//Update code deleted  
+			} // Else (If documentor table is already present)				
 			//alter table to change collation of column doc_title : 1.0.1
 			$row = $wpdb->get_row("SHOW FULL COLUMNS FROM $table_name LIKE 'doc_title'" );
 			$collation = ( isset( $row->Collation ) ) ? $row->Collation : '';
@@ -191,7 +195,7 @@ class DocumentorLite{
 					$rs5 = $wpdb->query($sqlupdate);
 				}
 			}
-			update_option( "documentorlite_db_version", $documentorlite_db_version );
+			update_site_option( "documentorlite_db_version", $documentorlite_db_version );
 			//global setting
 			$global_settings = $this->documentor_global_options;
 			$global_settings_curr = get_option('documentor_global_options');
@@ -204,29 +208,26 @@ class DocumentorLite{
 				}
 			}
 			update_option('documentor_global_options',$global_settings_curr);
-		}//end of if db version chnage
+		}//end of if db version change
 	}
-
 	function shortcode( $atts ) {
 		$doc_id = isset($atts[0])?$atts[0]:'';
 		$id = intVal($doc_id);
 		$guide = new DocumentorLiteGuide( $id );
 		$html = $guide->view();
 		return $html;
-	}
-	
+	}	
 	function include_files() { 
 		require_once (dirname (__FILE__) . '/core/includes/fonts.php');
 		require_once (dirname (__FILE__) . '/core/admin.php');
 		require_once (dirname (__FILE__) . '/core/guide.php');
 		require_once (dirname (__FILE__) . '/core/section.php');
 		require_once (dirname (__FILE__) . '/core/ajax.php');
-	}
-	
+		require_once (dirname (__FILE__) . '/core/includes/compat.php');
+	}	
 	public static function documentor_plugin_url( $path = '' ) {
 		return plugins_url( $path, __FILE__ );
 	}
-
 	public static function documentor_admin_url( $query = array() ) {
 		global $plugin_page;
 
@@ -253,10 +254,13 @@ class DocumentorLite{
 		//New Custom Post Type
 		$global_settings_curr = get_option('documentor_global_options');
 		if( isset( $global_settings_curr['custom_post'] ) && $global_settings_curr['custom_post'] == '1' && !post_type_exists('documentor-sections') ){
-			add_action( 'init', array( &$this, 'section_post_type'), 11 );
+			add_action( 'init', array( &$this, 'section_post_type'), 11);
 			//add filter to ensure the text Sections, or Section, is displayed when user updates a Section 
 			add_filter('post_updated_messages', array( &$this, 'section_updated_messages') );
 		} //if custom_post is true
+		if(!post_type_exists('guide')){		
+		  add_action( 'init', array( &$this, 'guide_post_type'), 11);
+		}
 	}
 	function section_post_type() {
 		$labels = array(
@@ -282,7 +286,7 @@ class DocumentorLite{
 		'show_in_menu' => false,
 		'show_in_nav_menus' => false, 
 		'query_var' => true,
-		'rewrite' => array('slug' => 'documentor-sections','with_front' => false),
+		'rewrite' => array('slug' => 'section'),
 		'capability_type' => 'post',
 		'has_archive' => false, 
 		'hierarchical' => false,
@@ -291,6 +295,40 @@ class DocumentorLite{
 		'supports' => array('title','editor','thumbnail','excerpt','custom-fields')
 		); 
 		register_post_type('documentor-sections',$args);
+	}
+	function guide_post_type() {
+		$labels = array(
+		'name' => _x('Guides', 'post type general name'),
+		'singular_name' => _x('Guide', 'post type singular name'),
+		'add_new' => _x('Add New', 'documentor'),
+		'add_new_item' => __('Add New Documentor Guide'),
+		'edit_item' => __('Edit Documentor Guide'),
+		'new_item' => __('New Documentor Guide'),
+		'all_items' => __('All Documentor Guides'),
+		'view_item' => __('View Documentor Guide'),
+		'search_items' => __('Search Documentor Guides'),
+		'not_found' =>  __('No Documentor guides found'),
+		'not_found_in_trash' => __('No Documentor guides found in Trash'), 
+		'parent_item_colon' => '',
+		'menu_name' => 'Guides'
+		);
+		$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => false, 
+		'show_in_menu' => false, 
+		'show_in_nav_menus' => false,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'guide'),
+		'capability_type' => 'post',
+		'has_archive' => true, 
+		'hierarchical' => false,
+		'menu_position' => null,
+		'can_export' => true,
+		'supports' => array('title','editor','thumbnail','excerpt','custom-fields')
+		); 
+		register_post_type('guide',$args); //ver1.4 end
 	}
 	function section_updated_messages( $messages ) {
 		global $post, $post_ID;
@@ -310,7 +348,6 @@ class DocumentorLite{
 		  date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
 		10 => sprintf( __('Documentor Section draft updated. <a target="_blank" href="%s">Preview Documentor Section</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 		);
-
 		return $messages;
 	}
 	function documentor_custom_styles() {
@@ -332,7 +369,6 @@ if(!function_exists('get_documentor')){
 		echo $html;
 	}
 }
-
 if( class_exists( 'DocumentorLite' ) ) {
   $cn = new DocumentorLite();
   // Register for activation

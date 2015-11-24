@@ -141,7 +141,14 @@ class DocumentorLiteDisplaybroad {
 					} else {
 						$section_title = get_post_meta( $postid, '_documentor_sectiontitle', true );
 					}
-					$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."#section-".$secdata->sec_id : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+					//1.4 :fix for NGINX server
+					$servername=$_SERVER['SERVER_NAME'];
+					if( strpos($servername, '*') === false ){
+						$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$servername.$_SERVER['REQUEST_URI'] : "http://".$servername.$_SERVER['REQUEST_URI'];
+					}
+					else{
+						$currsecurl = get_permalink();
+					}
 					
 					$currsecurl = $currsecurl."#".$sectionid;
 					
@@ -150,7 +157,7 @@ class DocumentorLiteDisplaybroad {
 					if( post_type_exists($type) ) { 
 						if ( is_user_logged_in() && current_user_can('edit_post', $postid)) {
 							$edtlink = get_edit_post_link($postid);
-							$shtml.= '<span><a href="'.esc_url($edtlink).'" target="_blank">'. __('Edit','documentorlite').'</a></span>';
+							$shtml.= '<span><a href="'.esc_url($edtlink).'" target="_blank">'. __('Edit','documentor-lite').'</a></span>';
 						}
 					}
 				} 
@@ -172,7 +179,7 @@ class DocumentorLiteDisplaybroad {
 				if( $secdata->type != 3	) { //not link section
 					$html.= '<div class="doc-help">';
 							if( $settings['updated_date'] == 1 ) {
-								$html.='<div class="doc-mdate">'.__('Last updated on','documentorlite').' '.$modified_date.'</div>';
+								$html.='<div class="doc-mdate">'.__('Last updated on','documentor-lite').' '.$modified_date.'</div>';
 							}
 						$html.='</div>';
 				}
@@ -182,8 +189,7 @@ class DocumentorLiteDisplaybroad {
 					foreach( $obj->children as $child ) {
 					    $j++;$k = 'child';
 					    $html .= $this->buildFrontSections($child, $i, $k, $j);
-					}
-					
+					}				
 				}
 			}
 		}
@@ -242,7 +248,9 @@ class DocumentorLiteDisplaybroad {
 						} 
 					}
 				} 
-				$html .= '<div class="doc-guidetitle">'.$starttag.' class="doc-title" '.$cssarr['guidetitle'].'>'.$guideobj->title.$endtag.'</div>';
+				if(isset($guideobj->doc_title)){
+					$html .= '<div class="doc-guidetitle">'.$starttag.' class="doc-title" '.$cssarr['guidetitle'].'>'.$guideobj->doc_title.$endtag.'</div>';
+				}
 			}
 			$html .= '<div class="doc-document-wrapper">';
 			//documentation menu
@@ -274,7 +282,7 @@ class DocumentorLiteDisplaybroad {
 				$i = 0;
 				//add social share buttons at top of the document
 				if( $settings['socialshare'] == 1 && $settings['sbutton_position'] == 'top' ) {
-					$guidetitle = $guideobj->title;
+					$guidetitle = $guideobj->doc_title;
 					$html .= $guideobj->get_social_buttons( $settings, $guidetitle, $currentlink ); 
 				}  
 				foreach( $jsonObj as $jobj ) {
@@ -288,7 +296,7 @@ class DocumentorLiteDisplaybroad {
 				}
 				//add social share buttons at bottom of the document
 				if( $settings['socialshare'] == 1 && $settings['sbutton_position'] == 'bottom' ) {
-					$guidetitle = $guideobj->title;
+					$guidetitle = $guideobj->doc_title;
 					$html .= $guideobj->get_social_buttons( $settings, $guidetitle, $currentlink ); 
 				}  
 				$html.='</div><!--.doc-sec-container-->';
@@ -320,7 +328,9 @@ class DocumentorLiteDisplaybroad {
 					documentid	: '.$this->docid.',
 					docid		: "documentor-'.$this->docid.'",
 					animation	: "'.$settings['animation'].'",
-					indexformat	: "'.$settings['indexformat'].'",
+					indexformat	: "'.$settings['indexformat'].'",					
+					pformat		: "'.$settings['pif'].'",
+					cformat		: "'.$settings['cif'].'",
 					secstyle	: "'.$secstyle.'",
 					actnavbg_default: "'.$settings['actnavbg_default'].'",
 					actnavbg_color	: "'.$settings['actnavbg_color'].'",

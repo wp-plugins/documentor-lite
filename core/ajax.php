@@ -18,12 +18,15 @@ if( !class_exists( 'DocumentorLiteAjax' ) ) {
 				//search results functions
 				add_action('wp_ajax_doc_search_results', array('DocumentorLiteGuide','get_search_results'));
 				add_action('wp_ajax_nopriv_doc_search_results', array('DocumentorLiteGuide','get_search_results'));
+				add_action('wp_ajax_update_review_me', array('DocumentorLiteGuide','update_review_me'));
+
 			}
 			if( class_exists( 'DocumentorLiteFonts' ) and is_admin() ) {
 				add_action('wp_ajax_documentor_disp_gfweight',array('DocumentorLiteFonts','google_font_weight'));
 				add_action('wp_ajax_documentor_load_fontsdiv',array('DocumentorLiteFonts','load_fontsdiv_callback'));
 			}
-			
+
+
 		}
 		
 	}

@@ -96,10 +96,10 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 			}
 			
 			$html='<select name="'.esc_attr($name).'" id="'.esc_attr($gid).'" class="google-fonts" autocomplete="off">
-				<option value="">'. __( '&mdash; Google Fonts &mdash;', 'documentorlite' ).'</option>
+				<option value="">'. __( '&mdash; Google Fonts &mdash;', 'documentor-lite' ).'</option>
 				<!-- Google Serif -->';
 				 if ( ! empty( $documentor_google_subsets['serif'] ) ):
-					$html.='<optgroup label="'. __( 'Google Serif Fonts', 'documentorlite' ).'" class="google_label">';
+					$html.='<optgroup label="'. __( 'Google Serif Fonts', 'documentor-lite' ).'" class="google_label">';
 					 foreach ( $documentor_google_subsets['serif'] as $id => $properties ) : 
 							$html.='<option value="'.esc_attr($id).'" data-font-type="google" '.selected( $current_value, $id, false ); 
 							$html.='>'.$properties['name'].'</option>';
@@ -110,7 +110,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 
 			$html.='<!-- Google Sans Serif -->';
 			if ( ! empty( $documentor_google_subsets['sans-serif'] ) ): 
-				$html.='<optgroup label="'. __( 'Google Sans Serif Fonts', 'documentorlite' ).'" class="google_label">';
+				$html.='<optgroup label="'. __( 'Google Sans Serif Fonts', 'documentor-lite' ).'" class="google_label">';
 					foreach ( $documentor_google_subsets['sans-serif'] as $id => $properties ) :
 							$html.='<option value="'.esc_attr($id).'" data-font-type="google" '.selected( $current_value, $id, false ); 
 							$html.='>'.$properties['name'].'</option>';
@@ -121,7 +121,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 
 			$html.='<!-- Google Display -->';
 			if ( ! empty( $documentor_google_subsets['display'] ) ): 
-				$html.='<optgroup label="'. __( 'Google Display Fonts', 'documentorlite' ).'" class="google_label">';
+				$html.='<optgroup label="'. __( 'Google Display Fonts', 'documentor-lite' ).'" class="google_label">';
 					foreach ( $documentor_google_subsets['display'] as $id => $properties ) :
 							$html.='<option value="'.esc_attr($id).'" data-font-type="google" '.selected( $current_value, $id, false ); 
 							$html.='>'.$properties['name'].'</option>';
@@ -132,7 +132,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 	
 			$html.='<!-- Google Handwriting -->';
 			if ( ! empty( $documentor_google_subsets['handwriting'] ) ): 
-				$html.='<optgroup label="'. __( 'Google Handwriting Fonts', 'documentorlite' ).'" class="google_label">';
+				$html.='<optgroup label="'. __( 'Google Handwriting Fonts', 'documentor-lite' ).'" class="google_label">';
 					foreach ( $documentor_google_subsets['handwriting'] as $id => $properties ) :
 							$html.='<option value="'.esc_attr($id).'" data-font-type="google" '.selected( $current_value, $id, false ); 
 							$html.='>'.$properties['name'].'</option>';
@@ -143,7 +143,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 
 			$html.='<!-- Google Monospace -->';
 			if ( ! empty( $documentor_google_subsets['monospace'] ) ): 
-				$html.='<optgroup label="'. __( 'Google Monospace Fonts', 'documentorlite' ).'" class="google_label">';
+				$html.='<optgroup label="'. __( 'Google Monospace Fonts', 'documentor-lite' ).'" class="google_label">';
 					foreach ( $documentor_google_subsets['monospace'] as $id => $properties ) :
 							$html.='<option value="'.esc_attr($id).'" data-font-type="google" '.selected( $current_value, $id, false ); 
 							$html.='>'.$properties['name'].'</option>';
@@ -167,7 +167,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 					$html.='<option value="'.esc_attr($value).'" '.selected( $current_value, $value, false ). '>'.$value.'</option>';
 				endforeach;
 			} else {
-				$html.='<option value="">'. __( '&mdash; Font Weight &mdash;', 'documentorlite' ).'</option>';
+				$html.='<option value="">'. __( '&mdash; Font Weight &mdash;', 'documentor-lite' ).'</option>';
 			}
 			$html.='</select>';
 			return $html;
@@ -191,7 +191,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 					$html.='<option value="'.esc_attr($value).'" '.$sel. '>'.$value.'</option>';
 				endforeach;
 			} else {
-				$html.='<option value="">'. __( '&mdash; Font Subset &mdash;', 'documentorlite' ).'</option>';
+				$html.='<option value="">'. __( '&mdash; Font Subset &mdash;', 'documentor-lite' ).'</option>';
 			}
 			$html.='</select>';
 			return $html;
@@ -276,13 +276,13 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 
 			if( $type == 'regular' ) {
 				$html.='<table><tr valign="top">
-				<th scope="row">'. __('Font','documentorlite') .'</th>
+				<th scope="row">'. __('Font','documentor-lite') .'</th>
 				<td>';
 				$dfonts=$objfonts->get_default_fonts($name= $documentor_options."[$nm]", $id = "documentor_$nm", $class = "havemoreinfo", $current_value=$documentor_curr["$nm"] );
 				
 				$html.=$dfonts;
 				$html.='<span class="moreInfo">
-					<div class="tooltip1">'. __('This value will be fallback font if Google web font value is specified below','documentorlite').'
+					<div class="tooltip1">'. __('This value will be fallback font if Google web font value is specified below','documentor-lite').'
 					</div>
 				</span>
 				</td>
@@ -292,7 +292,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 				$nmgw = $nm.'w';
 				$nmgsubset = $nm.'subset';
 				$html.='<table><tr valign="top">
-				<th scope="row">'. __('Google Web Font','documentorlite').'</th>
+				<th scope="row">'. __('Google Web Font','documentor-lite').'</th>
 				<td>';
 					$google_fonts  = $objfonts->get_google_fonts_html( $name = $documentor_options."[$nm]", $gid = "documentor_$nm", $current_value = $documentor_curr["$nm"]);
 					$html.=$google_fonts; 
@@ -300,7 +300,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 				</tr>
 
 				<tr valign="top">
-				<th scope="row">'. __('Google Font Weight','documentorlite').'</th>
+				<th scope="row">'. __('Google Font Weight','documentor-lite').'</th>
 				<td class="google-fontsweight">';
 					$google_fw=$objfonts->get_google_font_weight( $currfont = $documentor_curr[$nm], $name = $documentor_options."[$nmgw]", $id = "documentor_$nmgw", $current_value = $documentor_curr["$nmgw"] );
 					$html.=$google_fw;
@@ -308,7 +308,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 				</tr>
 
 				<tr valign="top">
-				<th scope="row">'. __('Google Font Subset','documentorlite').'</th>
+				<th scope="row">'. __('Google Font Subset','documentor-lite').'</th>
 				<td class="google-fontsubset">';
 					$google_fsubset=$objfonts->get_google_font_subset_html($currfont = $documentor_curr[$nm], $name = $documentor_options."[$nmgsubset][]", $id = "documentor_$nmgsubset", $current_value = $documentor_curr["$nmgsubset"]);
 					$html.=$google_fsubset;
@@ -316,7 +316,7 @@ if( !class_exists( 'DocumentorLiteFonts' ) ) {
 				</tr></table>';
 			} else if( $type == 'custom' ) {
 				$html.='<table><tr valign="top">
-				<th scope="row">'. __('Custom Font','documentorlite').'</th>
+				<th scope="row">'. __('Custom Font','documentor-lite').'</th>
 				<td>';
 					$custom_font=$objfonts->get_custom_font_html($name = $documentor_options."[$nm]", $id = "documentor_$nm", $current_value = $documentor_curr["$nm"]);
 					$html.=$custom_font;

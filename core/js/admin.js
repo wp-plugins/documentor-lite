@@ -21,7 +21,36 @@ function getUrlParameter(sParam)
         }
     }
 } 
+
 jQuery(document).ready(function() {
+
+		 jQuery('#later').on("click", function(){
+			//alert("later");
+			var r = jQuery('#hidden_reviewme').val();
+			//alert(r);
+			var data = {};
+			data['reviewme'] = parseInt(r);
+			data['action'] = 'update_review_me';
+			jQuery.post(ajaxurl, data, function(response) {
+			if(response) {
+				alert(jQuery('#hidden_reviewme').val(response));
+				jQuery('#hidden_reviewme').val(response);
+			}
+			jQuery('#reviewme').remove();
+			});
+		});
+		jQuery('#already').on("click", function(){
+			//alert("already");
+			var data = {};
+			data['reviewme'] = 0;
+			data['action'] = 'update_review_me';
+			jQuery.post(ajaxurl, data, function(response) {
+				if(response) {
+					jQuery('#hidden_reviewme').val(response);
+				}
+				jQuery('#reviewme').remove();
+			});
+		});
 	//global variable docid
 	var docid = jQuery("input[name='docsid']").val();
 
@@ -458,6 +487,28 @@ jQuery(document).ready(function() {
 			 expandBtnHTML   : '',
             		 collapseBtnHTML : '',
 		}).on('change', updateOutput);
+		jQuery(window).mousemove(function (e) {
+		    if (jQuery('.dd-dragel') && jQuery('.dd-dragel').length > 0 && !jQuery('html, body').is(':animated')) {
+			var bottom = jQuery(window).height() - 50,
+			    top = 50;
+			
+			if (e.clientY > bottom && (jQuery(window).scrollTop() + jQuery(window).height() < jQuery(document).height() - 100))
+			 {
+			    jQuery('html, body').animate({
+				scrollTop: jQuery(window).scrollTop() + 300
+			    }, 600);
+			    
+			}
+			else if (e.clientY < top && jQuery(window).scrollTop() > 0) {
+			    jQuery('html, body').animate({
+				scrollTop: jQuery(window).scrollTop() - 300
+			    }, 600);
+			   
+			} else {
+			    jQuery('html, body').finish();
+			}
+		    } 
+		});
 		// output initial serialised data
 		if( jQuery('#reorders').length > 0 ) {
 			updateOutput(jQuery('#reorders').data('output', jQuery('#reorders-output')));
@@ -566,6 +617,9 @@ jQuery(document).ready(function() {
 			});
 			return false;
 		});
+		
+		
+		
 		//save all sections
 		jQuery(".save-sections",scope).click(function() {
 			var sectionObj = {};
@@ -615,8 +669,8 @@ jQuery(document).ready(function() {
 			jQuery("#reorders").append('<div class="doc-loader" style="background: url('+docloader+') 50% 50% ;background-repeat: no-repeat;width: 100px;height: 20px;margin: 15px auto;"></div>');
 			jQuery.post(ajaxurl, data, function(response) {
 				var sections_nonce = jQuery("input[name='documentor-sections-nonce']").val();
-				var res = response.substring(0, 5);
-				if( res == 'error' ) {
+				var res = response.substring(0, 7);
+				if( res == 'Warning' ) {
 					jQuery('.doc-success-msg').html("<div class='validation-msg'>"+response+"</div>").show();
 				} 
 				else {
@@ -689,9 +743,10 @@ jQuery(document).ready(function() {
 			var cnxt=jQuery(".eb-cs-right");
 			bindBehaviors(cnxt);
 		});
-	}
+	 } 
+	 
+	
 });
-
 
 
 

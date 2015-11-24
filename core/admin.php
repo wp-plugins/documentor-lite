@@ -22,20 +22,26 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 				return $links;
 			$url = DocumentorLite::documentor_admin_url(array('page'=>'documentor-admin'));
 			$manage_link = '<a href="' . esc_attr( $url ) . '">'
-				. esc_html( __( 'Manage','documentorlite') ) . '</a>';
+				. esc_html( __( 'Manage','documentor-lite') ) . '</a>';
 			array_unshift( $links, $manage_link );
 			return $links;
 		}
 		// function for adding guides page to wp-admin
 		function documentor_admin_menu() {
 			// Add a new submenu under Options
-			add_menu_page( __('Documentor','documentorlite'), __('Documentor','documentorlite'), 'upload_files','documentor-admin', array(&$this, 'documentor_guides_page'), DocumentorLite::documentor_plugin_url( 'core/images/logo.png'));	
-			add_submenu_page( 'documentor-admin', __('Global Settings','documentorlite'), __('Global Settings','documentorlite'), 'upload_files','documentor-global-settings', array(&$this, 'documentor_global_settings'));
+			// Documentor Lite  1.2.2 start
+			$documentor_global_curr = get_option('documentor_global_options');
+			$user_level= (isset($documentor_global_curr['user_level'])?$documentor_global_curr['user_level']:'publish_posts');
+			
+			add_menu_page( __('Documentor','documentor-lite'), __('Documentor','documentor-lite'),$user_level,'documentor-admin', array(&$this, 'documentor_guides_page'), DocumentorLite::documentor_plugin_url( 'core/images/logo.png'));	
+			// Documentor Lite 1.2.2 end
+			add_submenu_page( 'documentor-admin', __('Global Settings','documentor-lite'), __('Global Settings','documentor-lite'), 'manage_options','documentor-global-settings', array(&$this, 'documentor_global_settings'));
 			//add meta box if WPML is active
+			
 			if( function_exists( 'add_meta_box' ) && function_exists('icl_plugin_action_links') ) {
 				$post_types = get_post_types(); 
 				foreach($post_types as $post_type) {
-					add_meta_box( 'documentor_box', __( 'Documentor' , 'documentorlite'), array(&$this, 'documentor_custom_box'), $post_type, 'advanced' );
+					add_meta_box( 'documentor_box', __( 'Documentor' , 'documentor-lite'), array(&$this, 'documentor_custom_box'), $post_type, 'advanced' );
 				}
 			}
 		}
@@ -68,7 +74,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 			<table class="form-table" style="margin: 0;">
 				<tr valign="top">
 					<td scope="row">
-						<label for="documentor_menutitle"><?php _e('Menu Title ','documentorlite'); ?></label>
+						<label for="documentor_menutitle"><?php _e('Menu Title ','documentor-lite'); ?></label>
 					</td>
 					<td>
 						<input type="text" name="_documentor_menutitle" class="documentor_menutitle" value="<?php echo esc_attr($documentor_menutitle);?>" size="50" />
@@ -76,7 +82,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 				</tr>
 				<tr valign="top">
 					<td scope="row">
-						<label for="documentor_sectiontitle"><?php _e('Section Title ','documentorlite'); ?></label>
+						<label for="documentor_sectiontitle"><?php _e('Section Title ','documentor-lite'); ?></label>
 					</td>
 					<td>
 						<input type="text" name="_documentor_sectiontitle" class="documentor_sectiontitle" value="<?php echo esc_attr($documentor_sectiontitle);?>" size="50" />
@@ -151,12 +157,12 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 			}
 			?>
 			<div class="global_settings">
-				<h2> <?php _e('Global Settings','documentorlite'); ?> </h2>
+				<h2> <?php _e('Global Settings','documentor-lite'); ?> </h2>
 				<form name="documentor_global_settings" method="post" action="options.php">
 					<?php settings_fields($group); ?>
 					<table class="form-table">
 						<tr valign="top">
-							<th scope="row"><?php _e('Custom Post','documentorlite'); ?></th>
+							<th scope="row"><?php _e('Custom Post','documentor-lite'); ?></th>
 							<td>
 								<div class="eb-switch eb-switchnone">
 									<input type="hidden" name="<?php echo $documentor_global_options;?>[custom_post]" class="hidden_check" id="documentor_custom_post" value="<?php echo esc_attr($documentor_global_curr['custom_post']);?>">
@@ -165,20 +171,47 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 								</div>
 							</td>
 						</tr>
+						<?php // Documentor 1.2.2- start ?>
 						<tr valign="top">
-							<th scope="row"><?php _e('Custom Styles','documentorlite'); ?></th>
+							<th scope="row"><?php _e('Minimum User Level to create and manage guides','documentor'); ?></th>
+							<td><select name="<?php echo $documentor_global_options;?>[user_level]" id="documentor_user_level">
+							<option value="manage_options"<?php if ($documentor_global_curr['user_level'] == "manage_options"){ echo "selected";}?> ><?php _e('Administrator','documentor'); ?></option>
+							
+							<option value="edit_others_posts" <?php if ($documentor_global_curr['user_level'] == "edit_others_posts"){ echo "selected";}?> ><?php _e('Editor and Admininstrator','documentor'); ?></option>
+							<option value="publish_posts" <?php if ($documentor_global_curr['user_level'] == "publish_posts"){ echo "selected";}?> ><?php _e('Author, Editor and Admininstrator','documentor'); ?></option>
+							<option value="edit_posts" <?php if ($documentor_global_curr['user_level'] == "edit_posts"){ echo "selected";}?> ><?php _e('Contributor, Author, Editor and Admininstrator','documentor'); ?></option>
+							</select>
+							</td>
+						</tr>
+						<?php // Documentor 1.2.2- end ?>
+						<tr valign="top">
+							<th scope="row"><?php _e('Custom Styles','documentor-lite'); ?></th>
 							<td>
 								<textarea name="<?php echo $documentor_global_options;?>[custom_styles]"  rows="5" cols="40" class="code"><?php echo $documentor_global_curr['custom_styles']; ?></textarea>
 							</td>
 						</tr>
 					</table>
+					<input type="hidden" name="" id="">
 					<p class="submit">
-						<input type="submit" name="Save" class="button-primary" value="<?php _e('Save Changes', 'documentorlite');?>">
-					</p>
+						<input type="submit" name="Save" class="button-primary" value="<?php _e('Save Changes', 'documentor-lite');?>">
+					</p>					
+					<input type="hidden" name="<?php echo $documentor_global_options;?>[reviewme]" class="hidden_check" id="hidden_reviewme" value="<?php echo esc_attr($documentor_global_curr['reviewme']);?>">				
+					<?php 
+						$now=strtotime("now");
+						$reviewme=$documentor_global_curr['reviewme'];
+						       if($reviewme!=0 and $reviewme<$now) {
+						echo "<div id='reviewme' style='border:1px solid #ccc;padding:10px;background:#fff;margin-top:2%;float: left;width: 95%;'>
+						<p>".__('Hey, I noticed you have created an awesome document using Documentor Lite and using it for more than a week. Could you please do me a BIG favor and give it a 5-star rating on WordPress? Just to help us spread the word and boost our motivation.', 'documentor-lite')."</p>
+						<p>".__("~ Tejaswini from Documentor","documentorlite")."</p>
+						<ul><li><a href='https://wordpress.org/support/view/plugin-reviews/documentor-lite?filter=5' target='_blank' title='".__('Documentor Lite', 'documentor-lite')."'>".__('Ok, you deserve it', 'documentor-lite')."</a></li>
+						<li><a id='later' href='#' title='".__('Nope, maybe later', 'documentor-lite')."'>".__('Nope, maybe later', 'documentor-lite')."</a></li>
+						<li><a id='already' href='#' title='".__('I already did', 'documentor-lite')."'>".__('I already did', 'documentor-lite'). "</a></li></ul></div>";
+						 }
+					?>					
 				</form>	
 			</div>
 		<?php
-		}
+		}		
 		function register_global_settings() {
 			register_setting( 'documentor-global-group', 'documentor_global_options' );
 		}
@@ -189,8 +222,7 @@ if( !class_exists( 'DocumentorLiteAdmin' ) ) {
 			if( $post != NULL ) {
 				$wpdb->delete( $table_prefix.DOCUMENTORLITE_SECTIONS, array( 'post_id' => $pid ), array( '%d' ) );		
 			}
-		}
-			
+		}			
 	}//end class
 }//end if
 new DocumentorLiteAdmin();

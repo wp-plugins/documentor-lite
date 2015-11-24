@@ -1,10 +1,10 @@
 === Documentor - Create Product Documentation ===
 Contributors: internet techies, webfanzine
 Donate link: http://www.clickonf5.org/go/smooth-slider/
-Tags: documentation, guides, help, how-tos, toc
+Tags: documentation, guides, help, how-tos, toc, color options, colored menu, doc, docs, documentation, documents, easy, FAQ, FAQs, knowledge, knowledge base, menu, notes, order, organize, page, plugin, plugins, Post, quoble, simple, text, text document, word, wordpress, WordPress Plugin
 Requires at least: 3.6
-Tested up to: 4.3
-Stable tag: 1.2
+Tested up to: 4.3.1
+Stable tag: 1.3
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.
@@ -81,6 +81,22 @@ There's 3 ways to install this plugin:
 Please check the plugin page for FAQs and how-tos
 
 == Changelog ==
+
+= 1.3 =
+
+* New : Guide will be a CPT(Custom Post Type) 
+* New: Added 4 new indexing format for Guide menu like Roman and Alphabets
+* New : Added an option for minimum User Level to create and manage guides
+* New: Compatibility with Crayon Syntax Highlighter
+* Fixed : Issue with broad skin. only parent index are appearing now.
+* Fixed: If section title is empty ,Section order handle is appearing with proper height.
+* Fixed : If there are more than 20 sections on edit panel, drag and drop can be done with scroll easily.
+* Fixed: Active menu focus issue while scrolling
+* Fixed: The anchor link contained asteric for NGINX WP installations
+
+= 1.2.1 =
+
+* Fix - Errors while adding Posts/Pages as section on older versions of Mozilla Firefox
 
 = 1.2 =
 

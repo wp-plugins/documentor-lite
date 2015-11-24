@@ -66,6 +66,8 @@ function ReplaceNumberWithCommas(shareNumber) {
 			docid		: '1',
 			animation	: '',
 			indexformat	: '1',
+			pformat         : 'decimal',
+			cformat		: 'decimal',
 			secstyle	: '',
 			actnavbg_default: '0',
 			actnavbg_color	: '#f3b869',
@@ -91,7 +93,13 @@ function ReplaceNumberWithCommas(shareNumber) {
 			wow.init();
 		}
 		if(options.indexformat == '1') {
-			jQuery("head").append("<style type=\"text/css\"> #"+documentHandle+" ol {counter-reset: item ;}#"+documentHandle+" ol.doc-menu {margin-top: 20px;}#"+documentHandle+" ol li {display: block;}#"+documentHandle+" ol li:before {content: counters(item, \".\") \".\";counter-increment: item;"+options.secstyle+"}</style>");
+			countercss = "#"+documentHandle+" .doc-menu ol.doc-list-front > li:before {content: counter(item,"+options.pformat+") \".\";counter-increment: item;"+options.secstyle+";}.doc-menu ol ol li:before {content: counter(item,"+options.pformat+")\".\"counters(childitem, \".\", "+options.cformat+") \".\";counter-increment: childitem;"+options.secstyle;
+			
+			if( options.skin == 'broad') {
+				countercss = "#"+documentHandle+" .doc-menu ol.doc-list-front > li:before {content: counter(item,"+options.pformat+") \".\";counter-increment: item;"+options.secstyle;
+			}
+		
+			jQuery("head").append("<style type=\"text/css\"> #"+documentHandle+" .doc-menu ol.doc-list-front {counter-reset: item ;}.doc-menu ol ol {counter-reset: childitem;}#"+documentHandle+" ol.doc-menu {margin-top: 20px;}#"+documentHandle+" .doc-menu ol li {display: block;}"+countercss+"}</style>");
 		} else {
 			jQuery("head").append("<style type=\"text/css\">#"+documentHandle+" ol {list-style: none;}#"+documentHandle+" li {list-style: none;}</style>");
 		}
@@ -156,6 +164,11 @@ function ReplaceNumberWithCommas(shareNumber) {
 			if( jQuery(this.hash).length > 0 && options.scrolling == 1 ) {
 			 	jQuery('html,body').docuScrollTo( this.hash, this.hash ); 
 			}
+			var visiblemheight = jQuery("#"+documentHandle+" .doc-menu ol.doc-list-front").height();
+			if( jQuery("#"+documentHandle+" .documentor-related").length > 0 ) {
+				visiblemheight = visiblemheight + jQuery("#"+documentHandle+" .documentor-related").height()+40;
+			}
+			jQuery("#"+documentHandle+" .doc-sec-container").css('min-height',visiblemheight+'px');
 		
 		});
 		/* For broad skin - if link with hash value of section is opened in window */
@@ -193,7 +206,7 @@ function ReplaceNumberWithCommas(shareNumber) {
 				for (var i=0; i < aArray.length; i++) {
 					if( jQuery(aArray[i]).length > 0 ) {
 						var theID = aArray[i];
-						var divPos = jQuery(theID).offset().top - (windowHeight*0.40); // get the offset of the div from the top of page
+						var divPos = jQuery(theID).offset().top - (windowHeight*0.15); // get the offset of the div from the top of page
 						var divHeight = jQuery(theID).outerHeight(true); // get the height of the div in question
 						if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
 							jQuery("#"+documentHandle+" a[href='" + theID + "']").addClass("doc-acta");
@@ -235,7 +248,7 @@ function ReplaceNumberWithCommas(shareNumber) {
 			jQuery("html, body").animate({scrollTop:jQuery("#"+documentHandle).offset().top-50}, 600);
 		});
 		//scroll bar js
-		 jQuery("#"+documentHandle+" .doc-menuinner").slimScroll({
+		 jQuery("#"+documentHandle+" .doc-menurelated").slimScroll({
 			  size: options.scrollBarSize+'px', 
 			  height: '100%', 
 			  color: options.scrollBarColor, 

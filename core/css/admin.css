@@ -841,6 +841,7 @@ h2.guide_heading {
 	font-weight: bold; 
 	border: 1px solid #ccc;
     	background: #fafafa;
+    	min-height:43px;
     	background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
     	background:    -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
     	background:         linear-gradient(top, #fafafa 0%, #eee 100%);

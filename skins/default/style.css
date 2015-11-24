@@ -41,7 +41,7 @@
 	padding: 0;
 	margin: 0;
 }
-.documentor-default .doc-menu ol, li {
+.documentor-default .doc-menu ol, .documentor-default .doc-menu li {
 	list-style-position: inside;
 }
 .cleardiv {

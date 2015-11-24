@@ -6,8 +6,6 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 		public $menutitle='';
 		public $content='';
 		public $type='';
-		
-
 		function __construct($id=0 , $secid=0){
 			$this->doc_id = $id;
 			$this->secid = $secid;
@@ -41,12 +39,10 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						$post_id = wp_insert_post( $post );
 						//add meta fields for section title and menu title
 						update_post_meta($post_id, '_documentor_menutitle', $menutitle);
-						update_post_meta($post_id, '_documentor_sectiontitle', $sectiontitle);	
-						
+						update_post_meta($post_id, '_documentor_sectiontitle', $sectiontitle);			
 						//get slug of post
 						$dpost = get_post($post_id); 
 						$slug = $dpost->post_name;
-
 						//insert section in sections table
 						$wpdb->insert( 
 							$table_prefix.DOCUMENTORLITE_SECTIONS, 
@@ -63,11 +59,11 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 								'%s'
 							) 
 						);
-
 						//update order of sections in documentor table
 						$sectionid = $wpdb->insert_id;
-						$doctable = $table_prefix.DOCUMENTORLITE_TABLE;
-						$getorder = $wpdb->get_var($wpdb->prepare( "SELECT sections_order FROM $doctable WHERE doc_id = %d", $docid ) );
+						$doctable = $table_prefix.DOCUMENTORLITE_TABLE;						
+						$postid = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $doctable WHERE doc_id = %d", $docid ) );
+						$getorder = get_post_meta($postid,'_doc_sections_order',true); //ver1.4end
 						$secjarray = array();					
 						if( !empty( $getorder ) ) {
 							$secjarray = json_decode( $getorder, true );
@@ -77,19 +73,9 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						}
 						if( count( $secjarray ) > 0 ) {
 							$jsonstr = json_encode($secjarray);
-							$wpdb->update( 
-								$doctable, 
-								array( 
-									'sections_order' => $jsonstr	
-								), 
-								array( 'doc_id' => $docid ), 
-								array( 
-									'%s'
-								), 
-								array( '%d' ) 
-							);
+							update_post_meta($postid,'_doc_sections_order',$jsonstr);
 						}
-						_e("Section added successfully!!!",'documentorlite');
+						_e("Section added successfully!!!",'documentor-lite');
 						die();
 					}
 				}
@@ -106,7 +92,7 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 				$docid = isset( $_POST['docid'] ) ? intval($_POST['docid']) : '';
 				if( !empty( $docid ) ) {
 					if( !isset( $_POST['post_id'] ) ) {
-						_e('Please select any '.$docptype,'documentorlite');
+						_e('Please select any '.$docptype,'documentor-lite');
 						die();
 					}
 					$count = count($_POST['post_id']);
@@ -141,8 +127,9 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						for( $j = $sectionid; $j <= $lastid; $j++ ) {
 							$secarr[] = (object) array( 'id' => $j );
 						}
-						$doctable = $table_prefix.DOCUMENTORLITE_TABLE;
-						$getorder = $wpdb->get_var( $wpdb->prepare( "SELECT sections_order FROM $doctable WHERE doc_id = %d", $docid ) );
+						$doctable = $table_prefix.DOCUMENTORLITE_TABLE;						
+						$postid = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $doctable WHERE doc_id = %d", $docid ) );
+						$getorder = get_post_meta($postid,'_doc_sections_order',true); //ver1.4end
 						$secjarray = array();					
 						if( !empty( $getorder ) ) {
 							$secjarray = json_decode( $getorder, true );
@@ -151,22 +138,12 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 							$secjarray = array_merge( $secjarray, $secarr );
 						}
 						if( count( $secjarray ) > 0 ) {
-							$jsonstr = json_encode($secjarray);
-							$wpdb->update( 
-								$doctable, 
-								array( 
-									'sections_order' => $jsonstr	
-								), 
-								array( 'doc_id' => $docid ), 
-								array( 
-									'%s'
-								), 
-								array( '%d' ) 
-							);
+							$jsonstr = json_encode($secjarray);						
+							update_post_meta($postid,'_doc_sections_order',$jsonstr);
 						}
 					}
 				}
-				_e("Section added successfully!!!",'documentorlite');
+				_e("Section added successfully!!!",'documentor-lite');
 				die();
 			} else if ( $ptype == 'link' ) {
 				$type = 3;	//3 for links
@@ -193,11 +170,9 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						);
 					//insert custom post
 					$post_id = wp_insert_post( $post );
-
 					//get slug of post
 					$dpost = get_post($post_id); 
-					$slug = $dpost->post_name;
-					
+					$slug = $dpost->post_name;					
 					//insert section in sections table
 					$docid = isset( $_POST['docid'] ) ? intval($_POST['docid']) : '';
 					global $table_prefix, $wpdb;
@@ -216,12 +191,12 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 							'%s'
 						) 
 					);
-
 					//update order of sections in documentor table
 					$sectionid = $wpdb->insert_id;
 					$doctable = $table_prefix.DOCUMENTORLITE_TABLE;
 					if( !empty( $docid ) ) {
-						$getorder = $wpdb->get_var( $wpdb->prepare("SELECT sections_order FROM $doctable WHERE doc_id = %d", $docid ) );
+						$postid = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $doctable WHERE doc_id = %d", $docid ) );
+						$getorder = get_post_meta($postid,'_doc_sections_order',true); //ver1.4end
 						$secjarray = array();					
 						if( !empty( $getorder ) ) {
 							$secjarray = json_decode( $getorder, true );
@@ -230,21 +205,11 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 							$secjarray[] = (object) array('id' => $sectionid);
 						}
 						if( count( $secjarray ) > 0 ) {
-							$jsonstr = json_encode($secjarray);
-							$wpdb->update( 
-								$doctable, 
-								array( 
-									'sections_order' => $jsonstr	
-								), 
-								array( 'doc_id' => $docid ), 
-								array( 
-									'%s'
-								), 
-								array( '%d' ) 
-							);
+							$jsonstr = json_encode($secjarray);						
+							update_post_meta($postid,'_doc_sections_order',$jsonstr);
 						}
 					} 
-					_e("Section added successfully!!!",'documentorlite');
+					_e("Section added successfully!!!",'documentor-lite');
 					die();
 				}
 			}
@@ -288,7 +253,6 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						);
 						wp_update_post( $post );
 					}
-
 					//update meta fields for menu title and section title
 					$menu_title = get_post_meta($postid,'_documentor_menutitle',true);
 					if( $menu_title != $mtitle ) {
@@ -310,7 +274,6 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 						'new_window'=>$newwindow
 						);
 					$content = serialize($arr); 
-
 					//update nav_menu item post
 					$post = array(
 						      'ID'           => $postid,
@@ -401,19 +364,19 @@ if( !class_exists( 'DocumentorLiteSection' ) ) {
 			$html.='<form method="post" id="addlink-section" class="addsecform">
 					<div style="margin-left: 20px;">
 						<div class="docfrm-div">
-							<label class="titles"> '.__('Menu Title','documentorlite').' </label>
-							<input type="text" name="menutitle" class="txts menutitle" placeholder="'.__('Enter Menu Title','documentorlite').'" value="" />
+							<label class="titles"> '.__('Menu Title','documentor-lite').' </label>
+							<input type="text" name="menutitle" class="txts menutitle" placeholder="'.__('Enter Menu Title','documentor-lite').'" value="" />
 						</div>
 						<div class="docfrm-div">
-							<label class="titles"> '.__('Link URL','documentorlite').' </label>
+							<label class="titles"> '.__('Link URL','documentor-lite').' </label>
 							<input type="text" name="linkurl" class="txts linkurl" placeholder="http://" value="" />
 						</div>
 						<div class="docfrm-div">
 							<input type="checkbox" name="new_window" class="new_window" />
 							<input type="hidden" name="targetw" class="targetw">
-							<label class="linklabel"> '.__('Open in new window','documentorlite').' </label>';
+							<label class="linklabel"> '.__('Open in new window','documentor-lite').' </label>';
 						$html.='</div><div class="clrleft"></div>
-						<input type="submit" name="add_section" class="button-primary add-linksectionbtn" value="'.__('Insert','documentorlite').'" />
+						<input type="submit" name="add_section" class="button-primary add-linksectionbtn" value="'.__('Insert','documentor-lite').'" />
 						<input type="hidden" name="post_type" value="link" />
 					</div>
 				</form>';

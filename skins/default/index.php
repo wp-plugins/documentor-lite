@@ -123,7 +123,14 @@ class DocumentorLiteDisplaydefault{
 					} else {
 						$section_title = get_post_meta( $postid, '_documentor_sectiontitle', true );
 					}
-					$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."#section-".$secdata->sec_id : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+					//1.4 :fix for NGINX server
+					$servername=$_SERVER['SERVER_NAME'];
+					if( strpos($servername, '*') === false ){
+						$currsecurl = (!empty($_SERVER['HTTPS'])) ? "https://".$servername.$_SERVER['REQUEST_URI'] : "http://".$servername.$_SERVER['REQUEST_URI'];
+					}
+					else{
+						$currsecurl = get_permalink();
+					}
 					
 					$currsecurl = $currsecurl."#".$sectionid;
 					
@@ -132,7 +139,7 @@ class DocumentorLiteDisplaydefault{
 					if( post_type_exists($type) ) { 
 						if ( is_user_logged_in() && current_user_can('edit_post', $postid)) {
 							$edtlink = get_edit_post_link($postid);
-							$shtml.= '<span><a href="'.esc_url($edtlink).'" target="_blank">'. __('Edit','documentorlite').'</a></span>';
+							$shtml.= '<span><a href="'.esc_url($edtlink).'" target="_blank">'. __('Edit','documentor-lite').'</a></span>';
 						}
 					}
 				} 
@@ -154,7 +161,7 @@ class DocumentorLiteDisplaydefault{
 				if( $secdata->type != 3	) { //not link section
 					$html.= '<div class="doc-help">';
 							if( $settings['updated_date'] == 1 ) {
-								$html.='<div class="doc-mdate">'.__('Last updated on','documentorlite').' '.$modified_date.'</div>';
+								$html.='<div class="doc-mdate">'.__('Last updated on','documentor-lite').' '.$modified_date.'</div>';
 							}
 						$html.='</div>';
 				}
@@ -215,7 +222,9 @@ class DocumentorLiteDisplaydefault{
 						} 
 					}
 				} 
-				$html .= '<div class="doc-guidetitle">'.$starttag.' class="doc-title" '.$cssarr['guidetitle'].'>'.$guideobj->title.$endtag.'</div>';
+				if(isset($guideobj->doc_title)){
+					$html .= '<div class="doc-guidetitle">'.$starttag.' class="doc-title" '.$cssarr['guidetitle'].'>'.$guideobj->doc_title.$endtag.'</div>';
+				}
 			}
 			//navigation menu
 			$menupos = isset($settings['menu_position']) ? $settings['menu_position'] : 'left'; 
@@ -227,7 +236,7 @@ class DocumentorLiteDisplaydefault{
 			if( $settings['togglemenu'] == 1 ) {
 				$menuclass .= ' toggle';
 			} 
-			$html .= ' 	<div class="doc-menu'.$menuclass.'" ><div class="doc-menuinner">';
+			$html .= ' 	<div class="doc-menu'.$menuclass.'" ><div class="doc-menurelated">';
 			$obj = $guideobj->sections_order;
 			if( !empty( $obj ) ) {
 				$jsonObj = json_decode( $obj );
@@ -244,7 +253,7 @@ class DocumentorLiteDisplaydefault{
 				$i = 0;
 				//add social share buttons at top of the document
 				if( $settings['socialshare'] == 1 && $settings['sbutton_position'] == 'top' ) {
-					$guidetitle = $guideobj->title;
+					$guidetitle = $guideobj->doc_title;
 					$html .= $guideobj->get_social_buttons( $settings, $guidetitle, $currentlink ); 
 				}  
 				foreach( $jsonObj as $jobj ) {
@@ -253,7 +262,7 @@ class DocumentorLiteDisplaydefault{
 				}
 				//add social share buttons at bottom of document
 				if( $settings['socialshare'] == 1 && $settings['sbutton_position'] == 'bottom' ) {
-					$guidetitle = $guideobj->title;
+					$guidetitle = $guideobj->doc_title;
 					$html .= $guideobj->get_social_buttons( $settings, $guidetitle, $currentlink ); 
 				}  
 				$html.='</div>';
@@ -286,6 +295,8 @@ class DocumentorLiteDisplaydefault{
 					docid		: "documentor-'.$this->docid.'",
 					animation	: "'.$settings['animation'].'",
 					indexformat	: "'.$settings['indexformat'].'",
+					pformat		: "'.$settings['pif'].'",
+					cformat		: "'.$settings['cif'].'",
 					secstyle	: "'.$secstyle.'",
 					actnavbg_default: "'.$settings['actnavbg_default'].'",
 					actnavbg_color	: "'.$settings['actnavbg_color'].'",
