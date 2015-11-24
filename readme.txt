@@ -4,7 +4,7 @@ Donate link: http://www.clickonf5.org/go/smooth-slider/
 Tags: documentation, guides, help, how-tos, toc, color options, colored menu, doc, docs, documentation, documents, easy, FAQ, FAQs, knowledge, knowledge base, menu, notes, order, organize, page, plugin, plugins, Post, quoble, simple, text, text document, word, wordpress, WordPress Plugin
 Requires at least: 3.6
 Tested up to: 4.3.1
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 
 Great Products need Great Documentation!! Easily create Online Product Guide or Help Document.

@@ -3,7 +3,7 @@ Plugin Name: Documentor Lite
 Plugin URI: http://documentor.in/
 Description: Best plugin to create online documentation or product guide on WordPress.
 Text Domain: documentor-lite
-Version: 1.3
+Version: 1.3.1
 Author: WebFanzine Media
 Author URI: http://www.webfanzine.com/
 Wordpress version supported: 3.6 and above
@@ -103,7 +103,7 @@ class DocumentorLite{
 	{
 		if ( ! defined( 'DOCUMENTORLITE_TABLE' ) ) define('DOCUMENTORLITE_TABLE','documentor'); //Documentor TABLE NAME
 		if ( ! defined( 'DOCUMENTORLITE_SECTIONS' ) ) define('DOCUMENTORLITE_SECTIONS','documentor_sections'); //sections TABLE NAME
-		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.3",false);//Current Version of Documentor
+		if ( ! defined( 'DOCUMENTORLITE_VER' ) ) define("DOCUMENTORLITE_VER","1.3.1",false);//Current Version of Documentor
 		if ( ! defined( 'DOCUMENTORLITE_PLUGIN_BASENAME' ) )
 			define( 'DOCUMENTORLITE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		if ( ! defined( 'DOCUMENTORLITE_CSS_DIR' ) )
@@ -123,7 +123,7 @@ class DocumentorLite{
 	function install_documentor(){
 		global $wpdb, $table_prefix;
 		$documentorlite_db_version = DOCUMENTORLITE_VER;
-		$installed_ver = get_site_option( "documentorlite_db_version" );
+		$installed_ver = get_option( "documentorlite_db_version" );
 		if( $installed_ver != $documentorlite_db_version ) {
 			$table_name = $table_prefix.DOCUMENTORLITE_TABLE;
 			if($wpdb->get_var("show tables like '$table_name'") != $table_name) {				
@@ -195,7 +195,7 @@ class DocumentorLite{
 					$rs5 = $wpdb->query($sqlupdate);
 				}
 			}
-			update_site_option( "documentorlite_db_version", $documentorlite_db_version );
+			update_option( "documentorlite_db_version", $documentorlite_db_version );
 			//global setting
 			$global_settings = $this->documentor_global_options;
 			$global_settings_curr = get_option('documentor_global_options');
