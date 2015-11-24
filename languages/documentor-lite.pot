@@ -1,0 +1,842 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentor Lite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Sep 03 2015 11:56:20 GMT+0530 (IST)\n"
+"POT-Revision-Date: Thu Sep 03 2015 11:56:23 GMT+0530 (IST)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../documentor-lite.php:263
+msgctxt "post type general name"
+msgid "Sections"
+msgstr ""
+
+#: ../documentor-lite.php:264
+msgctxt "post type singular name"
+msgid "Section"
+msgstr ""
+
+#: ../documentor-lite.php:265
+msgctxt "documentor"
+msgid "Add New"
+msgstr ""
+
+#: ../documentor-lite.php:266
+msgid "Add New Documentor Section"
+msgstr ""
+
+#: ../documentor-lite.php:267
+msgid "Edit Documentor Section"
+msgstr ""
+
+#: ../documentor-lite.php:268
+msgid "New Documentor Section"
+msgstr ""
+
+#: ../documentor-lite.php:269
+msgid "All Documentor Sections"
+msgstr ""
+
+#: ../documentor-lite.php:270
+msgid "View Documentor Section"
+msgstr ""
+
+#: ../documentor-lite.php:271
+msgid "Search Documentor Sections"
+msgstr ""
+
+#: ../documentor-lite.php:272
+msgid "No Documentor sections found"
+msgstr ""
+
+#: ../documentor-lite.php:273
+msgid "No Documentor section found in Trash"
+msgstr ""
+
+#: ../documentor-lite.php:299
+#, php-format
+msgid "Documentor Section updated. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+
+#: ../documentor-lite.php:300
+msgid "Custom field updated."
+msgstr ""
+
+#: ../documentor-lite.php:301
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../documentor-lite.php:302
+msgid "Documentor Section updated."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: ../documentor-lite.php:304
+#, php-format
+msgid "Documentor section restored to revision from %s"
+msgstr ""
+
+#: ../documentor-lite.php:305
+#, php-format
+msgid "Documentor Section published. <a href=\"%s\">View Documentor section</a>"
+msgstr ""
+
+#: ../documentor-lite.php:306
+msgid "Section saved."
+msgstr ""
+
+#: ../documentor-lite.php:307
+#, php-format
+msgid ""
+"Documentor Section submitted. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+
+#: ../documentor-lite.php:308
+#, php-format
+msgid ""
+"Documentor Sections scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Documentor Section</a>"
+msgstr ""
+
+#. translators: Publish box date format, see http://php.net/date
+#: ../documentor-lite.php:310
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../documentor-lite.php:311
+#, php-format
+msgid ""
+"Documentor Section draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Documentor Section</a>"
+msgstr ""
+
+#: ../skins/broad/index.php:153 ../skins/default/index.php:135 ../core/guide.php:
+#: 135 ../core/guide.php:1437 ../core/guide.php:1578 ../core/guide.php:1668
+msgid "Edit"
+msgstr ""
+
+#: ../skins/broad/index.php:175 ../skins/default/index.php:157
+msgid "Last updated on"
+msgstr ""
+
+#: ../skins/broad/index.php:229 ../skins/default/index.php:202
+msgid "Search in Document"
+msgstr ""
+
+#: ../core/section.php:92 ../core/section.php:169 ../core/section.php:247
+msgid "Section added successfully!!!"
+msgstr ""
+
+#: ../core/section.php:404 ../core/guide.php:139 ../core/guide.php:1459
+msgid "Menu Title"
+msgstr ""
+
+#: ../core/section.php:405 ../core/guide.php:140 ../core/guide.php:1460
+msgid "Enter Menu Title"
+msgstr ""
+
+#: ../core/section.php:408
+msgid "Link URL"
+msgstr ""
+
+#: ../core/section.php:414 ../core/guide.php:151
+msgid "Open in new window"
+msgstr ""
+
+#: ../core/section.php:416 ../core/guide.php:1491 ../core/guide.php:1607 ..
+#: /core/guide.php:1697
+msgid "Insert"
+msgstr ""
+
+#: ../core/guide.php:142 ../core/guide.php:968 ../core/guide.php:1463
+msgid "Section Title"
+msgstr ""
+
+#: ../core/guide.php:143 ../core/guide.php:1464
+msgid "Enter Section Title"
+msgstr ""
+
+#: ../core/guide.php:147
+msgid "Link"
+msgstr ""
+
+#: ../core/guide.php:155
+msgid "Slug"
+msgstr ""
+
+#: ../core/guide.php:156
+msgid "Enter slug"
+msgstr ""
+
+#: ../core/guide.php:163 ../core/guide.php:677
+msgid "Save"
+msgstr ""
+
+#: ../core/guide.php:165
+msgid "Remove"
+msgstr ""
+
+#: ../core/guide.php:167
+msgid "Cancel"
+msgstr ""
+
+#: ../core/guide.php:170
+msgid "Do you want to delete all children sections ?"
+msgstr ""
+
+#: ../core/guide.php:170
+msgid "Delete children"
+msgstr ""
+
+#: ../core/guide.php:170
+msgid "Keep children"
+msgstr ""
+
+#: ../core/guide.php:513
+msgid "error: Guide name could not be blank"
+msgstr ""
+
+#: ../core/guide.php:569
+msgid "error: slug could not be blank."
+msgstr ""
+
+#: ../core/guide.php:573
+msgid "error: menu title could not be blank."
+msgstr ""
+
+#: ../core/guide.php:575
+msgid "error: section title could not be blank."
+msgstr ""
+
+#: ../core/guide.php:583
+msgid "error: link url could not be blank."
+msgstr ""
+
+#: ../core/guide.php:649
+msgid "Edit Guide"
+msgstr ""
+
+#: ../core/guide.php:654
+msgid "Sections"
+msgstr ""
+
+#: ../core/guide.php:655
+msgid "Settings"
+msgstr ""
+
+#: ../core/guide.php:656
+msgid "Embed Code"
+msgstr ""
+
+#: ../core/guide.php:657 ../core/guide.php:657
+msgid "Documentor Pro"
+msgstr ""
+
+#: ../core/guide.php:663
+msgid "Add Section"
+msgstr ""
+
+#: ../core/guide.php:690
+msgid "Basic Settings"
+msgstr ""
+
+#: ../core/guide.php:697
+msgid "Skin"
+msgstr ""
+
+#: ../core/guide.php:715
+msgid "Section Animation"
+msgstr ""
+
+#: ../core/guide.php:720
+msgid "Attention Seekers"
+msgstr ""
+
+#: ../core/guide.php:721
+msgid "bounce"
+msgstr ""
+
+#: ../core/guide.php:722
+msgid "flash"
+msgstr ""
+
+#: ../core/guide.php:723
+msgid "pulse"
+msgstr ""
+
+#: ../core/guide.php:724
+msgid "rubberBand"
+msgstr ""
+
+#: ../core/guide.php:725
+msgid "shake"
+msgstr ""
+
+#: ../core/guide.php:726
+msgid "swing"
+msgstr ""
+
+#: ../core/guide.php:727
+msgid "tada"
+msgstr ""
+
+#: ../core/guide.php:728
+msgid "wobble"
+msgstr ""
+
+#: ../core/guide.php:730
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: ../core/guide.php:731
+msgid "bounceIn"
+msgstr ""
+
+#: ../core/guide.php:732
+msgid "bounceInDown"
+msgstr ""
+
+#: ../core/guide.php:733
+msgid "bounceInLeft"
+msgstr ""
+
+#: ../core/guide.php:734
+msgid "bounceInRight"
+msgstr ""
+
+#: ../core/guide.php:735
+msgid "bounceInUp"
+msgstr ""
+
+#: ../core/guide.php:738
+msgid "Fading Entrances"
+msgstr ""
+
+#: ../core/guide.php:739
+msgid "fadeIn"
+msgstr ""
+
+#: ../core/guide.php:740
+msgid "fadeInDown"
+msgstr ""
+
+#: ../core/guide.php:741
+msgid "fadeInDownBig"
+msgstr ""
+
+#: ../core/guide.php:742
+msgid "fadeInLeft"
+msgstr ""
+
+#: ../core/guide.php:743
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: ../core/guide.php:744
+msgid "fadeInRight"
+msgstr ""
+
+#: ../core/guide.php:745
+msgid "fadeInRightBig"
+msgstr ""
+
+#: ../core/guide.php:746
+msgid "fadeInUp"
+msgstr ""
+
+#: ../core/guide.php:747
+msgid "fadeInUpBig"
+msgstr ""
+
+#: ../core/guide.php:750
+msgid "Flippers"
+msgstr ""
+
+#: ../core/guide.php:751
+msgid "flip"
+msgstr ""
+
+#: ../core/guide.php:752
+msgid "flipInX"
+msgstr ""
+
+#: ../core/guide.php:753
+msgid "flipInY"
+msgstr ""
+
+#: ../core/guide.php:756
+msgid "Lightspeed"
+msgstr ""
+
+#: ../core/guide.php:757
+msgid "lightSpeedIn"
+msgstr ""
+
+#: ../core/guide.php:760
+msgid "Rotating Entrances"
+msgstr ""
+
+#: ../core/guide.php:761
+msgid "rotateIn"
+msgstr ""
+
+#: ../core/guide.php:762
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: ../core/guide.php:763
+msgid "rotateInDownRight"
+msgstr ""
+
+#: ../core/guide.php:764
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: ../core/guide.php:765
+msgid "rotateInUpRight"
+msgstr ""
+
+#: ../core/guide.php:768
+msgid "Specials"
+msgstr ""
+
+#: ../core/guide.php:769
+msgid "hinge"
+msgstr ""
+
+#: ../core/guide.php:770
+msgid "rollIn"
+msgstr ""
+
+#: ../core/guide.php:773
+msgid "Zoom Entrances"
+msgstr ""
+
+#: ../core/guide.php:774
+msgid "zoomIn"
+msgstr ""
+
+#: ../core/guide.php:775
+msgid "zoomInDown"
+msgstr ""
+
+#: ../core/guide.php:776
+msgid "zoomInLeft"
+msgstr ""
+
+#: ../core/guide.php:777
+msgid "zoomInRight"
+msgstr ""
+
+#: ../core/guide.php:778
+msgid "zoomInUp"
+msgstr ""
+
+#: ../core/guide.php:781
+msgid "Slide Entrances"
+msgstr ""
+
+#: ../core/guide.php:782
+msgid "slideInDown"
+msgstr ""
+
+#: ../core/guide.php:783
+msgid "slideInLef"
+msgstr ""
+
+#: ../core/guide.php:784
+msgid "slideInRight"
+msgstr ""
+
+#: ../core/guide.php:785
+msgid "slideInUp"
+msgstr ""
+
+#: ../core/guide.php:794
+msgid "Indexing Format"
+msgstr ""
+
+#: ../core/guide.php:805
+msgid "Guide Title"
+msgstr ""
+
+#: ../core/guide.php:812
+msgid "Options"
+msgstr ""
+
+#: ../core/guide.php:817
+msgid "Scrolling"
+msgstr ""
+
+#: ../core/guide.php:829
+msgid "Fixed Menu"
+msgstr ""
+
+#: ../core/guide.php:841
+msgid "Top Margin for Menu"
+msgstr ""
+
+#: ../core/guide.php:843 ../core/guide.php:925 ../core/guide.php:1020 ..
+#: /core/guide.php:1079 ../core/guide.php:1369
+msgid "px"
+msgstr ""
+
+#: ../core/guide.php:852
+msgid "Menu Position"
+msgstr ""
+
+#: ../core/guide.php:862
+msgid "Toggle child menu"
+msgstr ""
+
+#: ../core/guide.php:874 ../core/guide.php:940 ../core/guide.php:965 ..
+#: /core/guide.php:1037 ../core/guide.php:1110 ../core/guide.php:1142 ..
+#: /core/guide.php:1394 ../core/admin.php:176
+msgid "Save Changes"
+msgstr ""
+
+#: ../core/guide.php:881
+msgid "Formatting"
+msgstr ""
+
+#: ../core/guide.php:884
+msgid "Nav Menu Title"
+msgstr ""
+
+#: ../core/guide.php:890 ../core/guide.php:948 ../core/guide.php:987 ..
+#: /core/guide.php:1046 ../core/guide.php:1334
+msgid "Use theme default"
+msgstr ""
+
+#: ../core/guide.php:901 ../core/guide.php:959 ../core/guide.php:998 ..
+#: /core/guide.php:1057 ../core/guide.php:1128 ../core/guide.php:1344
+msgid "Color"
+msgstr ""
+
+#: ../core/guide.php:906 ../core/guide.php:1003 ../core/guide.php:1062 ..
+#: /core/guide.php:1351 ../core/includes/fonts.php:279
+msgid "Font"
+msgstr ""
+
+#: ../core/guide.php:924 ../core/guide.php:1019 ../core/guide.php:1078 ..
+#: /core/guide.php:1368
+msgid "Font Size"
+msgstr ""
+
+#: ../core/guide.php:929 ../core/guide.php:1024 ../core/guide.php:1083 ..
+#: /core/guide.php:1373
+msgid "Font Style"
+msgstr ""
+
+#: ../core/guide.php:931 ../core/guide.php:1026 ../core/guide.php:1085 ..
+#: /core/guide.php:1376
+msgid "Bold"
+msgstr ""
+
+#: ../core/guide.php:932 ../core/guide.php:1027 ../core/guide.php:1086 ..
+#: /core/guide.php:1377
+msgid "Bold Italic"
+msgstr ""
+
+#: ../core/guide.php:933 ../core/guide.php:1028 ../core/guide.php:1087 ..
+#: /core/guide.php:1378
+msgid "Italic"
+msgstr ""
+
+#: ../core/guide.php:934 ../core/guide.php:1029 ../core/guide.php:1088 ..
+#: /core/guide.php:1379
+msgid "Normal"
+msgstr ""
+
+#: ../core/guide.php:943
+msgid "Active Nav Menu Background"
+msgstr ""
+
+#: ../core/guide.php:973 ../core/guide.php:1320
+msgid "Element"
+msgstr ""
+
+#: ../core/guide.php:1040
+msgid "Section Content"
+msgstr ""
+
+#: ../core/guide.php:1094
+msgid "Last Updated Date"
+msgstr ""
+
+#: ../core/guide.php:1112
+msgid "Scrollbar"
+msgstr ""
+
+#: ../core/guide.php:1122
+msgid "size"
+msgstr ""
+
+#: ../core/guide.php:1134
+msgid "Opacity"
+msgstr ""
+
+#: ../core/guide.php:1151
+msgid "Advance Settings"
+msgstr ""
+
+#: ../core/guide.php:1156
+msgid "Guide Manager"
+msgstr ""
+
+#: ../core/guide.php:1172
+msgid "Search Box"
+msgstr ""
+
+#: ../core/guide.php:1183
+msgid "RTL Support"
+msgstr ""
+
+#: ../core/guide.php:1195
+msgid "Back to Top button"
+msgstr ""
+
+#: ../core/guide.php:1207
+msgid "Social Sharing"
+msgstr ""
+
+#: ../core/guide.php:1215
+msgid "Format"
+msgstr ""
+
+#: ../core/guide.php:1225
+msgid "Social Share Options"
+msgstr ""
+
+#: ../core/guide.php:1227
+msgid "Select Social buttons"
+msgstr ""
+
+#: ../core/guide.php:1231
+msgid "Facebook"
+msgstr ""
+
+#: ../core/guide.php:1239
+msgid "Twitter"
+msgstr ""
+
+#: ../core/guide.php:1247
+msgid "Google Plus"
+msgstr ""
+
+#: ../core/guide.php:1254
+msgid ""
+"To get the count of Google Plus shares, please enable the curl extension of "
+"PHP"
+msgstr ""
+
+#: ../core/guide.php:1258
+msgid "Pinterest"
+msgstr ""
+
+#: ../core/guide.php:1266
+msgid "Select Format"
+msgstr ""
+
+#: ../core/guide.php:1287
+msgid "Display Share Count"
+msgstr ""
+
+#: ../core/guide.php:1290
+msgid "Share Count"
+msgstr ""
+
+#: ../core/guide.php:1298
+msgid "Position"
+msgstr ""
+
+#: ../core/guide.php:1302
+msgid "Top"
+msgstr ""
+
+#: ../core/guide.php:1305
+msgid "Bottom"
+msgstr ""
+
+#: ../core/guide.php:1317
+msgid "Guide Title Formatting"
+msgstr ""
+
+#: ../core/guide.php:1419
+msgid "Shortcode"
+msgstr ""
+
+#: ../core/guide.php:1426
+msgid "Template Tag"
+msgstr ""
+
+#: ../core/guide.php:1446
+msgid "Inline"
+msgstr ""
+
+#: ../core/guide.php:1448
+msgid "Posts"
+msgstr ""
+
+#: ../core/guide.php:1449
+msgid "Pages"
+msgstr ""
+
+#: ../core/guide.php:1450
+msgid "Links"
+msgstr ""
+
+#: ../core/guide.php:1467
+msgid "Content"
+msgstr ""
+
+#: ../core/guide.php:1500
+msgid "Back to Edit"
+msgstr ""
+
+#: ../core/guide.php:1550 ../core/guide.php:1550
+msgid "Search"
+msgstr ""
+
+#: ../core/guide.php:1561 ../core/guide.php:1652
+msgid "ID"
+msgstr ""
+
+#: ../core/guide.php:1562 ../core/guide.php:1653
+msgid "Name"
+msgstr ""
+
+#: ../core/guide.php:1563 ../core/guide.php:1654
+msgid "Edit Link"
+msgstr ""
+
+#: ../core/guide.php:1594 ../core/guide.php:1684
+msgid "Page"
+msgstr ""
+
+#: ../core/guide.php:1594 ../core/guide.php:1684
+msgid "of"
+msgstr ""
+
+#: ../core/guide.php:1595 ../core/guide.php:1685
+msgid "First"
+msgstr ""
+
+#: ../core/guide.php:1596 ../core/guide.php:1686
+msgid "Previous"
+msgstr ""
+
+#: ../core/guide.php:1603 ../core/guide.php:1693
+msgid "Next"
+msgstr ""
+
+#: ../core/guide.php:1604 ../core/guide.php:1694
+msgid "Last"
+msgstr ""
+
+#: ../core/guide.php:1612
+msgid "Enter search text"
+msgstr ""
+
+#: ../core/guide.php:1618 ../core/guide.php:1700
+msgid "no posts found"
+msgstr ""
+
+#: ../core/admin.php:25
+msgid "Manage"
+msgstr ""
+
+#: ../core/admin.php:32 ../core/admin.php:32 ../core/admin.php:38
+msgid "Documentor"
+msgstr ""
+
+#: ../core/admin.php:33 ../core/admin.php:33 ../core/admin.php:154
+msgid "Global Settings"
+msgstr ""
+
+#: ../core/admin.php:71
+msgid "Menu Title "
+msgstr ""
+
+#: ../core/admin.php:79
+msgid "Section Title "
+msgstr ""
+
+#: ../core/admin.php:159
+msgid "Custom Post"
+msgstr ""
+
+#: ../core/admin.php:169
+msgid "Custom Styles"
+msgstr ""
+
+#: ../core/includes/fonts.php:99
+msgid "&mdash; Google Fonts &mdash;"
+msgstr ""
+
+#: ../core/includes/fonts.php:102
+msgid "Google Serif Fonts"
+msgstr ""
+
+#: ../core/includes/fonts.php:113
+msgid "Google Sans Serif Fonts"
+msgstr ""
+
+#: ../core/includes/fonts.php:124
+msgid "Google Display Fonts"
+msgstr ""
+
+#: ../core/includes/fonts.php:135
+msgid "Google Handwriting Fonts"
+msgstr ""
+
+#: ../core/includes/fonts.php:146
+msgid "Google Monospace Fonts"
+msgstr ""
+
+#: ../core/includes/fonts.php:165 ../core/includes/fonts.php:170
+msgid "&mdash; Font Weight &mdash;"
+msgstr ""
+
+#: ../core/includes/fonts.php:194
+msgid "&mdash; Font Subset &mdash;"
+msgstr ""
+
+#: ../core/includes/fonts.php:285
+msgid "This value will be fallback font if Google web font value is specified below"
+msgstr ""
+
+#: ../core/includes/fonts.php:295
+msgid "Google Web Font"
+msgstr ""
+
+#: ../core/includes/fonts.php:303
+msgid "Google Font Weight"
+msgstr ""
+
+#: ../core/includes/fonts.php:311
+msgid "Google Font Subset"
+msgstr ""
+
+#: ../core/includes/fonts.php:319
+msgid "Custom Font"
+msgstr ""
