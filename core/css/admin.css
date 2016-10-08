@@ -1194,6 +1194,18 @@ p.error span {
 		line-height: 28px;
 		height: 28px;
 	}
+	.nav-tab-wrapper .nav_tab_active{
+		margin-left: 2px;
+	}
+	#embedcode{
+		margin-left: 0px;
+	}
+	#embedcode td{
+		padding-left: 10px;
+	}
+	.documentor-newdoc{
+		margin-left: 2px;	
+	}
 }
 @media only screen and (min-width: 531px) and (max-width: 782px) {
 	.documentor-settings .form-table td select,.documentor-settings .form-table input[type="text"] { 
